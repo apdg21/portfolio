@@ -8,11 +8,16 @@ body {
 }
 
 h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+
+h2,
+
+h3,
+
+h4,
+
+h5,
+
+h6 {
     color: #414141;
 }
 
@@ -22,15 +27,18 @@ a {
 }
 
 a:hover,
-a:active,
-a:focus {
+
+a:active,
+
+a:focus {
     color: #ffffff !important;
     outline: none;
     text-decoration: none;
 }
 
 .btn:focus,
-.form-control:focus {
+
+.form-control:focus {
     box-shadow: none;
 }
 
@@ -200,7 +208,8 @@ a:hover,
     }
 
     .navbar-light .navbar-nav .nav-link,
-        .navbar-light .navbar-nav .nav-link:focus {
+    
+    .navbar-light .navbar-nav .nav-link:focus {
         padding: 10px 10px 8px 10px;
         color: #ffffff;
         font-size: 15px;
@@ -208,17 +217,20 @@ a:hover,
     }
 
     .navbar-light.nav-sticky .navbar-nav .nav-link,
-        .navbar-light.nav-sticky .navbar-nav .nav-link:focus {
+    
+    .navbar-light.nav-sticky .navbar-nav .nav-link:focus {
         color: #414141;
     }
 
     .navbar-light .navbar-nav .nav-link:hover,
-        .navbar-light .navbar-nav .nav-link.active {
+    
+    .navbar-light .navbar-nav .nav-link.active {
         color: #ffffff;
     }
 
     .navbar-light.nav-sticky .navbar-nav .nav-link:hover,
-        .navbar-light.nav-sticky .navbar-nav .nav-link.active {
+    
+    .navbar-light.nav-sticky .navbar-nav .nav-link.active {
         color: #000000;
     }
 }
@@ -373,8 +385,10 @@ a:hover,
     }
 
     .hero,
-        .hero .hero-text,
-        .hero .hero-btn {
+    
+    .hero .hero-text,
+    
+    .hero .hero-btn {
         width: 100%;
         text-align: center;
     }
@@ -701,18 +715,21 @@ a:hover,
     }
 
     .experience .timeline .timeline-item.left::after,
-        .experience .timeline .timeline-item.right::after {
+    
+    .experience .timeline .timeline-item.right::after {
         left: 0;
     }
 
     .experience .timeline .timeline-item.left::before,
-        .experience .timeline .timeline-item.right::before {
+    
+    .experience .timeline .timeline-item.right::before {
         left: 18px;
         border-color: transparent #dddddd transparent transparent;
     }
 
     .experience .timeline .timeline-item.left .timeline-date,
-        .experience .timeline .timeline-item.right .timeline-date {
+    
+    .experience .timeline .timeline-item.right .timeline-date {
         position: relative;
         top: 0;
         right: auto;
@@ -722,7 +739,8 @@ a:hover,
     }
 
     .experience .timeline .timeline-item.left .timeline-text,
-        .experience .timeline .timeline-item.right .timeline-text {
+    
+    .experience .timeline .timeline-item.right .timeline-text {
         border-right: none;
         border-left: 5px solid #dddddd;
     }
@@ -792,7 +810,8 @@ a:hover,
 }
 
 .service .service-item:hover .service-text h3,
-.service .service-item:hover .service-text p {
+
+.service .service-item:hover .service-text p {
     color: #ffffff;
 }
 
@@ -841,7 +860,8 @@ a:hover,
 }
 
 .portfolio #portfolio-filter li:hover,
-.portfolio #portfolio-filter li.filter-active {
+
+.portfolio #portfolio-filter li.filter-active {
     color: #000000;
     background: transparent;
     box-shadow: inset 0 0 0 0 #000000;
@@ -999,8 +1019,10 @@ a:hover,
 }
 
 .price .price-header,
-.price .price-body,
-.price .price-footer {
+
+.price .price-body,
+
+.price .price-footer {
     position: relative;
     text-align: center;
 }
@@ -1174,8 +1196,10 @@ a:hover,
 }
 
 .team .team-item:hover .team-text h2,
-.team .team-item:hover .team-text h4,
-.team .team-item:hover .team-text p {
+
+.team .team-item:hover .team-text h4,
+
+.team .team-item:hover .team-text p {
     color: #ffffff;
 }
 
@@ -1344,7 +1368,8 @@ a:hover,
 }
 
 .contact .contact-form .form-control:-ms-input-placeholder,
-.contact .contact-form .form-control::-ms-input-placeholder {
+
+.contact .contact-form .form-control::-ms-input-placeholder {
     color: #ffffff;
 }
 
@@ -1584,5 +1609,255 @@ a:hover,
         font-size: 16px;
         line-height: 16px;
         padding: 0 5px;
+    }
+}
+
+/* ***************************** */
+/* ******** Vibe coding section CSS ********* */
+/* ***************************** */
+
+/* ===== Vibe Coded Projects - Custom Design ===== */
+.vibe-projects {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated background elements */
+.vibe-projects::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><path d="M20 20 L80 20 L80 80 L20 80 Z" fill="none" stroke="white" stroke-width="2"/><circle cx="50" cy="50" r="15" fill="none" stroke="white" stroke-width="2"/></svg>');
+    background-size: 50px 50px;
+    animation: vibePattern 20s linear infinite;
+}
+
+@keyframes vibePattern {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(5deg) scale(1.1); }
+    100% { transform: rotate(0deg) scale(1); }
+}
+
+.vibe-projects .section-header p {
+    color: rgba(255,255,255,0.9);
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.vibe-projects .section-header h2 {
+    color: white;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Project Card - Custom Design */
+.vibe-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 100%;
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.vibe-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+    background: white;
+}
+
+/* Card Image Area */
+.vibe-card-image {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+}
+
+.vibe-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.vibe-card:hover .vibe-card-image img {
+    transform: scale(1.15) rotate(2deg);
+}
+
+/* Tech Tags Overlay */
+.vibe-tags {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.vibe-card:hover .vibe-tags {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.vibe-tag {
+    background: rgba(102, 126, 234, 0.9);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* Card Content */
+.vibe-card-content {
+    padding: 25px;
+    position: relative;
+}
+
+.vibe-card-content h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.vibe-card:hover .vibe-card-content h3 {
+    color: #667eea;
+}
+
+.vibe-card-content p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Project Stats */
+.vibe-stats {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.vibe-stat {
+    text-align: center;
+}
+
+.vibe-stat .stat-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #667eea;
+    display: block;
+}
+
+.vibe-stat .stat-label {
+    font-size: 12px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Custom Button */
+.vibe-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.vibe-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.vibe-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.5);
+    color: white;
+    text-decoration: none;
+}
+
+.vibe-btn:hover::before {
+    left: 100%;
+}
+
+/* Floating Animation for Cards */
+@keyframes vibeFloat {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.vibe-card {
+    animation: vibeFloat 5s ease-in-out infinite;
+}
+
+/* Different animation delays for each card */
+.vibe-card:nth-child(1) { animation-delay: 0s; }
+.vibe-card:nth-child(2) { animation-delay: 0.5s; }
+.vibe-card:nth-child(3) { animation-delay: 1s; }
+.vibe-card:nth-child(4) { animation-delay: 1.5s; }
+.vibe-card:nth-child(5) { animation-delay: 2s; }
+.vibe-card:nth-child(6) { animation-delay: 2.5s; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .vibe-projects {
+        padding: 50px 0;
+    }
+    
+    .vibe-projects .section-header h2 {
+        font-size: 32px;
+    }
+    
+    .vibe-card {
+        margin-bottom: 30px;
+    }
+    
+    .vibe-stats {
+        gap: 10px;
+    }
+    
+    .vibe-stat .stat-value {
+        font-size: 16px;
     }
 }
