@@ -19,11 +19,21 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <style>
-        /* Simple adjustment for team section repurpose */
+        /* Adjustments for portfolio grid and email samples */
+        .portfolio .portfolio-item {
+            margin-bottom: 30px;
+        }
         .team-item .team-text h4 { font-size: 1rem; margin-bottom: 0.5rem; }
         .team-item .team-text p { font-size: 0.9rem; margin-bottom: 1rem; }
         .team-item .blog-meta { justify-content: center; margin-bottom: 0.5rem; }
         .team-item .blog-meta p { margin: 0 5px; font-size: 0.7rem; }
+        .btn-email-samples {
+            display: block;
+            width: fit-content;
+            margin: 40px auto 0;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+        }
     </style>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
@@ -243,7 +253,7 @@
     </div>
     <!-- Job Experience End -->
 
-    <!-- Portfolio / Projects Start (replacing old Portfolio) -->
+    <!-- Portfolio / Vibe Coded Projects Start -->
     <div class="portfolio" id="portfolio">
         <div class="container">
             <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
@@ -306,7 +316,7 @@
                         </div>
                         <div class="portfolio-text">
                             <h3>Family Connection Tools</h3>
-                            <p>Small web apps built to help my family stay connected and organized. A personal passion project.</p>
+                            <p>Small web apps built to help my family stay organized. A personal passion project.</p>
                             <a class="btn" href="https://resumepro.pages.dev/family-connection-tools" target="_blank"><i class="fa fa-link"></i> View Tools</a>
                         </div>
                     </div>
@@ -314,12 +324,12 @@
                  <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
                     <div class="portfolio-item">
                         <div class="portfolio-img">
-                            <img src="img/portfolio-6.jpg" alt="Email Marketing Portfolio">
+                            <img src="img/portfolio-6.jpg" alt="Klaviyo Analytics Tool">
                         </div>
                         <div class="portfolio-text">
-                            <h3>Email Marketing Work</h3>
-                            <p>Samples, case studies, and thoughts on email marketing, gathered in one place.</p>
-                            <a class="btn" href="https://apdg21.github.io/email-marketing/portfolio1128" target="_blank"><i class="fa fa-link"></i> View Portfolio</a>
+                            <h3>Klaviyo Analytics Dashboard</h3>
+                            <p>A tool to upload and visualize Klaviyo campaign data, built to simplify performance analysis.</p>
+                            <a class="btn" href="https://resumepro.pages.dev/klaviyo-tool" target="_blank"><i class="fa fa-link"></i> View Tool</a>
                         </div>
                     </div>
                 </div>
@@ -342,14 +352,13 @@
                             <img src="img/team-1.jpg" alt="Email Sample 1">
                         </div>
                         <div class="team-text">
-                            <h2>Welcome Series</h2>
-                            <h4>Strategy & Copy</h4>
-                            <p>A 3-email welcome flow designed to onboard new subscribers and drive first purchase, with a focus on brand storytelling.</p>
+                            <h2>Email Sample 1</h2>
+                            <h4>Campaign Example</h4>
+                            <p>Newsletter design with clear branding and engaging content.</p>
                             <div class="blog-meta">
-                                <p><i class="far fa-calendar-alt"></i> 2024</p>
-                                <p><i class="fa fa-tag"></i> E-commerce</p>
+                                <p><i class="fa fa-tag"></i> Newsletter</p>
                             </div>
-                            <a class="btn" href="https://apdg21.github.io/email-marketing/portfolio1128" target="_blank">View Sample</a>
+                            <a class="btn" href="https://htq.soundestlink.com/ce/v/0/697d964fa41a0b536079083e" target="_blank">View Email</a>
                         </div>
                     </div>
                 </div>
@@ -359,14 +368,13 @@
                             <img src="img/team-2.jpg" alt="Email Sample 2">
                         </div>
                         <div class="team-text">
-                            <h2>Abandoned Cart Flow</h2>
-                            <h4>Automation & Copy</h4>
-                            <p>A 2-step recovery sequence using urgency and social proof to bring customers back to complete their purchase.</p>
+                            <h2>Email Sample 2</h2>
+                            <h4>Campaign Example</h4>
+                            <p>Promotional email focused on product features and call-to-action.</p>
                             <div class="blog-meta">
-                                <p><i class="far fa-calendar-alt"></i> 2025</p>
-                                <p><i class="fa fa-tag"></i> Retail</p>
+                                <p><i class="fa fa-tag"></i> Promotional</p>
                             </div>
-                            <a class="btn" href="https://apdg21.github.io/email-marketing/portfolio1128" target="_blank">View Sample</a>
+                            <a class="btn" href="https://htq.soundestlink.com/ce/v/0/69859bb032bb5df3c42d5c64" target="_blank">View Email</a>
                         </div>
                     </div>
                 </div>
@@ -376,14 +384,13 @@
                             <img src="img/team-3.jpg" alt="Email Sample 3">
                         </div>
                         <div class="team-text">
-                            <h2>Newsletter Design</h2>
-                            <h4>Design & Development</h4>
-                            <p>A responsive newsletter template featuring a clean layout, engaging visuals, and clear calls-to-action. Coded for compatibility.</p>
+                            <h2>Email Sample 3</h2>
+                            <h4>Campaign Example</h4>
+                            <p>Event announcement with compelling visuals and registration link.</p>
                             <div class="blog-meta">
-                                <p><i class="far fa-calendar-alt"></i> 2024</p>
-                                <p><i class="fa fa-tag"></i> SaaS</p>
+                                <p><i class="fa fa-tag"></i> Announcement</p>
                             </div>
-                            <a class="btn" href="https://apdg21.github.io/email-marketing/portfolio1128" target="_blank">View Sample</a>
+                            <a class="btn" href="https://htq.soundestlink.com/ce/v/0/6960b533ea8f5b0d3ca2d45e" target="_blank">View Email</a>
                         </div>
                     </div>
                 </div>
@@ -393,17 +400,20 @@
                             <img src="img/team-4.jpg" alt="Email Sample 4">
                         </div>
                         <div class="team-text">
-                            <h2>Re-engagement Campaign</h2>
-                            <h4>Strategy & Copy</h4>
-                            <p>A win-back campaign for inactive subscribers, using personalized content and a strong offer to rekindle interest.</p>
+                            <h2>Email Sample 4</h2>
+                            <h4>Campaign Example</h4>
+                            <p>Seasonal campaign using storytelling to drive engagement.</p>
                             <div class="blog-meta">
-                                <p><i class="far fa-calendar-alt"></i> 2023</p>
-                                <p><i class="fa fa-tag"></i> Service</p>
+                                <p><i class="fa fa-tag"></i> Seasonal</p>
                             </div>
-                            <a class="btn" href="https://apdg21.github.io/email-marketing/portfolio1128" target="_blank">View Sample</a>
+                            <a class="btn" href="https://htq.soundestlink.com/ce/v/0/698ef2d783e006c4e79bbfcf" target="_blank">View Email</a>
                         </div>
                     </div>
                 </div>
+            </div>
+            <!-- Button to main email marketing portfolio -->
+            <div class="text-center">
+                <a class="btn btn-email-samples" href="https://apdg21.github.io/email-marketing/portfolio1128" target="_blank">View All Email Marketing Samples →</a>
             </div>
         </div>
     </div>
