@@ -519,6 +519,7 @@ a:focus {
 
 .about .about-content {
     padding: 0 60px;
+    margin-top: 30px;
 }
 
 .about .about-text p {
@@ -1641,7 +1642,7 @@ a:focus {
 }
 
 .vibe-projects .section-header p {
-    color: rgba(255,255,255,0.9);
+    color: black;
     font-size: 18px;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -2162,3 +2163,4 @@ a:focus {
         width: 90%;
     }
 }
+
