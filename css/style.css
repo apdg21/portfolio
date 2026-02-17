@@ -62,7 +62,7 @@ a:focus {
 }
 
 .btn:hover {
-    color: #000000;
+    color: black !important;
     background: transparent;
     box-shadow: inset 0 0 0 0 #000000;
     border-color: #000000;
@@ -340,7 +340,7 @@ a:focus {
 }
 
 .hero .hero-btn .btn:hover {
-    color: #ffffff;
+    color: black !important;
     background: transparent;
     box-shadow: inset 0 0 0 0 #ffffff;
     border-color: #ffffff;
@@ -985,7 +985,7 @@ a:focus {
 }
 
 .banner .banner-text .btn:hover {
-    color: #ffffff;
+    color: black !important;
     background: transparent;
     box-shadow: inset 0 0 0 0 #ffffff;
     border-color: #ffffff;
@@ -1383,7 +1383,7 @@ a:focus {
 }
 
 .contact .contact-form .btn:hover {
-    color: #ffffff;
+    color: black !important;
     background: transparent;
     box-shadow: inset 0 0 0 0 #ffffff;
     border-color: #ffffff;
@@ -2336,6 +2336,7 @@ a:focus {
         padding: 15px;
     }
 }
+
 
 
 
