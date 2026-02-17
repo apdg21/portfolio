@@ -340,7 +340,7 @@ a:focus {
 }
 
 .hero .hero-btn .btn:hover {
-    color: white;
+    color: white !important;
     background: transparent;
     box-shadow: inset 0 0 0 0 #ffffff;
     border-color: #ffffff;
@@ -1383,7 +1383,7 @@ a:focus {
 }
 
 .contact .contact-form .btn:hover {
-    color: white;
+    color: white !important;
     background: transparent;
     box-shadow: inset 0 0 0 0 #ffffff;
     border-color: #ffffff;
@@ -2336,6 +2336,7 @@ a:focus {
         padding: 15px;
     }
 }
+
 
 
 
