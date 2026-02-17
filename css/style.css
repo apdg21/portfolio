@@ -1209,7 +1209,8 @@ a:focus {
 }
 
 .team .team-item:hover .team-social a.btn:hover {
-    border-color: black;
+    border-color: #ffffff;
+    color: black;
 }
 
 @media (max-width: 575.98px) {
@@ -2335,5 +2336,6 @@ a:focus {
         padding: 15px;
     }
 }
+
 
 
