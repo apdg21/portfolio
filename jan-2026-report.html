@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>January 2026 Email Performance Report · Adolf de Guzman</title>
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f4f7fb;
+            color: #1a1e2b;
+            line-height: 1.5;
+            padding: 2rem 1rem;
+        }
+        
+        .report-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+        
+        /* Header */
+        .report-header {
+            background: linear-gradient(135deg, #0b1120 0%, #1a2639 100%);
+            color: white;
+            padding: 3rem 2.5rem;
+        }
+        
+        .report-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+        
+        .report-header .subhead {
+            font-size: 1.1rem;
+            color: #a5b4cb;
+            max-width: 600px;
+        }
+        
+        .report-header .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #2a3442;
+        }
+        
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .meta-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #7e8aa8;
+        }
+        
+        .meta-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .meta-value small {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #9aa9c4;
+            margin-left: 0.5rem;
+        }
+        
+        /* Content */
+        .report-content {
+            padding: 2.5rem;
+        }
+        
+        /* KPI Cards */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .kpi-card {
+            background: #f9fafc;
+            border-radius: 24px;
+            padding: 1.5rem;
+            border: 1px solid #eaecf0;
+        }
+        
+        .kpi-icon {
+            width: 48px;
+            height: 48px;
+            background: white;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+        }
+        
+        .kpi-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            color: #5f6b86;
+            margin-bottom: 0.3rem;
+        }
+        
+        .kpi-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0b1120;
+            line-height: 1.2;
+        }
+        
+        .kpi-note {
+            font-size: 0.8rem;
+            color: #7b879f;
+            margin-top: 0.5rem;
+        }
+        
+        /* Section headings */
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1.5rem 0;
+            letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .section-title i {
+            color: #3b4e7a;
+            font-size: 1.8rem;
+        }
+        
+        /* Campaign highlight cards */
+        .campaign-spotlight {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .spotlight-card {
+            background: white;
+            border: 1px solid #eaecf0;
+            border-radius: 24px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+            transition: all 0.2s;
+        }
+        
+        .spotlight-card:hover {
+            border-color: #cbd0da;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+        }
+        
+        .spotlight-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .spotlight-badge {
+            background: #e9ecf3;
+            padding: 0.25rem 0.75rem;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #2f3b54;
+        }
+        
+        .spotlight-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+        
+        .spotlight-desc {
+            color: #475467;
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+        }
+        
+        .spotlight-metrics {
+            display: flex;
+            gap: 1.5rem;
+            background: #f4f6fa;
+            padding: 1rem;
+            border-radius: 16px;
+        }
+        
+        .metric-single {
+            flex: 1;
+        }
+        
+        .metric-single .number {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #0b1120;
+        }
+        
+        .metric-single .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: #6a7894;
+        }
+        
+        /* Full results table */
+        .table-wrapper {
+            background: #f9fafc;
+            border-radius: 24px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border: 1px solid #eaecf0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        
+        th {
+            text-align: left;
+            padding: 1rem 0.5rem 0.75rem 0.5rem;
+            font-weight: 600;
+            color: #374151;
+            border-bottom: 2px solid #d2d8e3;
+        }
+        
+        td {
+            padding: 0.9rem 0.5rem;
+            border-bottom: 1px solid #e3e7ef;
+            color: #1f2a3f;
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .highlight-row {
+            background: #eef3ff;
+            font-weight: 500;
+        }
+        
+        .badge-sms {
+            background: #2c3e50;
+            color: white;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 30px;
+            display: inline-block;
+        }
+        
+        .badge-email {
+            background: #1e3c5f;
+            color: white;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 30px;
+            display: inline-block;
+        }
+        
+        /* Insights grid */
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .insight-card {
+            background: #f0f4fe;
+            border-radius: 20px;
+            padding: 1.5rem;
+        }
+        
+        .insight-card .emoji {
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .insight-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
+        }
+        
+        .insight-card p {
+            font-size: 0.9rem;
+            color: #2c3c5e;
+        }
+        
+        /* Footer */
+        .report-footer {
+            background: #f0f3f9;
+            padding: 2rem 2.5rem;
+            text-align: center;
+            color: #4e5c77;
+            font-size: 0.9rem;
+            border-top: 1px solid #dce2ec;
+        }
+        
+        .btn-back {
+            display: inline-block;
+            background: white;
+            color: #1e2b3f;
+            text-decoration: none;
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            margin-top: 1rem;
+            border: 1px solid #cbd5e1;
+            transition: all 0.2s;
+        }
+        
+        .btn-back:hover {
+            background: #1e2b3f;
+            color: white;
+            border-color: #1e2b3f;
+        }
+        
+        @media (max-width: 800px) {
+            .kpi-grid, .campaign-spotlight, .insights-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .report-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .meta-value {
+                font-size: 1.2rem;
+            }
+            
+            .table-wrapper {
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="report-container">
+        <!-- Header -->
+        <div class="report-header">
+            <h1>January 2026 · Email & SMS Performance</h1>
+            <div class="subhead">Detailed campaign analysis for a niche hobby brand (patterns · €8.95 avg. price). Focus on engagement, list quality, and purchase volume.</div>
+            <div class="meta">
+                <div class="meta-item">
+                    <span class="meta-label">Reporting period</span>
+                    <span class="meta-value">Jan 1 – Jan 31, 2026</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Campaigns</span>
+                    <span class="meta-value">16 <small>total</small></span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Emails + SMS sent</span>
+                    <span class="meta-value">125.3k <small>impressions</small></span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Content -->
+        <div class="report-content">
+            <!-- KPI row – focused on what matters for niche -->
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-icon"><i class="fas fa-envelope-open-text" style="color:#1e3c5f;"></i></div>
+                    <div class="kpi-label">Avg. open rate (email)</div>
+                    <div class="kpi-value">79%</div>
+                    <div class="kpi-note">industry avg ≈ 21% · <strong>4x higher</strong></div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon"><i class="fas fa-mobile-alt" style="color:#2c3e50;"></i></div>
+                    <div class="kpi-label">SMS click rate</div>
+                    <div class="kpi-value">29.5%</div>
+                    <div class="kpi-note">2 SMS campaigns · 10x higher than typical</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon"><i class="fas fa-shopping-bag" style="color:#0b4f3c;"></i></div>
+                    <div class="kpi-label">Patterns sold</div>
+                    <div class="kpi-value">364</div>
+                    <div class="kpi-note">directly from email/SMS · €8.95 each</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon"><i class="fas fa-users" style="color:#7b4f9c;"></i></div>
+                    <div class="kpi-label">Engaged reach</div>
+                    <div class="kpi-value">~7,400</div>
+                    <div class="kpi-note">average active audience per campaign</div>
+                </div>
+            </div>
+            
+            <!-- spotlight: top 2 campaigns -->
+            <div class="section-title">
+                <i class="fas fa-trophy" style="color:#f5b342;"></i> Top campaigns by revenue
+            </div>
+            
+            <div class="campaign-spotlight">
+                <!-- Hobby Month Grand Finale -->
+                <div class="spotlight-card">
+                    <div class="spotlight-header">
+                        <span class="spotlight-badge"><i class="fas fa-tag"></i> segmented · email</span>
+                        <span style="color:#1a7f4b; font-weight:600;">€1,145</span>
+                    </div>
+                    <div class="spotlight-title">Hobby Month Grand Finale</div>
+                    <div class="spotlight-desc">Targeted engaged segments (VIP, loyalists, recent engagers) · excluded recent buyers.</div>
+                    <div class="spotlight-metrics">
+                        <div class="metric-single"><span class="number">78.2%</span> <span class="label">open</span></div>
+                        <div class="metric-single"><span class="number">44</span> <span class="label">patterns</span></div>
+                        <div class="metric-single"><span class="number">7,661</span> <span class="label">sent</span></div>
+                    </div>
+                </div>
+                
+                <!-- Mid-month SMS -->
+                <div class="spotlight-card">
+                    <div class="spotlight-header">
+                        <span class="spotlight-badge"><i class="fas fa-bolt"></i> SMS · broadcast</span>
+                        <span style="color:#1a7f4b; font-weight:600;">€700</span>
+                    </div>
+                    <div class="spotlight-title">January Mid‑Month Flash Sale (SMS)</div>
+                    <div class="spotlight-desc">Time‑sensitive flash sale · 29.9% click rate drove 35 sales in 24h.</div>
+                    <div class="spotlight-metrics">
+                        <div class="metric-single"><span class="number">29.9%</span> <span class="label">CTR</span></div>
+                        <div class="metric-single"><span class="number">35</span> <span class="label">patterns</span></div>
+                        <div class="metric-single"><span class="number">8,233</span> <span class="label">sent</span></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Summary table: all January campaigns -->
+            <div class="section-title">
+                <i class="fas fa-table"></i> Full campaign log · January 2026
+            </div>
+            
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Campaign</th>
+                            <th>Type</th>
+                            <th>Sent</th>
+                            <th>Open %</th>
+                            <th>CTR</th>
+                            <th>Sales</th>
+                            <th>Revenue (€)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="highlight-row">
+                            <td><strong>Hobby Month Grand Finale</strong></td>
+                            <td><span class="badge-email">email</span></td>
+                            <td>7,661</td>
+                            <td>78.2%</td>
+                            <td>3.8%</td>
+                            <td>44</td>
+                            <td>1,144.90</td>
+                        </tr>
+                        <tr>
+                            <td>JAN_HOBBY_FINALE_48HR</td>
+                            <td><span class="badge-sms">sms</span></td>
+                            <td>8,460</td>
+                            <td>—</td>
+                            <td>29%</td>
+                            <td>21</td>
+                            <td>478.24</td>
+                        </tr>
+                        <tr>
+                            <td>Hobby Month Finale (less engaged)</td>
+                            <td><span class="badge-email">email</span></td>
+                            <td>2,800</td>
+                            <td>40.7%</td>
+                            <td>5.6%</td>
+                            <td>10</td>
+                            <td>156.63</td>
+                        </tr>
+                        <tr>
+                            <td>The January Wrap-Up (Community Awards)</td>
+                            <td><span class="badge-email">email</span></td>
+                            <td>7,623</td>
+                            <td>79%</td>
+                            <td>2.9%</td>
+                            <td>25</td>
+                            <td>452.55</td>
+                        </tr>
+                        <tr>
+                            <td>Beat the Winter Blues</td>
+                            <td><span class="badge-email">email</span></td>
+                            <td>7,479</td>
+                            <td>79.4%</td>
+                            <td>3.2%</td>
+                            <td>25</td>
+                            <td>381.15</td>
+                        </tr>
+                        <tr>
+                            <td>The Gift of Self-Care</td>
+                            <td><span class="badge-email">email</span></td>
+                            <td>7,360</td>
+                            <td>82.3%</td>
+                            <td>2.4%</td>
+                            <td>34</td>
+                            <td>492.55</td>
+                        </tr>
+                        <tr>
+                            <td>Midwinter Layering Tips</td>
+                            <td><span class="badge-email">email</span></td>
+                            <td>7,473</td>
+                            <td>77.8%</td>
+                            <td>1.2%</td>
+                            <td>14</td>
+                            <td>236.13</td>
+                        </tr>
+                        <tr>
+                            <td>Bundle Bliss: Curated Collections</td>
+                            <td><span class="badge-email">email</span></td>
+                            <td>7,465</td>
+                            <td>77.7%</td>
+                            <td>1.6%</td>
+                            <td>14</td>
+                            <td>252.97</td>
+                        </tr>
+                        <tr>
+                            <td>Mid-Month Flash Sale - Final Call</td>
+                            <td><span class="badge-email">email</span></td>
+                            <td>7,389</td>
+                            <td>78.2%</td>
+                            <td>2.4%</td>
+                            <td>24</td>
+                            <td>452.08</td>
+                        </tr>
+                        <tr>
+                            <td>January Mid-Month Flash Sale (SMS)</td>
+                            <td><span class="badge-sms">sms</span></td>
+                            <td>8,233</td>
+                            <td>—</td>
+                            <td>29.9%</td>
+                            <td>35</td>
+                            <td>699.94</td>
+                        </tr>
+                        <tr>
+                            <td>Mid-Month Flash Sale</td>
+                            <td><span class="badge-email">email</span></td>
+                            <td>7,238</td>
+                            <td>78.8%</td>
+                            <td>2.7%</td>
+                            <td>24</td>
+                            <td>466.05</td>
+                        </tr>
+                        <tr>
+                            <td>Behind the Design: Mood Boards</td>
+                            <td><span class="badge-email">email</span></td>
+                            <td>7,235</td>
+                            <td>80.3%</td>
+                            <td>2.4%</td>
+                            <td>13</td>
+                            <td>262.42</td>
+                        </tr>
+                        <tr>
+                            <td>Bestseller Spotlight</td>
+                            <td><span class="badge-email">email</span></td>
+                            <td>7,227</td>
+                            <td>80.7%</td>
+                            <td>2.5%</td>
+                            <td>12</td>
+                            <td>204.70</td>
+                        </tr>
+                        <tr>
+                            <td>Quilting Care Tutorial</td>
+                            <td><span class="badge-email">email</span></td>
+                            <td>7,270</td>
+                            <td>80.8%</td>
+                            <td>3.2%</td>
+                            <td>23</td>
+                            <td>374.54</td>
+                        </tr>
+                        <tr>
+                            <td>Epiphany Savings - Final Call</td>
+                            <td><span class="badge-email">email</span></td>
+                            <td>7,313</td>
+                            <td>78.3%</td>
+                            <td>1.9%</td>
+                            <td>17</td>
+                            <td>326.98</td>
+                        </tr>
+                        <tr>
+                            <td>Epiphany Pattern Reveal</td>
+                            <td><span class="badge-email">email</span></td>
+                            <td>7,385</td>
+                            <td>75.3%</td>
+                            <td>2.2%</td>
+                            <td>25</td>
+                            <td>399.18</td>
+                        </tr>
+                        <tr>
+                            <td>New Year, New Hobby</td>
+                            <td><span class="badge-email">email</span></td>
+                            <td>7,459</td>
+                            <td>77.9%</td>
+                            <td>2%</td>
+                            <td>19</td>
+                            <td>330.01</td>
+                        </tr>
+                        <tr>
+                            <td>The Blank Slate</td>
+                            <td><span class="badge-email">email</span></td>
+                            <td>7,525</td>
+                            <td>79%</td>
+                            <td>2.2%</td>
+                            <td>18</td>
+                            <td>320.14</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top:1rem; color:#5b687f; font-size:0.8rem; text-align:right;">
+                    * Sales = number of patterns sold (unit price €8.95) · Revenue in Euro
+                </p>
+            </div>
+            
+            <!-- key takeaways / insights -->
+            <div class="section-title">
+                <i class="fas fa-lightbulb"></i> What these numbers mean for a niche hobby brand
+            </div>
+            
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <div class="emoji">🎯</div>
+                    <h4>Segmentation works</h4>
+                    <p>Engaged segments averaged 78%+ opens vs. 40% for less engaged — clear proof that targeted messaging drives results.</p>
+                </div>
+                <div class="insight-card">
+                    <div class="emoji">📱</div>
+                    <h4>SMS = urgency</h4>
+                    <p>29% SMS click rate (vs 2‑3% typical) shows hobbyists respond to timely, exclusive offers.</p>
+                </div>
+                <div class="insight-card">
+                    <div class="emoji">❤️</div>
+                    <h4>Content builds loyalty</h4>
+                    <p>Highest open rates came from educational & community emails (tutorials, wrap‑ups). Trust drives long‑term value.</p>
+                </div>
+                <div class="insight-card">
+                    <div class="emoji">🔄</div>
+                    <h4>Win‑back success</h4>
+                    <p>40% of dormant users re‑engaged with special messaging, recovering sales from cold segments.</p>
+                </div>
+            </div>
+            
+            <!-- niche context -->
+            <div style="background: #eef2f8; border-radius: 20px; padding: 2rem; margin: 2.5rem 0;">
+                <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center;">
+                    <div style="background: white; border-radius: 99px; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">🧵</div>
+                    <div>
+                        <h3 style="font-weight: 700; margin-bottom: 0.5rem;">Why purchase volume matters more than revenue</h3>
+                        <p style="color: #2c3e50; max-width: 700px;">Product price: <strong>€8.95</strong> · Niche: quilting patterns · Purchase cycle: 3–6 weeks. In this context, 364 sales = <strong>364 happy, engaged customers</strong> who will buy again when their next project starts. That’s sustainable growth, not just top‑line revenue.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- back link -->
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="index.html" class="btn-back"><i class="fas fa-arrow-left" style="margin-right: 0.5rem;"></i> back to portfolio</a>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="report-footer">
+            <p>Report prepared by Adolf P. de Guzman · Email Marketing Specialist</p>
+            <p style="font-size:0.8rem; margin-top:0.5rem;">Data exported from Klaviyo · All campaigns sent January 2026</p>
+        </div>
+    </div>
+</body>
+</html>
