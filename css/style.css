@@ -207,6 +207,10 @@ a:focus {
         color: #000000;
     }
 
+    .navbar.nav-sticky .navbar-brand:hover {
+        color: #000000;
+    }
+
     .navbar-light .navbar-nav .nav-link,
     
     .navbar-light .navbar-nav .nav-link:focus {
@@ -220,6 +224,7 @@ a:focus {
     
     .navbar-light.nav-sticky .navbar-nav .nav-link:focus {
         color: #414141 !important;
+        text-decoration: underline;
     }
 
     .navbar-light .navbar-nav .nav-link:hover,
@@ -2336,6 +2341,7 @@ a:focus {
         padding: 15px;
     }
 }
+
 
 
 
