@@ -1026,21 +1026,31 @@
                 <div class="col-md-8">
                     <div class="contact-form">
                         <div id="success"></div>
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                        <!-- Updated form with FormSubmit -->
+                        <form action="https://formsubmit.co/reload.adolf2023@gmail.com" method="POST" id="contactForm">
+                            <!-- FormSubmit required fields -->
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_next" value="https://YOUR-DOMAIN.com/thank-you.html">
+                            <input type="hidden" name="_subject" value="New Contact Form Submission">
+                            <input type="hidden" name="_template" value="box">
+                            
+                            <!-- Honeypot to prevent spam -->
+                            <input type="text" name="_honey" style="display:none">
+                            
                             <div class="control-group">
-                                <input type="text" class="form-control" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name"/>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name"/>
                                 <p class="help-block"></p>
                             </div>
                             <div class="control-group">
-                                <input type="email" class="form-control" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email"/>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email"/>
                                 <p class="help-block"></p>
                             </div>
                             <div class="control-group">
-                                <input type="text" class="form-control" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject"/>
+                                <input type="text" class="form-control" id="subject" name="_subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject"/>
                                 <p class="help-block"></p>
                             </div>
                             <div class="control-group">
-                                <textarea class="form-control" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
+                                <textarea class="form-control" id="message" name="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
                                 <p class="help-block"></p>
                             </div>
                             <div>
@@ -1054,41 +1064,30 @@
     </div>
 </div>
 
+<!-- Optional: Add this script for AJAX submission (more reliable redirect) -->
 <script>
 $(function() {
-    $("#sendMessageButton").click(function(event) {
-        event.preventDefault();
+    $("#contactForm").submit(function(e) {
+        e.preventDefault();
         
-        // Disable button to prevent double submission
-        var $btn = $(this);
+        var $btn = $("#sendMessageButton");
         $btn.prop('disabled', true).text('Sending...');
         
-        var name = $("#name").val();
-        var email = $("#email").val();
-        var subject = $("#subject").val();
-        var message = $("#message").val();
-
+        var formData = $(this).serialize();
+        
         $.ajax({
-            url: "https://script.google.com/macros/s/AKfycbzCCBl92L_XdYETf1ZrwJNZEGmI-pPFu-spck2IRzaxC-kCVozWqe9yEQYSkpu-gyyq/exec",
+            url: "https://formsubmit.co/ajax/reload.adolf2023@gmail.com",
             type: "POST",
-            data: {
-                name: name,
-                email: email,
-                subject: subject,
-                message: message
-            },
+            data: formData,
             dataType: "json",
             success: function(response) {
-                if (response.result === "success") {
-                    // Redirect to thank you page on the same site
-                    window.location.href = "/thank-you.html";
-                } else {
-                    $("#success").html("<div class='alert alert-danger'>An error occurred. Please try again.</div>");
-                    $btn.prop('disabled', false).text('Send Message');
-                }
+                console.log("Success:", response);
+                // Redirect to thank you page
+                window.location.href = "/thank-you.html";
             },
-            error: function() {
-                $("#success").html("<div class='alert alert-danger'>An error occurred. Please try again.</div>");
+            error: function(xhr, status, error) {
+                console.log("Error:", error);
+                $("#success").html("<div class='alert alert-danger'>Connection error. Please try again.</div>");
                 $btn.prop('disabled', false).text('Send Message');
             }
         });
@@ -1096,7 +1095,7 @@ $(function() {
 });
 </script>
 <!-- Contact End -->
-
+    
     <!-- Blog Start -->
 <div class="blog" id="blog">
     <div class="container">
