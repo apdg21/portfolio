@@ -2341,6 +2341,143 @@ a:focus {
     }
 }
 
+/* New Highlight Email Section */
+/* Mobile fixes for January Performance Deep Dive panel */
+@media screen and (max-width: 768px) {
+  /* Fix the main container */
+  .row > .col-12 > div[style*="background: linear-gradient(145deg, #0b1a2e, #0e223a)"] {
+    padding: 20px 15px !important;
+  }
+  
+  /* Stack the two columns vertically */
+  div[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  
+  /* Fix header with Drive link */
+  div[style*="display: flex"][style*="justify-content: space-between"][style*="align-items: center"] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 15px !important;
+  }
+  
+  /* Make Drive link full width */
+  div[style*="display: flex"][style*="justify-content: space-between"] a[style*="background: rgba(255,255,255,0.1)"] {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  
+  /* Revenue section adjustments */
+  div[style*="display: flex"][style*="flex-wrap: wrap"][style*="gap: 25px"] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 15px !important;
+  }
+  
+  /* Campaign and Automation boxes */
+  div[style*="display: flex"][style*="gap: 35px"] {
+    gap: 20px !important;
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+  
+  /* Audience growth rows */
+  div[style*="display: flex"][style*="flex-direction: column"][style*="gap: 20px"] > div {
+    flex-wrap: wrap !important;
+  }
+  
+  /* Subscriber counts and badges */
+  div[style*="display: flex"][style*="align-items: center"][style*="flex-wrap: wrap"] {
+    gap: 10px !important;
+  }
+  
+  /* Make subscriber numbers stand alone on mobile */
+  div[style*="font-size: 2rem"][style*="font-weight: 650"] {
+    font-size: 1.8rem !important;
+    width: auto !important;
+  }
+  
+  /* Fix the +448 badges */
+  div[style*="background: #1a3349"][style*="border-radius: 40px"] {
+    margin-left: 0 !important;
+  }
+  
+  /* Adjust section titles */
+  div[style*="border-bottom: 2px solid #2e4b70"] span[style*="font-size: 1.6rem"] {
+    font-size: 1.4rem !important;
+  }
+  
+  /* Total store revenue */
+  div[style*="display: flex"][style*="justify-content: space-between"][style*="font-size: 1.2rem"] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 5px !important;
+  }
+  
+  div[style*="display: flex"][style*="justify-content: space-between"] span[style*="font-size: 1.8rem"] {
+    font-size: 1.6rem !important;
+  }
+  
+  /* Subscription details text */
+  div[style*="font-size: 0.95rem"][style*="color: #b8d1ec"] {
+    margin-top: 5px !important;
+    width: 100% !important;
+  }
+}
+
+/* Extra small devices (phones under 480px) */
+@media screen and (max-width: 480px) {
+  div[style*="background: linear-gradient(145deg, #0b1a2e, #0e223a)"] {
+    padding: 15px 12px !important;
+  }
+  
+  h3[style*="font-size: 1.8rem"] {
+    font-size: 1.5rem !important;
+  }
+  
+  div[style*="font-size: 2.5rem"][style*="font-weight: 700"] {
+    font-size: 2rem !important;
+  }
+  
+  div[style*="display: flex"][style*="gap: 35px"] {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  
+  div[style*="display: flex"][style*="gap: 35px"] > div {
+    width: 100% !important;
+  }
+  
+  div[style*="font-size: 1.8rem"][style*="font-weight: 600"] {
+    font-size: 1.5rem !important;
+  }
+  
+  /* Make audience growth more readable */
+  div[style*="min-width: 130px"] {
+    min-width: 100% !important;
+    margin-bottom: 5px !important;
+  }
+  
+  div[style*="background: #1a3349"][style*="padding: 5px 12px"] {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Fix for tablets */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  div[style*="grid-template-columns: 1fr 1fr"] {
+    gap: 20px !important;
+  }
+  
+  div[style*="display: flex"][style*="gap: 35px"] {
+    gap: 20px !important;
+  }
+  
+  div[style*="min-width: 130px"] {
+    min-width: 100px !important;
+  }
+}
 
 
 
