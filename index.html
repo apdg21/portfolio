@@ -487,228 +487,176 @@
     
     
 <!-- Email Marketing Samples - Live Campaign Archive -->
-<!-- Email Marketing Samples - Dynamic Data -->
+<!-- Email Marketing Samples - Dynamic Month Selector -->
 <div class="email-showcase" id="email-samples">
     <div class="container">
         <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-            <p>📊 Real Results • Live Data</p>
-            <h2>Recent Campaign Performance</h2>
-            <p class="text-muted" id="data-status">Loading latest campaigns...</p>
+            <p>📊 REAL RESULTS · NICHE AUDIENCE</p>
+            <h2>Campaign Performance</h2>
+            
+            <!-- Month Selector Dropdown -->
+            <div class="month-selector-container" style="margin: 20px 0 10px;">
+                <select id="monthSelector" class="month-dropdown" style="
+                    padding: 12px 30px;
+                    font-size: 1.2rem;
+                    border-radius: 50px;
+                    border: 2px solid #0b1a2e;
+                    background: white;
+                    font-weight: 600;
+                    cursor: pointer;
+                    min-width: 250px;
+                ">
+                    <option value="jan-2026">January 2026</option>
+                    <option value="feb-2026" selected>February 2026</option>
+                </select>
+                <p class="text-muted mt-2" id="campaignCount">Loading...</p>
+            </div>
         </div>
-        
-        <!-- Dynamic Content Loaded via JavaScript -->
-        <div id="dynamic-campaign-data">
-            <!-- Content will be inserted here -->
+
+        <!-- Container where month data will be loaded -->
+        <div id="monthDataContainer">
+            <!-- Content will be loaded here dynamically -->
+            <div class="text-center py-5">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <p class="mt-2">Loading campaign data...</p>
+            </div>
         </div>
-        
-        <!-- Link to Full Archive -->
-        <div class="text-center mt-4">
-            <a href="/email-campaigns/" class="btn btn-primary">
-                View Complete Campaign Archive →
-            </a>
+
+        <!-- Key Insights (Same for both months) -->
+        <div class="email-insights wow fadeInUp">
+            <h3 class="text-center mb-4">🔍 Key Insights</h3>
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <div class="insight-icon">🎯</div>
+                    <h4>Segmentation Works</h4>
+                    <p>Engaged segments averaged 78%+ open rates</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-icon">📱</div>
+                    <h4>SMS Drives Urgency</h4>
+                    <p>SMS campaigns achieved 28%+ click rates</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-icon">❤️</div>
+                    <h4>Content Builds Trust</h4>
+                    <p>Educational content saw 80%+ open rates</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-icon">🔄</div>
+                    <h4>Win-Back Success</h4>
+                    <p>40% of dormant users re-engaged</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
+<!-- Dynamic Loading Script -->
 <script>
-// Fetch and display latest campaign data
-async function loadLatestCampaigns() {
-    try {
-        // First get the index to find latest month
-        const indexRes = await fetch('/email-campaigns/data/campaigns.json');
-        const index = await indexRes.json();
-        
-        // Get the most recent month (last in array)
-        const latestMonth = index.months[index.months.length - 1];
-        
-        // Update status text
-        document.getElementById('data-status').textContent = 
-            `Showing ${latestMonth.name} • ${latestMonth.campaignCount} campaigns`;
-        
-        // Load that month's data
-        const monthRes = await fetch(`/email-campaigns/data/${latestMonth.file}`);
-        const monthData = await monthRes.json();
-        
-        // Generate HTML for campaigns
-        let campaignsHtml = '<div class="row">';
-        
-        // Show top 4 campaigns from that month
-        monthData.campaigns.slice(0, 4).forEach(campaign => {
-            campaignsHtml += `
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="campaign-mini-card">
-                        <div class="campaign-header">
-                            <h4>${campaign.name}</h4>
-                            <span class="badge ${campaign.type}">${campaign.type}</span>
-                        </div>
-                        <div class="campaign-stats">
-                            <div>📧 ${campaign.openRate}% opens</div>
-                            <div>💰 €${campaign.revenue}</div>
-                            <div>🎯 ${campaign.sales} sold</div>
-                        </div>
-                        <div class="campaign-date">${new Date(campaign.date).toLocaleDateString()}</div>
-                    </div>
-                </div>
-            `;
-        });
-        
-        campaignsHtml += '</div>';
-        
-        // Add summary stats
-        campaignsHtml += `
-            <div class="summary-stats">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="stat-box">
-                            <span class="stat-value">€${monthData.summary.revenue.total}</span>
-                            <span class="stat-label">Revenue</span>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="stat-box">
-                            <span class="stat-value">${monthData.summary.audience.email.total}K</span>
-                            <span class="stat-label">Email Subs</span>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="stat-box">
-                            <span class="stat-value">${monthData.summary.highlights.bestOpenRate}</span>
-                            <span class="stat-label">Best Open</span>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="stat-box">
-                            <span class="stat-value">${monthData.campaigns.length}</span>
-                            <span class="stat-label">Campaigns</span>
-                        </div>
-                    </div>
-                </div>
+// Configuration
+const monthFiles = {
+    'jan-2026': '/email-campaigns/jan-2026.html',
+    'feb-2026': '/email-campaigns/feb-2026.html'
+};
+
+const monthStats = {
+    'jan-2026': '16 campaigns • 79% avg. open rate',
+    'feb-2026': '14 campaigns • 77% avg. open rate'
+};
+
+// Function to load month data
+async function loadMonthData(monthId) {
+    const container = document.getElementById('monthDataContainer');
+    const campaignCount = document.getElementById('campaignCount');
+    
+    // Show loading state
+    container.innerHTML = `
+        <div class="text-center py-5">
+            <div class="spinner-border text-primary" role="status">
+                <span class="sr-only">Loading...</span>
             </div>
-        `;
+            <p class="mt-2">Loading ${monthId.replace('-', ' ')} data...</p>
+        </div>
+    `;
+    
+    try {
+        // Fetch the month HTML file
+        const response = await fetch(monthFiles[monthId]);
+        const html = await response.text();
         
-        document.getElementById('dynamic-campaign-data').innerHTML = campaignsHtml;
+        // Extract just the content we need (the month-campaign-data div)
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const monthData = doc.querySelector('.month-campaign-data');
+        
+        // Insert into container
+        container.innerHTML = monthData.outerHTML;
+        
+        // Update campaign count
+        campaignCount.textContent = monthStats[monthId];
+        
+        // Re-run any necessary scripts (like Wow.js for animations)
+        if (typeof WOW !== 'undefined') {
+            new WOW().init();
+        }
         
     } catch (error) {
-        console.error('Error loading campaign data:', error);
-        document.getElementById('dynamic-campaign-data').innerHTML = `
-            <div class="alert alert-info">
-                View my latest email campaign results in the full dashboard →
+        console.error('Error loading month data:', error);
+        container.innerHTML = `
+            <div class="alert alert-warning text-center p-5">
+                <h4>⚠️ Unable to load campaign data</h4>
+                <p>Please try again later or <a href="/email-campaigns/">view full archive</a></p>
             </div>
         `;
     }
 }
 
-// Load data when page loads
-document.addEventListener('DOMContentLoaded', loadLatestCampaigns);
+// Event listener for month selector
+document.getElementById('monthSelector').addEventListener('change', function(e) {
+    loadMonthData(e.target.value);
+});
+
+// Load initial month (February)
+document.addEventListener('DOMContentLoaded', () => {
+    loadMonthData('feb-2026');
+});
 </script>
 
 <style>
-.campaign-mini-card {
-    background: white;
-    border-radius: 16px;
-    padding: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    height: 100%;
-    transition: all 0.3s;
-    border: 1px solid #eee;
+.month-dropdown {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 20px;
 }
 
-.campaign-mini-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+.month-dropdown:hover {
+    border-color: #4a90e2;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.campaign-header {
+.email-metrics {
     display: flex;
     justify-content: space-between;
-    align-items: start;
-    margin-bottom: 15px;
-}
-
-.campaign-header h4 {
-    font-size: 1rem;
-    margin: 0;
-    flex: 1;
-    line-height: 1.4;
-}
-
-.badge.email {
-    background: #0b1a2e;
-    color: white;
-    padding: 3px 10px;
-    border-radius: 40px;
-    font-size: 0.7rem;
-}
-
-.badge.sms {
-    background: #28a745;
-    color: white;
-    padding: 3px 10px;
-    border-radius: 40px;
-    font-size: 0.7rem;
-}
-
-.campaign-stats {
     margin: 15px 0;
     font-size: 0.9rem;
-    color: #495057;
 }
 
-.campaign-stats div {
-    margin-bottom: 5px;
-}
-
-.campaign-date {
-    font-size: 0.8rem;
-    color: #adb5bd;
-    border-top: 1px solid #eee;
-    padding-top: 10px;
-    margin-top: 10px;
-}
-
-.summary-stats {
-    margin-top: 40px;
-    padding-top: 30px;
-    border-top: 2px dashed #dee2e6;
-}
-
-.stat-box {
-    text-align: center;
-    padding: 20px;
-    background: linear-gradient(145deg, #f8f9fa, #ffffff);
-    border-radius: 16px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-}
-
-.stat-value {
-    display: block;
-    font-size: 1.8rem;
+.metric-number {
     font-weight: 700;
     color: #0b1a2e;
-    line-height: 1.2;
 }
 
-.stat-label {
-    color: #6c757d;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, #0b1a2e, #1e3a5f);
-    border: none;
-    padding: 12px 30px;
-    border-radius: 60px;
-    font-weight: 600;
-    transition: all 0.3s;
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 30px rgba(0,40,80,0.2);
+/* Loading spinner */
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
 }
 </style>
+
 <!-- Email Samples End -->
 
 <!-- Contact Start -->
