@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "lastUpdated": "2026-03-01",
+    "totalCampaigns": 30,
+    "dateRange": {
+      "start": "2026-01-01",
+      "end": "2026-02-28"
+    },
+    "summary": {
+      "avgOpenRate": "78%",
+      "totalPatternsSold": 714,
+      "totalRevenue": "€29,365.44",
+      "totalOrders": 1609
+    }
+  },
+  "months": [
+    {
+      "id": "jan-2026",
+      "name": "January 2026",
+      "slug": "january-2026",
+      "campaignCount": 16,
+      "emailCount": 14,
+      "smsCount": 2,
+      "file": "jan-2026.json"
+    },
+    {
+      "id": "feb-2026",
+      "name": "February 2026",
+      "slug": "february-2026",
+      "campaignCount": 14,
+      "emailCount": 13,
+      "smsCount": 1,
+      "file": "feb-2026.json"
+    }
+  ]
+}
