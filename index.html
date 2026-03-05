@@ -515,7 +515,6 @@
 
         <!-- Container where month data will be loaded -->
         <div id="monthDataContainer">
-            <!-- Content will be loaded here dynamically -->
             <div class="text-center py-5">
                 <div class="spinner-border text-primary" role="status">
                     <span class="sr-only">Loading...</span>
@@ -524,7 +523,7 @@
             </div>
         </div>
 
-        <!-- Key Insights (Same for both months) -->
+        <!-- Key Insights -->
         <div class="email-insights wow fadeInUp">
             <h3 class="text-center mb-4">🔍 Key Insights</h3>
             <div class="insights-grid">
@@ -555,23 +554,20 @@
 
 <!-- Dynamic Loading Script -->
 <script>
-// Configuration
 const monthFiles = {
     'jan-2026': '/email-campaigns/jan-2026.html',
     'feb-2026': '/email-campaigns/feb-2026.html'
 };
 
 const monthStats = {
-    'jan-2026': '16 campaigns • 79% avg. open rate',
-    'feb-2026': '14 campaigns • 77% avg. open rate'
+    'jan-2026': '16 campaigns • 79% avg. open rate • 364 patterns sold',
+    'feb-2026': '14 campaigns • 77% avg. open rate • 350 patterns sold'
 };
 
-// Function to load month data
 async function loadMonthData(monthId) {
     const container = document.getElementById('monthDataContainer');
     const campaignCount = document.getElementById('campaignCount');
     
-    // Show loading state
     container.innerHTML = `
         <div class="text-center py-5">
             <div class="spinner-border text-primary" role="status">
@@ -582,22 +578,16 @@ async function loadMonthData(monthId) {
     `;
     
     try {
-        // Fetch the month HTML file
         const response = await fetch(monthFiles[monthId]);
         const html = await response.text();
         
-        // Extract just the content we need (the month-campaign-data div)
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
         const monthData = doc.querySelector('.month-campaign-data');
         
-        // Insert into container
         container.innerHTML = monthData.outerHTML;
-        
-        // Update campaign count
         campaignCount.textContent = monthStats[monthId];
         
-        // Re-run any necessary scripts (like Wow.js for animations)
         if (typeof WOW !== 'undefined') {
             new WOW().init();
         }
@@ -607,55 +597,20 @@ async function loadMonthData(monthId) {
         container.innerHTML = `
             <div class="alert alert-warning text-center p-5">
                 <h4>⚠️ Unable to load campaign data</h4>
-                <p>Please try again later or <a href="/email-campaigns/">view full archive</a></p>
+                <p>Please try again later</p>
             </div>
         `;
     }
 }
 
-// Event listener for month selector
 document.getElementById('monthSelector').addEventListener('change', function(e) {
     loadMonthData(e.target.value);
 });
 
-// Load initial month (February)
 document.addEventListener('DOMContentLoaded', () => {
     loadMonthData('feb-2026');
 });
 </script>
-
-<style>
-.month-dropdown {
-    appearance: none;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right 15px center;
-    background-size: 20px;
-}
-
-.month-dropdown:hover {
-    border-color: #4a90e2;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.email-metrics {
-    display: flex;
-    justify-content: space-between;
-    margin: 15px 0;
-    font-size: 0.9rem;
-}
-
-.metric-number {
-    font-weight: 700;
-    color: #0b1a2e;
-}
-
-/* Loading spinner */
-.spinner-border {
-    width: 3rem;
-    height: 3rem;
-}
-</style>
 
 <!-- Email Samples End -->
 
