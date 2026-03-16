@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign pulse · 48h tiered event</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f4f7fb;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1.5rem;
+            line-height: 1.5;
+            color: #1a2b3e;
+        }
+        .card {
+            max-width: 720px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 32px;
+            box-shadow: 0 20px 35px -8px rgba(0, 20, 45, 0.15), 0 5px 12px -4px rgba(0,0,0,0.05);
+            overflow: hidden;
+            border: 1px solid #eef2f6;
+        }
+
+        /* header */
+        .header {
+            padding: 1.8rem 2rem 1.2rem 2rem;
+            border-bottom: 1px solid #e9edf3;
+        }
+        .event-tag {
+            display: inline-block;
+            background: #f0f5ff;
+            color: #1e4f8a;
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+            padding: 0.3rem 0.9rem;
+            border-radius: 30px;
+            margin-bottom: 0.8rem;
+            border: 1px solid #d9e3f0;
+        }
+        .title-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 0.5rem;
+        }
+        h1 {
+            font-size: 1.9rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #0a1c2f;
+            line-height: 1.2;
+        }
+        .time-badge {
+            background: #eaeef4;
+            border-radius: 40px;
+            padding: 0.45rem 1.2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #2d4059;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+        }
+        .time-badge span {
+            font-weight: 600;
+            color: #1a4972;
+        }
+
+        /* KPI grid */
+        .kpi-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1px;
+            background: #e9edf3;
+            border: 1px solid #e9edf3;
+            border-radius: 24px;
+            margin: 1.8rem 2rem 1.4rem 2rem;
+            overflow: hidden;
+            background-color: #e9edf3;
+        }
+        .kpi-item {
+            flex: 1 1 130px;
+            background: white;
+            padding: 1.5rem 0.8rem;
+            text-align: center;
+            min-width: 120px;
+        }
+        .kpi-label {
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #59748f;
+            margin-bottom: 0.5rem;
+        }
+        .kpi-value {
+            font-size: 2.4rem;
+            font-weight: 700;
+            line-height: 1;
+            color: #0a253b;
+            margin-bottom: 0.15rem;
+        }
+        .kpi-sub {
+            font-size: 0.75rem;
+            color: #59748f;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+        .trend-up {
+            color: #1f8b4c;
+            background: #e3f5eb;
+            padding: 0.15rem 0.5rem;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        /* divider */
+        .insight-header {
+            padding: 0.8rem 2rem 0 2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .insight-header h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            color: #3c5775;
+        }
+        .line {
+            height: 2px;
+            background: linear-gradient(90deg, #cbd6e4, transparent);
+            flex: 1;
+        }
+
+        /* insights */
+        .insights-list {
+            padding: 1rem 2rem 2.2rem 2rem;
+        }
+        .insight-card {
+            background: #f9fcff;
+            border-radius: 24px;
+            padding: 1.5rem 1.8rem;
+            border: 1px solid #e3eefb;
+            box-shadow: 0 4px 10px -2px rgba(0,0,0,0.02);
+        }
+        .insight-block {
+            margin-bottom: 1.8rem;
+        }
+        .insight-block:last-child {
+            margin-bottom: 0;
+        }
+        .insight-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #11324e;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .insight-title span {
+            background: #1f4e8c;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 0.15rem 0.7rem;
+            border-radius: 40px;
+        }
+        .bullet-list {
+            list-style: none;
+            padding-left: 1.4rem;
+        }
+        .bullet-list li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            font-size: 0.95rem;
+            color: #1f3449;
+        }
+        .bullet-list li::before {
+            content: "✔";
+            color: #1e7e34;
+            font-weight: 600;
+            position: absolute;
+            left: -1.3rem;
+        }
+        .note-highlight {
+            background: #eef5fa;
+            border-left: 4px solid #2f6eb3;
+            padding: 0.9rem 1.2rem;
+            border-radius: 14px;
+            margin: 1rem 0 0.2rem 0;
+            font-size: 0.95rem;
+            color: #173e5f;
+            font-weight: 450;
+        }
+        .final-note {
+            background: #f2f1fe;
+            border-radius: 18px;
+            padding: 1.2rem 1.5rem;
+            margin-top: 1.5rem;
+            border: 1px solid #dad9f0;
+        }
+        .final-note p {
+            display: flex;
+            gap: 10px;
+            font-weight: 450;
+            color: #1b2a44;
+        }
+        .final-note i {
+            font-size: 1.2rem;
+            color: #3d5f8c;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px dashed #cbd6e4;
+            margin: 1rem 2rem;
+        }
+
+        .footer-meta {
+            padding: 0 2rem 1.8rem 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            color: #5a6f89;
+            font-size: 0.8rem;
+        }
+        .badge-light {
+            background: #e7ecf5;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            color: #1d3f62;
+            font-weight: 500;
+        }
+
+        @media (max-width: 500px) {
+            .header, .kpi-grid, .insights-list, .footer-meta {
+                padding-left: 1.2rem;
+                padding-right: 1.2rem;
+            }
+            .kpi-grid {
+                margin-left: 1.2rem;
+                margin-right: 1.2rem;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            .time-badge {
+                padding: 0.2rem 0.8rem;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <div class="header">
+        <div class="event-tag">📊 48‑HOUR PERFORMANCE · MARCH MAKER TIERED</div>
+        <div class="title-row">
+            <h1>March Maker<br>tiered event</h1>
+            <div class="time-badge">
+                <span>📅 sent 13 Mar 2026</span> · 8:00 AM
+            </div>
+        </div>
+    </div>
+
+    <!-- KPI numbers -->
+    <div class="kpi-grid">
+        <div class="kpi-item">
+            <div class="kpi-label">open rate</div>
+            <div class="kpi-value">78.5%</div>
+            <div class="kpi-sub"><span class="trend-up">▲ +14%</span> vs benchmark</div>
+        </div>
+        <div class="kpi-item">
+            <div class="kpi-label">CTR</div>
+            <div class="kpi-value">3.00%</div>
+            <div class="kpi-sub"><span class="trend-up">above avg</span></div>
+        </div>
+        <div class="kpi-item">
+            <div class="kpi-label">revenue (launch)</div>
+            <div class="kpi-value">€209.17</div>
+            <div class="kpi-sub">solid discovery phase</div>
+        </div>
+    </div>
+
+    <!-- insights header -->
+    <div class="insight-header">
+        <h3>🔍 INSIGHTS & INTERPRETATION</h3>
+        <div class="line"></div>
+    </div>
+
+    <div class="insights-list">
+        <div class="insight-card">
+
+            <!-- block 1 -->
+            <div class="insight-block">
+                <div class="insight-title"><span>1</span> Excellent open rate (78.50%) — strong promotional interest</div>
+                <ul class="bullet-list">
+                    <li>The “Maker Event” framing resonated well</li>
+                    <li>Subscribers were curious about the tiered savings</li>
+                    <li>Audience remains highly responsive to promotions</li>
+                    <li>Friday morning timing successfully captured attention</li>
+                </ul>
+                <div class="note-highlight">✔ This shows strong audience readiness for the sale.</div>
+            </div>
+
+            <!-- block 2 -->
+            <div class="insight-block">
+                <div class="insight-title"><span>2</span> Strong CTR (3.00%) — tiered offer encouraged exploration</div>
+                <ul class="bullet-list">
+                    <li>The tiered discount structure attracted interest</li>
+                    <li>Readers were motivated to browse products</li>
+                    <li>The “save more when you buy more” concept encouraged engagement</li>
+                </ul>
+                <div class="note-highlight">💡 Tiered offers tend to drive larger carts rather than just clicks, which likely influenced shopping behavior.</div>
+            </div>
+
+            <!-- block 3 -->
+            <div class="insight-block">
+                <div class="insight-title"><span>3</span> Solid revenue (€209.17) — discovery phase of the sale</div>
+                <ul class="bullet-list">
+                    <li>Revenue is solid for a launch email, but slightly lower than some flash sale starts.</li>
+                    <li>Many subscribers were still exploring products</li>
+                    <li>Some customers wait until the final call to purchase</li>
+                    <li>Tiered promotions often lead to longer browsing and cart building</li>
+                </ul>
+                <div class="note-highlight">📈 This suggests revenue may increase significantly during the final call.</div>
+            </div>
+
+            <!-- final call note -->
+            <div class="final-note">
+                <p>
+                    <span style="font-size:1.2rem;">⏳</span>
+                    <span><strong>Final‑call opportunity:</strong> with 78.5% opens and engaged traffic, a well‑timed last‑chance reminder could convert browsers into buyers. Tiered structure encourages upsell — consider last 24h push.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- subtle footer with campaign ref -->
+    <hr>
+    <div class="footer-meta">
+        <div class="badge-light">📧 March Maker Tiered Event · 13 Mar 2026 08:00</div>
+        <div style="display: flex; gap: 12px;">
+            <span>📊 after 48h</span>
+            <span>⚡ sample analysis</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
