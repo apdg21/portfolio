@@ -1225,9 +1225,17 @@
   <!-- Scripts -->
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // ── Loader
-    window.addEventListener('load', () => {
-      setTimeout(() => document.getElementById('loader').classList.add('hidden'), 300);
-    });
+    // Loader with safety fallback
+window.addEventListener('load', () => {
+  hideLoader();
+});
+
+setTimeout(hideLoader, 2500); // Force hide after 2.5 seconds max
+
+function hideLoader() {
+  const loader = document.getElementById('loader');
+  if (loader) loader.classList.add('hidden');
+}
 
     // ── Navbar
     const navbar = document.getElementById('navbar');
@@ -1317,7 +1325,7 @@
     document.getElementById('monthSelector').addEventListener('change', e => loadMonthData(e.target.value));
     document.addEventListener('DOMContentLoaded', () => loadMonthData('feb-2026'));
 
-    // ── Contact form AJAX
+      // ── Contact form AJAX
     (function() {
       const form = document.getElementById('contactForm');
       if (!form) return;
@@ -1330,4 +1338,11 @@
           .then(r => r.json())
           .then(() => { window.location.href = '/thank-you.html'; })
           .catch(() => {
-            document.ge
+            document.getElementById('success').innerHTML = '<div class="alert-danger">Connection error. Please try again.</div>';
+            btn.disabled = false; btn.textContent = 'Send Message';
+          });
+      });
+    })();
+  </script>
+</body>
+</html>
