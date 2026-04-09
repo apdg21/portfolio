@@ -275,104 +275,105 @@
   const obs=new IntersectionObserver(entries=>entries.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);} }),{threshold:.1});
   document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
-  const campaigns=[
+  const campaigns = [
     {
-                    id: 1,
-                    title: "Campaign #1",
-                    category: "Email Campaign",
-                    thumbnail: "https://app.omnisend.com/image/newsletter/69c646d338740057c8b1b117?auto=format&fit=crop&q=80&w=600",
-                    iframeSrc: "https://mow.soundestlink.com/ce/v/0/69c64db588ca1733ab749297",
-                    fullLink: "https://mow.soundestlink.com/ce/v/0/69c64db588ca1733ab749297"
-                },
-                {
-                    id: 2,
-                    title: "Campaign #2",
-                    category: "Email Campaign",
-                    thumbnail: "https://app.omnisend.com/image/newsletter/69c3e48aaab2b97328490848?auto=format&fit=crop&q=80&w=600",
-                    iframeSrc: "https://mow.soundestlink.com/ce/v/0/69c4d93448ccfb7fbefe17fb",
-                    fullLink: "https://mow.soundestlink.com/ce/v/0/69c4d93448ccfb7fbefe17fb"
-                },
-                {
-                    id: 3,
-                    title: "Campaign #3",
-                    category: "Email Campaign",
-                    thumbnail: "https://app.omnisend.com/image/newsletter/69c228479ab58d00e92c5151?auto=format&fit=crop&q=80&w=600",
-                    iframeSrc: "https://mow.soundestlink.com/ce/v/0/69c22a7696347d7738ea08a2",
-                    fullLink: "https://mow.soundestlink.com/ce/v/0/69c22a7696347d7738ea08a2"
-                },
-                {
-                    id: 4,
-                    title: "Campaign #4",
-                    category: "Email Campaign",
-                    thumbnail: "https://app.omnisend.com/image/newsletter/69bd0671aab2b97328487cf3?auto=format&fit=crop&q=85&w=600&h=400&crop=entropy",
-                    iframeSrc: "https://mow.soundestlink.com/ce/v/0/69bd29612a15a01491862a5c",
-                    fullLink: "https://mow.soundestlink.com/ce/v/0/69bd29612a15a01491862a5c"
-                },
-                {
-                    id: 5,
-                    title: "Campaign #5",
-                  category: "Email Campaign"l
-                    thumbnail: "https://app.omnisend.com/image/newsletter/69bbab4faab2b973284853f6?auto=format&fit=crop&q=80&w=600",
-                    iframeSrc: "https://mow.soundestlink.com/ce/v/0/69bcf1244616ceb9131f519b",
-                    fullLink: "https://mow.soundestlink.com/ce/v/0/69bcf1244616ceb9131f519b"
-                },
-                {
-                    id: 6,
-                    title: "Campaign #6",
-                  category: "Email Campaign",
-                    thumbnail: "https://app.omnisend.com/image/newsletter/69ba9fadaab2b97328483abe?auto=format&fit=crop&q=80&w=600",
-                    iframeSrc: "https://mow.soundestlink.com/ce/v/0/69bce59f3877a7c19241e34a",
-                    fullLink: "https://mow.soundestlink.com/ce/v/0/69bce59f3877a7c19241e34a"
-                },
-                {
-                    id: 7,
-                    title: "Campaign #7",
-                  category: "Email Campaign",
-                    thumbnail: "https://app.omnisend.com/image/newsletter/69cce1fc7df5e3c03c15b866?auto=format&fit=crop&q=80&w=1100",
-                    iframeSrc: "https://htq.soundestlink.com/ce/v/0/69ce15e078d804d871a2e792",
-                    fullLink: "https://htq.soundestlink.com/ce/v/0/69ce15e078d804d871a2e792"
-                },
-                {
-                    id: 8,
-                    title: "Campaign #8",
-                  category: "Email Campaign",
-                    thumbnail: "https://app.omnisend.com/image/newsletter/69ca2c320cb63ba828f4003d?auto=format&fit=crop&q=80&w=1200",
-                    iframeSrc: "https://htq.soundestlink.com/ce/v/0/69cb6ecd4cee8e5fcc2a17c3",
-                    fullLink: "https://htq.soundestlink.com/ce/v/0/69cb6ecd4cee8e5fcc2a17c3"
-                },
-                {
-                    id: 9,
-                    title: "Campaign #9",
-                  category: "Email Campaign",
-                    thumbnail: "https://app.omnisend.com/image/newsletter/69c62f499ab58d00e92cc7c3?auto=format&fit=crop&q=80&w=1200&h=800",
-                    iframeSrc: "https://htq.soundestlink.com/ce/v/0/69c637953c4e6e23d376875d",
-                    fullLink: "https://htq.soundestlink.com/ce/v/0/69c637953c4e6e23d376875d"
-                },
-                {
-                    id: 10,
-                    title: "Campaign #10",
-                  category: "Email Campaign",
-                    thumbnail: "https://app.omnisend.com/image/newsletter/69c61f449ab58d00e92cc5e4?v=1721060578&width=1200",
-                    iframeSrc: "https://htq.soundestlink.com/ce/v/0/69c62b5848ccfb7fbefe32b5",
-                    fullLink: "https://htq.soundestlink.com/ce/v/0/69c62b5848ccfb7fbefe32b5"
-                },
-                {
-                    id: 11,
-                    title: "Campaign #11",
-                  category: "Email Campaign",
-                    thumbnail: "https://app.omnisend.com/image/newsletter/69bbb222aab2b97328485525?auto=format&fit=crop&q=80&w=1200",
-                    iframeSrc: "https://htq.soundestlink.com/ce/v/0/69bd010701fc05d4a76458d1",
-                    fullLink: "https://htq.soundestlink.com/ce/v/0/69bd010701fc05d4a76458d1"
-                },
-                {
-                    id: 12,
-                    title: "Campaign #12",
-                  category: "Email Campaign",
-                    thumbnail: "https://app.omnisend.com/image/newsletter/69ba403a5fd931be29547da3?auto=format&fit=crop&q=85&w=1200&h=800&fm=jpg&ixlib=rb-4.0.3",
-                    iframeSrc: "https://htq.soundestlink.com/ce/v/0/69ba49acab0aea1b28da5695",
-                    fullLink: "https://htq.soundestlink.com/ce/v/0/69ba49acab0aea1b28da5695"
-                }
-  ];
+        id: 1,
+        title: "Campaign #1",
+        category: "Email Campaign",
+        thumbnail: "https://app.omnisend.com/image/newsletter/69c646d338740057c8b1b117?auto=format&fit=crop&q=80&w=600",
+        src: "https://mow.soundestlink.com/ce/v/0/69c64db588ca1733ab749297",
+        link: "https://mow.soundestlink.com/ce/v/0/69c64db588ca1733ab749297"
+    },
+    {
+        id: 2,
+        title: "Campaign #2",
+        category: "Email Campaign",
+        thumbnail: "https://app.omnisend.com/image/newsletter/69c3e48aaab2b97328490848?auto=format&fit=crop&q=80&w=600",
+        src: "https://mow.soundestlink.com/ce/v/0/69c4d93448ccfb7fbefe17fb",
+        link: "https://mow.soundestlink.com/ce/v/0/69c4d93448ccfb7fbefe17fb"
+    },
+    {
+        id: 3,
+        title: "Campaign #3",
+        category: "Email Campaign",
+        thumbnail: "https://app.omnisend.com/image/newsletter/69c228479ab58d00e92c5151?auto=format&fit=crop&q=80&w=600",
+        src: "https://mow.soundestlink.com/ce/v/0/69c22a7696347d7738ea08a2",
+        link: "https://mow.soundestlink.com/ce/v/0/69c22a7696347d7738ea08a2"
+    },
+    {
+        id: 4,
+        title: "Campaign #4",
+        category: "Email Campaign",
+        thumbnail: "https://app.omnisend.com/image/newsletter/69bd0671aab2b97328487cf3?auto=format&fit=crop&q=85&w=600&h=400&crop=entropy",
+        src: "https://mow.soundestlink.com/ce/v/0/69bd29612a15a01491862a5c",
+        link: "https://mow.soundestlink.com/ce/v/0/69bd29612a15a01491862a5c"
+    },
+    {
+        id: 5,
+        title: "Campaign #5",
+        category: "Email Campaign",
+        thumbnail: "https://app.omnisend.com/image/newsletter/69bbab4faab2b973284853f6?auto=format&fit=crop&q=80&w=600",
+        src: "https://mow.soundestlink.com/ce/v/0/69bcf1244616ceb9131f519b",
+        link: "https://mow.soundestlink.com/ce/v/0/69bcf1244616ceb9131f519b"
+    },
+    {
+        id: 6,
+        title: "Campaign #6",
+        category: "Email Campaign",
+        thumbnail: "https://app.omnisend.com/image/newsletter/69ba9fadaab2b97328483abe?auto=format&fit=crop&q=80&w=600",
+        src: "https://mow.soundestlink.com/ce/v/0/69bce59f3877a7c19241e34a",
+        link: "https://mow.soundestlink.com/ce/v/0/69bce59f3877a7c19241e34a"
+    },
+    {
+        id: 7,
+        title: "Campaign #7",
+        category: "Email Campaign",
+        thumbnail: "https://app.omnisend.com/image/newsletter/69cce1fc7df5e3c03c15b866?auto=format&fit=crop&q=80&w=1100",
+        src: "https://htq.soundestlink.com/ce/v/0/69ce15e078d804d871a2e792",
+        link: "https://htq.soundestlink.com/ce/v/0/69ce15e078d804d871a2e792"
+    },
+    {
+        id: 8,
+        title: "Campaign #8",
+        category: "Email Campaign",
+        thumbnail: "https://app.omnisend.com/image/newsletter/69ca2c320cb63ba828f4003d?auto=format&fit=crop&q=80&w=1200",
+        src: "https://htq.soundestlink.com/ce/v/0/69cb6ecd4cee8e5fcc2a17c3",
+        link: "https://htq.soundestlink.com/ce/v/0/69cb6ecd4cee8e5fcc2a17c3"
+    },
+    {
+        id: 9,
+        title: "Campaign #9",
+        category: "Email Campaign",
+        thumbnail: "https://app.omnisend.com/image/newsletter/69c62f499ab58d00e92cc7c3?auto=format&fit=crop&q=80&w=1200&h=800",
+        src: "https://htq.soundestlink.com/ce/v/0/69c637953c4e6e23d376875d",
+        link: "https://htq.soundestlink.com/ce/v/0/69c637953c4e6e23d376875d"
+    },
+    {
+        id: 10,
+        title: "Campaign #10",
+        category: "Email Campaign",
+        thumbnail: "https://app.omnisend.com/image/newsletter/69c61f449ab58d00e92cc5e4?v=1721060578&width=1200",
+        src: "https://htq.soundestlink.com/ce/v/0/69c62b5848ccfb7fbefe32b5",
+        link: "https://htq.soundestlink.com/ce/v/0/69c62b5848ccfb7fbefe32b5"
+    },
+    {
+        id: 11,
+        title: "Campaign #11",
+        category: "Email Campaign",
+        thumbnail: "https://app.omnisend.com/image/newsletter/69bbb222aab2b97328485525?auto=format&fit=crop&q=80&w=1200",
+        src: "https://htq.soundestlink.com/ce/v/0/69bd010701fc05d4a76458d1",
+        link: "https://htq.soundestlink.com/ce/v/0/69bd010701fc05d4a76458d1"
+    },
+    {
+        id: 12,
+        title: "Campaign #12",
+        category: "Email Campaign",
+        thumbnail: "https://app.omnisend.com/image/newsletter/69ba403a5fd931be29547da3?auto=format&fit=crop&q=85&w=1200&h=800&fm=jpg&ixlib=rb-4.0.3",
+        src: "https://htq.soundestlink.com/ce/v/0/69ba49acab0aea1b28da5695",
+        link: "https://htq.soundestlink.com/ce/v/0/69ba49acab0aea1b28da5695"
+    }
+];
+  
   const LABELS={promotional:'Promotional',collection:'Collection',educational:'Educational'};
   const PER_PAGE=6;
   let filter='all', page=1;
