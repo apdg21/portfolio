@@ -1,802 +1,1228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-W15RH4CQWQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W15RH4CQWQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-W15RH4CQWQ');
+  </script>
+  <meta charset="utf-8">
+  <title>Adolf de Guzman — Email Marketing Specialist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Email Marketing, Copywriting, Vibe Coding, Portfolio">
+  <meta name="description" content="Portfolio of Adolf P. de Guzman — Email Marketing Specialist, Copywriter & Vibe Coder">
+  <link rel="icon" type="image/png" href="favicon.png">
 
-  gtag('config', 'G-W15RH4CQWQ');
-</script>
-    <meta charset="utf-8">
-    <title>Adolf P. de Guzman - Email Marketing Portfolio</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Email Marketing, Copywriting, Vibe Coding, Portfolio" name="keywords">
-    <meta content="Portfolio of Adolf P. de Guzman, Email Marketing Specialist and Vibe Coder" name="description">
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png">
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- CSS Libraries -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-    <style>
-        /* Adjustments for portfolio grid and email samples */
-        .portfolio .portfolio-item {
-            margin-bottom: 30px;
-        }
-        .team-item .team-text h4 { font-size: 1rem; margin-bottom: 0.5rem; }
-        .team-item .team-text p { font-size: 0.9rem; margin-bottom: 1rem; }
-        .team-item .blog-meta { justify-content: center; margin-bottom: 0.5rem; }
-        .team-item .blog-meta p { margin: 0 5px; font-size: 0.7rem; }
-        .btn-email-samples {
-            display: block;
-            width: fit-content;
-            margin: 40px auto 0;
-            padding: 12px 30px;
-            font-size: 1.1rem;
-        }
-    </style>
-</head>
-<body data-spy="scroll" data-target=".navbar" data-offset="51">
-    <!-- Nav Bar Start -->
-    <div class="navbar navbar-expand-lg bg-light navbar-light">
-        <div class="container-fluid">
-            <a href="index.html" class="navbar-brand">AdolfDG</a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                <div class="navbar-nav ml-auto">
-                    <a href="#home" class="nav-item nav-link active">Home</a>
-                    <a href="#about" class="nav-item nav-link">About</a>
-                    <a href="#service" class="nav-item nav-link">Service</a>
-                    <a href="#experience" class="nav-item nav-link">Experience</a>
-                    <a href="#portfolio" class="nav-item nav-link">Projects</a>
-                    <a href="#email-samples" class="nav-item nav-link">Email Work</a>
-                    <a href="#blog" class="nav-item nav-link">Blog</a>
-                    <a href="#contact" class="nav-item nav-link">Contact</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Nav Bar End -->
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-      <!-- Hero Start -->
-    <div class="hero" id="home">
-        <div class="container-fluid">
-            <div class="row align-items-center">
-                <div class="col-sm-12 col-md-6">
-                    <div class="hero-content">
-                        <div class="hero-text">
-                            <p>I'm</p>
-                            <h1>Adolf de Guzman</h1>
-                            <h2></h2>
-                            <div class="typed-text">Email Marketing Specialist, Copywriter, Vibe Coder, Front-End Tinkerer, Marketing Strategist</div>
-                        </div>
-                        <div class="hero-btn">
-                            <a class="btn" href="#contact">Contact Me</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 d-none d-md-block">
-                    <div class="hero-image">
-                        <img src="img/hero.png" alt="Hero Image">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Hero End -->
+  <style>
+    /* ─── RESET & TOKENS ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-
-    <!-- About Start -->
-    <div class="about wow fadeInUp" data-wow-delay="0.1s" id="about">
-        <div class="container-fluid">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="about-img">
-                        <img src="img/about.png" alt="Image">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="about-content">
-                        <div class="section-header text-left">
-                            <p>Learn About Me</p>
-                            <h2>Email-First Marketer & Vibe Coder</h2>
-                        </div>
-                        <div class="about-text">
-                            <p>Hi! I'm Adolf, an Email Marketing Specialist with a journey starting in copywriting back in 2019. I craft emails that connect and convert. Lately, I've been exploring 'vibe coding'—building tools and sites for myself, like resume builders and web apps, to solve my own problems. This portfolio blends my core email expertise with my passion for building things on the side.</p>
-                        </div>
-                        <div class="skills">
-                            <div class="skill-name">
-                                <p>Email Marketing Strategy</p>
-                                <p>95%</p>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <div class="skill-name">
-                                <p>Copywriting</p>
-                                <p>95%</p>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <div class="skill-name">
-                                <p>Vibe Coding (HTML/CSS/JS)</p>
-                                <p>75%</p>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <div class="skill-name">
-                                <p>Campaign Analysis</p>
-                                <p>85%</p>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                        <a class="btn" href="#contact">Let's Talk</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- About End -->
-
-    <!-- Service Start -->
-    <div class="service" id="service">
-        <div class="container">
-            <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                <p>What I do</p>
-                <h2>Core Expertise & Side Projects</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="fa fa-envelope-open-text"></i>
-                        </div>
-                        <div class="service-text">
-                            <h3>Email Marketing Strategy</h3>
-                            <p>From concept to conversion: Planning campaigns, segmentation, automation flows, and data-driven optimizations to maximize ROI.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="fa fa-pen-fancy"></i>
-                        </div>
-                        <div class="service-text">
-                            <h3>Copywriting</h3>
-                            <p>Persuasive, clear, and on-brand copy for emails, landing pages, and products. Crafted to engage your audience and drive action.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="fa fa-laptop-code"></i>
-                        </div>
-                        <div class="service-text">
-                            <h3>Vibe Coding Projects</h3>
-                            <p>Building functional web apps and tools (like resume generators) to solve specific needs. It's coding driven by creativity and purpose.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <div class="service-text">
-                            <h3>Email Design & Dev</h3>
-                            <p>Designing and coding responsive email templates that look great in every inbox, combining visual appeal with functional deliverability.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Service End -->
-
-    <!-- Experience Start -->
-    <div class="experience" id="experience">
-        <div class="container">
-            <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                <p>My Resume</p>
-                <h2>Working Experience</h2>
-            </header>
-            <div class="timeline">
-                <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
-                    <div class="timeline-text">
-                        <div class="timeline-date">2025 - Present</div>
-                        <h2>Email Marketing Specialist</h2>
-                        <h4>Freelancer</h4>
-                        <p>Managing email campaigns from strategy to execution. Focus on segmentation, A/B testing, and performance analysis to improve engagement and conversions for clients.</p>
-                    </div>
-                </div>
-                <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
-                    <div class="timeline-text">
-                        <div class="timeline-date">2024 - 2025</div>
-                        <h2>Email Marketing Strategist</h2>
-                        <h4>Freelancer</h4>
-                        <p>Developed comprehensive email strategies, including welcome series, abandoned cart flows, and re-engagement campaigns. Focused on high-level planning and lifecycle marketing.</p>
-                    </div>
-                </div>
-                <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
-                    <div class="timeline-text">
-                        <div class="timeline-date">2022 - 2024</div>
-                        <h2>Email Marketing / Landing Page Designer</h2>
-                        <h4>Freelancer</h4>
-                        <p>Bridged marketing and design by creating user-friendly landing pages and coding responsive email templates that aligned with campaign goals and brand identity.</p>
-                    </div>
-                </div>
-                <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
-                    <div class="timeline-text">
-                        <div class="timeline-date">2021 - 2022</div>
-                        <h2>Email Marketing Specialist</h2>
-                        <h4>Freelancer</h4>
-                        <p>Developed strategic plans for email campaigns, including goal setting, defining target audiences, and determining the messaging and timing for each campaign.</p>
-                    </div>
-                </div>
-                <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
-                    <div class="timeline-text">
-                        <div class="timeline-date">2019 - 2021</div>
-                        <h2>Copywriter</h2>
-                        <h4>Reload Media / Nevanna / Freelancer</h4>
-                        <p>Created persuasive content for emails and product pages. Focused on writing compelling copy that captures attention and drives the reader to take action.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Job Experience End -->
-
-    <!-- Vibe Coded Projects - Custom Section -->
-<div class="vibe-projects" id="portfolio">
-    <div class="container">
-        <div class="section-header text-center wow fadeInUp" data-wow-delay="0.1s">
-            <p>⚡ My Builds ⚡</p>
-            <h2>Vibe Coded Projects</h2>
-        </div>
-        <div class="row">
-            <!-- Resume Pro Card -->
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                <div class="vibe-card">
-                    <div class="vibe-card-image">
-                        <img src="img/portfolio-1.jpg" alt="Resume Pro Project">
-                        <div class="vibe-tags">
-                            <span class="vibe-tag">HTML/CSS</span>
-                            <span class="vibe-tag">JavaScript</span>
-                            <span class="vibe-tag">UI/UX</span>
-                        </div>
-                    </div>
-                    <div class="vibe-card-content">
-                        <h3>Resume Pro</h3>
-                        <p>A sleek resume builder that solves formatting headaches. Create professional resumes in minutes with customizable templates.</p>
-                        <div class="vibe-stats">
-                            <div class="vibe-stat">
-                                <span class="stat-value">500+</span>
-                                <span class="stat-label">Users</span>
-                            </div>
-                            <div class="vibe-stat">
-                                <span class="stat-value">4.8</span>
-                                <span class="stat-label">Rating</span>
-                            </div>
-                            <div class="vibe-stat">
-                                <span class="stat-value">2024</span>
-                                <span class="stat-label">Launched</span>
-                            </div>
-                        </div>
-                        <a href="https://resumepro.pages.dev/" target="_blank" class="vibe-btn">
-                            <i class="fa fa-rocket"></i> Live Demo
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Resume Templates Card -->
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="vibe-card">
-                    <div class="vibe-card-image">
-                        <img src="img/portfolio-2.jpg" alt="Resume Templates">
-                        <div class="vibe-tags">
-                            <span class="vibe-tag">Templates</span>
-                            <span class="vibe-tag">Design</span>
-                            <span class="vibe-tag">Free</span>
-                        </div>
-                    </div>
-                    <div class="vibe-card-content">
-                        <h3>Resume Templates</h3>
-                        <p>A collection of clean, modern templates for job seekers. Each template is fully customizable and print-ready.</p>
-                        <div class="vibe-stats">
-                            <div class="vibe-stat">
-                                <span class="stat-value">12</span>
-                                <span class="stat-label">Templates</span>
-                            </div>
-                            <div class="vibe-stat">
-                                <span class="stat-value">3</span>
-                                <span class="stat-label">Formats</span>
-                            </div>
-                            <div class="vibe-stat">
-                                <span class="stat-value">2024</span>
-                                <span class="stat-label">Updated</span>
-                            </div>
-                        </div>
-                        <a href="https://resumepro.pages.dev/resume-templates" target="_blank" class="vibe-btn">
-                            <i class="fa fa-file-text"></i> Browse Templates
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Portfolio Templates Card -->
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                <div class="vibe-card">
-                    <div class="vibe-card-image">
-                        <img src="img/portfolio-3.jpg" alt="Portfolio Templates">
-                        <div class="vibe-tags">
-                            <span class="vibe-tag">Portfolio</span>
-                            <span class="vibe-tag">Creative</span>
-                            <span class="vibe-tag">Responsive</span>
-                        </div>
-                    </div>
-                    <div class="vibe-card-content">
-                        <h3>Portfolio Templates</h3>
-                        <p>Ready-to-use portfolio templates for creatives and professionals. Designed for simplicity and visual impact.</p>
-                        <div class="vibe-stats">
-                            <div class="vibe-stat">
-                                <span class="stat-value">8</span>
-                                <span class="stat-label">Designs</span>
-                            </div>
-                            <div class="vibe-stat">
-                                <span class="stat-value">100%</span>
-                                <span class="stat-label">Responsive</span>
-                            </div>
-                            <div class="vibe-stat">
-                                <span class="stat-value">2024</span>
-                                <span class="stat-label">Updated</span>
-                            </div>
-                        </div>
-                        <a href="https://resumepro.pages.dev/portfolio-templates" target="_blank" class="vibe-btn">
-                            <i class="fa fa-image"></i> View Gallery
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Android Apps Card -->
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="vibe-card">
-                    <div class="vibe-card-image">
-                        <img src="img/portfolio-4.jpg" alt="Android Apps">
-                        <div class="vibe-tags">
-                            <span class="vibe-tag">Android</span>
-                            <span class="vibe-tag">Java</span>
-                            <span class="vibe-tag">Mobile</span>
-                        </div>
-                    </div>
-                    <div class="vibe-card-content">
-                        <h3>Android Apps</h3>
-                        <p>A showcase of simple Android applications built while exploring mobile development. Practical tools for daily use.</p>
-                        <div class="vibe-stats">
-                            <div class="vibe-stat">
-                                <span class="stat-value">5</span>
-                                <span class="stat-label">Apps</span>
-                            </div>
-                            <div class="vibe-stat">
-                                <span class="stat-value">1K+</span>
-                                <span class="stat-label">Downloads</span>
-                            </div>
-                            <div class="vibe-stat">
-                                <span class="stat-value">4.5</span>
-                                <span class="stat-label">Rating</span>
-                            </div>
-                        </div>
-                        <a href="https://resumepro.pages.dev/android-applications" target="_blank" class="vibe-btn">
-                            <i class="fa fa-android"></i> View Apps
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Family Connection Tools Card -->
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                <div class="vibe-card">
-                    <div class="vibe-card-image">
-                        <img src="img/portfolio-5.jpg" alt="Family Connection Tools">
-                        <div class="vibe-tags">
-                            <span class="vibe-tag">Web App</span>
-                            <span class="vibe-tag">Family</span>
-                            <span class="vibe-tag">Tools</span>
-                        </div>
-                    </div>
-                    <div class="vibe-card-content">
-                        <h3>Family Connection Tools</h3>
-                        <p>Small web apps built to help family stay organized. Includes shared calendars, chore trackers, and more.</p>
-                        <div class="vibe-stats">
-                            <div class="vibe-stat">
-                                <span class="stat-value">6</span>
-                                <span class="stat-label">Tools</span>
-                            </div>
-                            <div class="vibe-stat">
-                                <span class="stat-value">3</span>
-                                <span class="stat-label">Families</span>
-                            </div>
-                            <div class="vibe-stat">
-                                <span class="stat-value">Beta</span>
-                                <span class="stat-label">Status</span>
-                            </div>
-                        </div>
-                        <a href="https://resumepro.pages.dev/family-connection-tools" target="_blank" class="vibe-btn">
-                            <i class="fa fa-users"></i> Try Tools
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Klaviyo Analytics Dashboard Card -->
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                <div class="vibe-card">
-                    <div class="vibe-card-image">
-                        <img src="img/portfolio-6.jpg" alt="Klaviyo Analytics Tool">
-                        <div class="vibe-tags">
-                            <span class="vibe-tag">Analytics</span>
-                            <span class="vibe-tag">Klaviyo</span>
-                            <span class="vibe-tag">CSV</span>
-                        </div>
-                    </div>
-                    <div class="vibe-card-content">
-                        <h3>Klaviyo Analytics Dashboard</h3>
-                        <p>Upload and visualize Klaviyo campaign data. Track opens, clicks, revenue, and more with interactive charts.</p>
-                        <div class="vibe-stats">
-                            <div class="vibe-stat">
-                                <span class="stat-value">Real-time</span>
-                                <span class="stat-label">Analysis</span>
-                            </div>
-                            <div class="vibe-stat">
-                                <span class="stat-value">CSV</span>
-                                <span class="stat-label">Import</span>
-                            </div>
-                            <div class="vibe-stat">
-                                <span class="stat-value">Free</span>
-                                <span class="stat-label">Tool</span>
-                            </div>
-                        </div>
-                        <a href="https://resumepro.pages.dev/klaviyo-tool" target="_blank" class="vibe-btn">
-                            <i class="fa fa-chart-bar"></i> Analyze Data
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Vibe Coded Projects - Custom Section -->
-    
-    
-<!-- Email Marketing Samples - Live Campaign Archive -->
-<!-- Email Marketing Samples - Dynamic Month Selector -->
-<div class="email-showcase" id="email-samples">
-    <div class="container">
-        <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-            <p>📊 REAL RESULTS · NICHE AUDIENCE</p>
-            <h2>Campaign Performance</h2>
-            
-            <!-- Month Selector Dropdown -->
-            <div class="month-selector-container" style="margin: 20px 0 10px;">
-                <select id="monthSelector" class="month-dropdown" style="
-                    padding: 12px 30px;
-                    font-size: 1.2rem;
-                    border-radius: 50px;
-                    border: 2px solid #0b1a2e;
-                    background: white;
-                    font-weight: 600;
-                    cursor: pointer;
-                    min-width: 250px;
-                ">
-                    <option value="jan-2026">January 2026</option>
-                    <option value="feb-2026" selected>February 2026</option>
-                </select>
-                <p class="text-muted mt-2" id="campaignCount">Loading...</p>
-            </div>
-        </div>
-
-        <!-- Container where month data will be loaded -->
-        <div id="monthDataContainer">
-            <div class="text-center py-5">
-                <div class="spinner-border text-primary" role="status">
-                    <span class="sr-only">Loading...</span>
-                </div>
-                <p class="mt-2">Loading campaign data...</p>
-            </div>
-        </div>
-
-        <!-- Key Insights -->
-        <div class="email-insights wow fadeInUp">
-            <h3 class="text-center mb-4">🔍 Key Insights</h3>
-            <div class="insights-grid">
-                <div class="insight-card">
-                    <div class="insight-icon">🎯</div>
-                    <h4>Segmentation Works</h4>
-                    <p>Engaged segments averaged 78%+ open rates</p>
-                </div>
-                <div class="insight-card">
-                    <div class="insight-icon">📱</div>
-                    <h4>SMS Drives Urgency</h4>
-                    <p>SMS campaigns achieved 28%+ click rates</p>
-                </div>
-                <div class="insight-card">
-                    <div class="insight-icon">❤️</div>
-                    <h4>Content Builds Trust</h4>
-                    <p>Educational content saw 80%+ open rates</p>
-                </div>
-                <div class="insight-card">
-                    <div class="insight-icon">🔄</div>
-                    <h4>Win-Back Success</h4>
-                    <p>40% of dormant users re-engaged</p>
-                </div>
-            </div>
-        </div>
-		<!-- Add this anywhere in your main portfolio, perhaps after the email samples section -->
-<a href="email-gallery.html" align="center" class="btn btn-primary" style="margin: 20px auto; display: inline-block;">
-    <i class="fas fa-images"></i> View Sample Campaign Gallery →
-</a>
-    </div>
-</div>
-
-
-<!-- Dynamic Loading Script -->
-<script>
-const monthFiles = {
-    'jan-2026': '/email-campaigns/jan-2026.html',
-    'feb-2026': '/email-campaigns/feb-2026.html'
-};
-
-const monthStats = {
-    'jan-2026': '16 campaigns • 79% avg. open rate • 364 patterns sold',
-    'feb-2026': '14 campaigns • 77% avg. open rate • 350 patterns sold'
-};
-
-async function loadMonthData(monthId) {
-    const container = document.getElementById('monthDataContainer');
-    const campaignCount = document.getElementById('campaignCount');
-    
-    container.innerHTML = `
-        <div class="text-center py-5">
-            <div class="spinner-border text-primary" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-            <p class="mt-2">Loading ${monthId.replace('-', ' ')} data...</p>
-        </div>
-    `;
-    
-    try {
-        const response = await fetch(monthFiles[monthId]);
-        const html = await response.text();
-        
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
-        const monthData = doc.querySelector('.month-campaign-data');
-        
-        container.innerHTML = monthData.outerHTML;
-        campaignCount.textContent = monthStats[monthId];
-        
-        if (typeof WOW !== 'undefined') {
-            new WOW().init();
-        }
-        
-    } catch (error) {
-        console.error('Error loading month data:', error);
-        container.innerHTML = `
-            <div class="alert alert-warning text-center p-5">
-                <h4>⚠️ Unable to load campaign data</h4>
-                <p>Please try again later</p>
-            </div>
-        `;
+    :root {
+      --ink:     #0d0d0d;
+      --paper:   #f5f2ec;
+      --cream:   #ede9df;
+      --accent:  #c84b31;
+      --accent2: #e8a87c;
+      --muted:   #7a7568;
+      --border:  #d4cebc;
+      --mono:    'Space Mono', monospace;
+      --serif:   'DM Serif Display', serif;
+      --sans:    'DM Sans', sans-serif;
     }
-}
 
-document.getElementById('monthSelector').addEventListener('change', function(e) {
-    loadMonthData(e.target.value);
-});
+    html { scroll-behavior: smooth; }
 
-document.addEventListener('DOMContentLoaded', () => {
-    loadMonthData('feb-2026');
-});
-</script>
+    body {
+      font-family: var(--sans);
+      background: var(--paper);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
 
-<!-- Email Samples End -->
+    ::selection { background: var(--accent); color: #fff; }
 
-<!-- Contact Start -->
-<div class="contact wow fadeInUp" data-wow-delay="0.1s" id="contact">
-    <div class="container-fluid">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-4"></div>
-                <div class="col-md-8">
-                    <div class="contact-form">
-                        <div id="success"></div>
-                        <!-- Updated form with FormSubmit -->
-                        <form action="https://formsubmit.co/reload.adolf2023@gmail.com" method="POST" id="contactForm">
-                            <!-- FormSubmit required fields -->
-                            <input type="hidden" name="_captcha" value="false">
-                            <input type="hidden" name="_next" value="https://apdg21.github.io/portfolio/thank-you.html">
-                            <input type="hidden" name="_subject" value="New Contact Form Submission">
-                            <input type="hidden" name="_template" value="box">
-                            
-                            <!-- Honeypot to prevent spam -->
-                            <input type="text" name="_honey" style="display:none">
-                            
-                            <div class="control-group">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name"/>
-                                <p class="help-block"></p>
-                            </div>
-                            <div class="control-group">
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email"/>
-                                <p class="help-block"></p>
-                            </div>
-                            <div class="control-group">
-                                <input type="text" class="form-control" id="subject" name="_subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject"/>
-                                <p class="help-block"></p>
-                            </div>
-                            <div class="control-group">
-                                <textarea class="form-control" id="message" name="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
-                                <p class="help-block"></p>
-                            </div>
-                            <div>
-                                <button class="btn" type="submit" id="sendMessageButton">Send Message</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+    /* ─── SCROLLBAR ─── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--cream); }
+    ::-webkit-scrollbar-thumb { background: var(--accent); }
+
+    /* ─── LOADER ─── */
+    #loader {
+      position: fixed; inset: 0; z-index: 9999;
+      background: var(--ink);
+      display: flex; align-items: center; justify-content: center;
+      transition: opacity 0.6s ease, visibility 0.6s;
+    }
+    #loader.hidden { opacity: 0; visibility: hidden; }
+    .loader-inner {
+      display: flex; gap: 8px;
+    }
+    .loader-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--accent);
+      animation: loaderBounce 0.9s ease-in-out infinite;
+    }
+    .loader-dot:nth-child(2) { animation-delay: 0.15s; background: var(--accent2); }
+    .loader-dot:nth-child(3) { animation-delay: 0.3s; background: var(--paper); }
+    @keyframes loaderBounce {
+      0%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-18px); }
+    }
+
+    /* ─── NAVBAR ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 4rem;
+      transition: background 0.4s, box-shadow 0.4s, padding 0.3s;
+    }
+    nav.scrolled {
+      background: rgba(245, 242, 236, 0.96);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 var(--border);
+      padding: 0.8rem 4rem;
+    }
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-cta {
+      background: var(--ink) !important;
+      color: var(--paper) !important;
+      padding: 0.5rem 1.2rem !important;
+      border-radius: 2px;
+    }
+    .nav-cta:hover { background: var(--accent) !important; color: #fff !important; }
+
+    /* Mobile nav toggle */
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--ink); transition: all 0.3s; }
+    .nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      nav.scrolled { padding: 0.7rem 1.5rem; }
+      .nav-toggle { display: flex; }
+      .nav-links {
+        position: fixed; top: 0; right: -100%; width: 70vw; height: 100vh;
+        background: var(--ink); flex-direction: column; justify-content: center;
+        align-items: center; gap: 2.5rem; transition: right 0.4s ease;
+      }
+      .nav-links.open { right: 0; }
+      .nav-links a { color: var(--cream) !important; font-size: 1rem; }
+      .nav-cta { background: var(--accent) !important; }
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 7rem 4rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -20%; right: -10%;
+      width: 55vw; height: 80vh;
+      background: radial-gradient(ellipse at center, var(--accent2) 0%, transparent 70%);
+      opacity: 0.15;
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.2rem;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.5s forwards;
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 1.0;
+      letter-spacing: -2px;
+      margin-bottom: 1rem;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.7s forwards;
+    }
+    .hero h1 em { font-style: italic; color: var(--accent); }
+    .hero-typed-wrap {
+      font-family: var(--sans);
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
+      color: var(--muted);
+      font-weight: 300;
+      min-height: 2em;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.9s forwards;
+    }
+    .hero-typed-wrap .typed-cursor { color: var(--accent); }
+    .hero-actions {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.7s 1.1s forwards;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--accent); color: #fff;
+      padding: 0.8rem 1.8rem;
+      font-family: var(--sans); font-size: 0.85rem; font-weight: 600;
+      letter-spacing: 0.05em;
+      border: none; border-radius: 2px; cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { background: #a8391f; transform: translateY(-2px); }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: transparent; color: var(--ink);
+      padding: 0.8rem 1.8rem;
+      font-family: var(--sans); font-size: 0.85rem; font-weight: 600;
+      letter-spacing: 0.05em;
+      border: 1.5px solid var(--ink); border-radius: 2px; cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+    }
+    .btn-outline:hover { background: var(--ink); color: var(--paper); transform: translateY(-2px); }
+
+    .hero-stats {
+      display: flex; gap: 2.5rem; margin-top: 4rem;
+      opacity: 0;
+      animation: fadeUp 0.7s 1.3s forwards;
+    }
+    .hero-stat-num {
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      line-height: 1;
+      color: var(--ink);
+    }
+    .hero-stat-label {
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--muted);
+    }
+
+    .hero-image-col {
+      position: relative; display: flex; justify-content: flex-end; align-items: center;
+      opacity: 0;
+      animation: fadeIn 1s 0.8s forwards;
+    }
+    .hero-img-frame {
+      position: relative;
+      width: min(400px, 90%);
+      aspect-ratio: 3/4;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .hero-img-frame img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .hero-img-frame::before {
+      content: '';
+      position: absolute; top: 16px; left: 16px; right: -16px; bottom: -16px;
+      border: 2px solid var(--accent);
+      border-radius: 4px;
+      z-index: -1;
+    }
+    .hero-scroll-hint {
+      position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+      font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em;
+      color: var(--muted); text-transform: uppercase;
+      animation: bounce 2s infinite;
+    }
+    .hero-scroll-hint::after {
+      content: ''; display: block;
+      width: 1px; height: 40px; background: var(--muted);
+      animation: grow 2s infinite;
+    }
+    @keyframes grow {
+      0%, 100% { height: 40px; opacity: 1; }
+      50% { height: 60px; opacity: 0.4; }
+    }
+
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; text-align: center; }
+      .hero-actions { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .hero-image-col { justify-content: center; margin-top: 3rem; }
+      .hero-img-frame { width: 260px; aspect-ratio: 1; }
+    }
+
+    /* ─── SECTION BASE ─── */
+    section { padding: 6rem 4rem; }
+    @media (max-width: 768px) { section { padding: 4rem 1.5rem; } }
+    .section-tag {
+      font-family: var(--mono);
+      font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 0.8rem;
+      display: flex; align-items: center; gap: 0.8rem;
+    }
+    .section-tag::before {
+      content: ''; display: block; width: 24px; height: 1px; background: var(--accent);
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 1rem;
+    }
+    .section-title em { font-style: italic; color: var(--accent); }
+    .section-sub {
+      font-size: 1rem; color: var(--muted); max-width: 500px; line-height: 1.7;
+    }
+
+    /* ─── ABOUT ─── */
+    .about { background: var(--ink); color: var(--paper); }
+    .about .section-tag::before { background: var(--accent2); }
+    .about .section-tag { color: var(--accent2); }
+    .about .section-title { color: var(--paper); }
+    .about .section-sub { color: rgba(245,242,236,0.6); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+      margin-top: 3rem;
+    }
+    .about-img-wrap {
+      position: relative;
+    }
+    .about-img-wrap img {
+      width: 100%; border-radius: 4px; display: block;
+    }
+    .about-img-wrap::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, var(--ink) 10%, transparent 50%);
+    }
+    .about-badge {
+      position: absolute; bottom: 1.5rem; left: 1.5rem; z-index: 2;
+      background: var(--accent); color: #fff;
+      padding: 0.6rem 1rem;
+      font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.1em;
+      text-transform: uppercase; border-radius: 2px;
+    }
+    .about-text p {
+      color: rgba(245,242,236,0.75);
+      line-height: 1.8; font-size: 1rem; margin-bottom: 1.5rem;
+    }
+
+    /* Skills */
+    .skills-list { margin-top: 2rem; }
+    .skill-row { margin-bottom: 1.4rem; }
+    .skill-header {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 0.5rem;
+    }
+    .skill-name-label { font-size: 0.8rem; font-weight: 500; color: var(--paper); }
+    .skill-pct { font-family: var(--mono); font-size: 0.7rem; color: var(--accent2); }
+    .skill-track {
+      height: 2px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden;
+    }
+    .skill-fill {
+      height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2));
+      border-radius: 2px; width: 0; transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
+    /* ─── SERVICES ─── */
+    .services { background: var(--cream); }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5px; margin-top: 3.5rem;
+      background: var(--border);
+      border: 1.5px solid var(--border);
+      border-radius: 4px; overflow: hidden;
+    }
+    .service-card {
+      background: var(--paper);
+      padding: 2.5rem 2rem;
+      transition: background 0.3s;
+      position: relative;
+    }
+    .service-card:hover { background: var(--ink); }
+    .service-card:hover .service-card-title { color: var(--paper); }
+    .service-card:hover .service-card-body { color: rgba(245,242,236,0.65); }
+    .service-card:hover .service-icon-wrap { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .service-icon-wrap {
+      width: 44px; height: 44px;
+      border: 1.5px solid var(--border);
+      border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; color: var(--accent);
+      margin-bottom: 1.5rem;
+      transition: all 0.3s;
+    }
+    .service-card-title { font-family: var(--serif); font-size: 1.3rem; margin-bottom: 0.8rem; transition: color 0.3s; }
+    .service-card-body { font-size: 0.88rem; color: var(--muted); line-height: 1.7; transition: color 0.3s; }
+
+    /* ─── EXPERIENCE ─── */
+    .experience-list { margin-top: 3.5rem; position: relative; }
+    .experience-list::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 1px; background: var(--border);
+    }
+    .exp-item {
+      display: grid; grid-template-columns: 180px 1fr;
+      gap: 2rem; padding: 2.5rem 0 2.5rem 2.5rem;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .exp-item::before {
+      content: ''; position: absolute; left: -5px; top: 2.8rem;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--paper); border: 2px solid var(--accent);
+    }
+    .exp-year {
+      font-family: var(--mono); font-size: 0.72rem; color: var(--muted);
+      padding-top: 0.2rem;
+    }
+    .exp-role { font-family: var(--serif); font-size: 1.3rem; margin-bottom: 0.2rem; }
+    .exp-company { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; }
+    .exp-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
+
+    @media (max-width: 640px) {
+      .exp-item { grid-template-columns: 1fr; gap: 0.3rem; padding-left: 2rem; }
+    }
+
+    /* ─── PROJECTS ─── */
+    .projects { background: var(--cream); }
+    .projects-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem; margin-top: 3.5rem;
+    }
+    .project-card {
+      background: var(--paper);
+      border: 1.5px solid var(--border);
+      border-radius: 6px; overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .project-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+    .project-img {
+      width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;
+      background: var(--cream);
+    }
+    .project-img-placeholder {
+      width: 100%; aspect-ratio: 16/9;
+      background: linear-gradient(135deg, var(--ink) 0%, #2a2a2a 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.5rem; color: var(--accent2);
+    }
+    .project-body { padding: 1.5rem; }
+    .project-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .project-tag {
+      font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--accent);
+      background: rgba(200, 75, 49, 0.08);
+      padding: 0.2rem 0.5rem; border-radius: 2px;
+    }
+    .project-title { font-family: var(--serif); font-size: 1.2rem; margin-bottom: 0.5rem; }
+    .project-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.65; margin-bottom: 1.2rem; }
+    .project-stats { display: flex; gap: 1.5rem; padding: 1rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 1rem; }
+    .project-stat-val { font-family: var(--mono); font-size: 0.85rem; font-weight: 700; color: var(--ink); }
+    .project-stat-lbl { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); }
+    .project-link {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em;
+      text-transform: uppercase; color: var(--accent); text-decoration: none;
+      transition: gap 0.2s;
+    }
+    .project-link:hover { gap: 0.8rem; }
+
+    /* ─── CAMPAIGNS ─── */
+    .campaigns { background: var(--ink); color: var(--paper); }
+    .campaigns .section-tag { color: var(--accent2); }
+    .campaigns .section-tag::before { background: var(--accent2); }
+    .campaigns .section-title { color: var(--paper); }
+    .campaigns .section-sub { color: rgba(245,242,236,0.6); }
+
+    .campaign-controls {
+      display: flex; align-items: center; gap: 1rem; margin: 2.5rem 0;
+    }
+    .month-select {
+      font-family: var(--sans); font-size: 0.85rem;
+      background: rgba(255,255,255,0.05); color: var(--paper);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 0.6rem 1.2rem; border-radius: 2px; cursor: pointer;
+      outline: none; transition: border-color 0.2s;
+    }
+    .month-select option { background: #1a1a1a; }
+    .month-select:focus { border-color: var(--accent2); }
+    .campaign-count {
+      font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em;
+      color: rgba(245,242,236,0.4); text-transform: uppercase;
+    }
+
+    #monthDataContainer {
+      min-height: 200px;
+    }
+    .campaign-loading {
+      display: flex; align-items: center; gap: 0.8rem;
+      padding: 3rem; color: rgba(245,242,236,0.4);
+      font-family: var(--mono); font-size: 0.75rem;
+    }
+    .campaign-loading-dots span {
+      display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent); margin: 0 2px;
+      animation: loaderBounce 0.9s ease-in-out infinite;
+    }
+    .campaign-loading-dots span:nth-child(2) { animation-delay: 0.15s; }
+    .campaign-loading-dots span:nth-child(3) { animation-delay: 0.3s; }
+    .campaign-error {
+      padding: 2rem; background: rgba(200,75,49,0.1);
+      border: 1px solid rgba(200,75,49,0.3);
+      border-radius: 4px; text-align: center;
+      font-size: 0.9rem; color: var(--accent2);
+    }
+
+    .insights-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1px; margin-top: 3rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 4px; overflow: hidden;
+    }
+    .insight-card {
+      padding: 2rem 1.5rem; background: rgba(255,255,255,0.02);
+      transition: background 0.3s;
+    }
+    .insight-card:hover { background: rgba(255,255,255,0.06); }
+    .insight-icon { font-size: 1.5rem; margin-bottom: 1rem; }
+    .insight-card h4 { font-family: var(--serif); font-size: 1.1rem; color: var(--paper); margin-bottom: 0.5rem; }
+    .insight-card p { font-size: 0.82rem; color: rgba(245,242,236,0.5); line-height: 1.6; }
+
+    .campaign-gallery-cta {
+      display: block; width: fit-content; margin: 2.5rem auto 0;
+    }
+
+    /* ─── BLOG ─── */
+    .blog-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3.5rem; }
+    .blog-card {
+      border: 1.5px solid var(--border); border-radius: 6px; overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .blog-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(0,0,0,0.08); }
+    .blog-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: var(--cream); }
+    .blog-body { padding: 1.8rem; flex: 1; display: flex; flex-direction: column; }
+    .blog-meta-row { display: flex; gap: 1rem; margin-bottom: 1rem; }
+    .blog-meta-tag {
+      font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .blog-meta-tag i { margin-right: 4px; color: var(--accent); }
+    .blog-title { font-family: var(--serif); font-size: 1.25rem; line-height: 1.3; margin-bottom: 0.8rem; }
+    .blog-excerpt { font-size: 0.875rem; color: var(--muted); line-height: 1.7; flex: 1; margin-bottom: 1.5rem; }
+    .blog-read-more {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+      color: var(--accent); text-decoration: none; transition: gap 0.2s;
+    }
+    .blog-read-more:hover { gap: 0.7rem; }
+
+    @media (max-width: 640px) { .blog-grid { grid-template-columns: 1fr; } }
+
+    /* ─── CONTACT ─── */
+    .contact { background: var(--cream); }
+    .contact-wrap {
+      display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; margin-top: 3.5rem; align-items: start;
+    }
+    .contact-info h3 { font-family: var(--serif); font-size: 1.8rem; margin-bottom: 1.5rem; line-height: 1.2; }
+    .contact-info p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 2rem; }
+    .contact-item { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; }
+    .contact-item-icon {
+      width: 36px; height: 36px; border-radius: 2px;
+      background: var(--ink); color: var(--paper);
+      display: flex; align-items: center; justify-content: center; font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+    .contact-item-text { font-size: 0.85rem; color: var(--muted); }
+    .contact-socials { display: flex; gap: 0.8rem; margin-top: 2rem; }
+    .contact-social-link {
+      width: 36px; height: 36px;
+      border: 1.5px solid var(--border); border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted); font-size: 0.85rem; text-decoration: none;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .contact-social-link:hover { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+
+    .contact-form label {
+      display: block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%; padding: 0.9rem 1rem;
+      background: var(--paper); border: 1.5px solid var(--border);
+      border-radius: 2px; font-family: var(--sans); font-size: 0.9rem; color: var(--ink);
+      outline: none; transition: border-color 0.2s;
+      margin-bottom: 1.2rem;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus { border-color: var(--accent); }
+    .contact-form textarea { resize: vertical; min-height: 130px; }
+    #sendMessageButton {
+      width: 100%; padding: 1rem;
+      background: var(--ink); color: var(--paper);
+      border: none; border-radius: 2px; cursor: pointer;
+      font-family: var(--sans); font-size: 0.85rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      transition: background 0.2s;
+    }
+    #sendMessageButton:hover { background: var(--accent); }
+    #sendMessageButton:disabled { opacity: 0.6; cursor: not-allowed; }
+    #success .alert-success {
+      padding: 1rem; background: rgba(50,200,100,0.1); border: 1px solid rgba(50,200,100,0.3);
+      border-radius: 2px; color: #1a6b3a; font-size: 0.85rem; margin-bottom: 1rem;
+    }
+    #success .alert-danger {
+      padding: 1rem; background: rgba(200,75,49,0.1); border: 1px solid rgba(200,75,49,0.3);
+      border-radius: 2px; color: var(--accent); font-size: 0.85rem; margin-bottom: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .contact-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--ink); color: rgba(245,242,236,0.5);
+      padding: 2.5rem 4rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+      font-size: 0.78rem;
+    }
+    footer a { color: rgba(245,242,236,0.5); text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: var(--accent2); }
+    .footer-brand { font-family: var(--serif); font-size: 1.2rem; color: var(--paper); }
+    @media (max-width: 640px) { footer { padding: 2rem 1.5rem; text-align: center; justify-content: center; } }
+
+    /* ─── BACK TO TOP ─── */
+    .back-to-top {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 99;
+      width: 40px; height: 40px; background: var(--accent); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 2px; text-decoration: none; font-size: 0.85rem;
+      opacity: 0; transform: translateY(10px);
+      transition: opacity 0.3s, transform 0.3s;
+      pointer-events: none;
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .back-to-top:hover { background: #a8391f; }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ─── TYPED CURSOR ─── */
+    .typed-cursor { opacity: 1; animation: typedBlink 0.7s infinite; }
+    @keyframes typedBlink { 50% { opacity: 0; } }
+  </style>
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-dot"></div>
+      <div class="loader-dot"></div>
+      <div class="loader-dot"></div>
     </div>
-</div>
+  </div>
 
-<!-- Optional: Add this script for AJAX submission (more reliable redirect) -->
-<script>
-$(function() {
-    $("#contactForm").submit(function(e) {
-        e.preventDefault();
-        
-        var $btn = $("#sendMessageButton");
-        $btn.prop('disabled', true).text('Sending...');
-        
-        var formData = $(this).serialize();
-        
-        $.ajax({
-            url: "https://formsubmit.co/ajax/reload.adolf2023@gmail.com",
-            type: "POST",
-            data: formData,
-            dataType: "json",
-            success: function(response) {
-                console.log("Success:", response);
-                // Redirect to thank you page
-                window.location.href = "/thank-you.html";
-            },
-            error: function(xhr, status, error) {
-                console.log("Error:", error);
-                $("#success").html("<div class='alert alert-danger'>Connection error. Please try again.</div>");
-                $btn.prop('disabled', false).text('Send Message');
-            }
-        });
+  <!-- Navbar -->
+  <nav id="navbar">
+    <a href="#home" class="nav-logo">Adolf<span>.</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#service">Services</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#portfolio">Projects</a></li>
+      <li><a href="#email-samples">Email Work</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Available for freelance · Based in Cavite, PH</p>
+      <h1>Adolf<br><em>de Guzman</em></h1>
+      <div class="hero-typed-wrap">
+        <span id="typed-output"></span><span class="typed-cursor">|</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#portfolio" class="btn-primary"><i class="fa fa-arrow-down"></i> View My Work</a>
+        <a href="#contact" class="btn-outline">Get In Touch</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">6+</div>
+          <div class="hero-stat-label">Years in Email</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">78%</div>
+          <div class="hero-stat-label">Avg. Open Rate</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">500+</div>
+          <div class="hero-stat-label">Users Reached</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image-col">
+      <div class="hero-img-frame">
+        <img src="img/hero.png" alt="Adolf de Guzman">
+      </div>
+    </div>
+    <div class="hero-scroll-hint">Scroll</div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="about-grid" style="max-width:1100px; margin:0 auto;">
+      <div class="about-img-wrap reveal">
+        <img src="img/about.png" alt="About Adolf">
+        <div class="about-badge">Since 2019 · Email First</div>
+      </div>
+      <div class="about-text">
+        <p class="section-tag reveal">About Me</p>
+        <h2 class="section-title reveal">Email-First Marketer<br><em>&amp; Vibe Coder</em></h2>
+        <div class="reveal">
+          <p>Hi, I'm Adolf — an Email Marketing Specialist with roots in copywriting since 2019. I craft campaigns that genuinely connect with audiences and drive measurable conversions, not just open rates.</p>
+          <p>Alongside my email work, I've been building tools and web apps through "vibe coding" — turning real problems into functional solutions. From resume builders to analytics dashboards, I ship things that work.</p>
+        </div>
+        <div class="skills-list reveal">
+          <div class="skill-row">
+            <div class="skill-header">
+              <span class="skill-name-label">Email Marketing Strategy</span>
+              <span class="skill-pct">95%</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill" data-width="95"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-header">
+              <span class="skill-name-label">Copywriting</span>
+              <span class="skill-pct">95%</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill" data-width="95"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-header">
+              <span class="skill-name-label">HTML/CSS/JS (Vibe Coding)</span>
+              <span class="skill-pct">75%</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill" data-width="75"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-header">
+              <span class="skill-name-label">Campaign Analysis</span>
+              <span class="skill-pct">85%</span>
+            </div>
+            <div class="skill-track"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+        </div>
+        <div style="margin-top:2rem;" class="reveal">
+          <a href="#contact" class="btn-primary">Start a Conversation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="service">
+    <div style="max-width:1100px; margin:0 auto;">
+      <p class="section-tag reveal">What I Do</p>
+      <h2 class="section-title reveal">Core Expertise &amp;<br><em>Side Projects</em></h2>
+      <div class="services-grid reveal">
+        <div class="service-card">
+          <div class="service-icon-wrap"><i class="fa fa-envelope-open-text"></i></div>
+          <h3 class="service-card-title">Email Marketing Strategy</h3>
+          <p class="service-card-body">From concept to conversion — campaign planning, segmentation, automation flows, and data-driven optimizations that maximize ROI.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap"><i class="fa fa-pen-fancy"></i></div>
+          <h3 class="service-card-title">Copywriting</h3>
+          <p class="service-card-body">Persuasive, on-brand copy for emails, landing pages, and product listings — crafted to engage your audience and move them to act.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap"><i class="fa fa-laptop-code"></i></div>
+          <h3 class="service-card-title">Vibe Coding Projects</h3>
+          <p class="service-card-body">Building functional web apps and tools — resume generators, analytics dashboards — driven by creative problem-solving.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon-wrap"><i class="fa fa-chart-line"></i></div>
+          <h3 class="service-card-title">Email Design &amp; Dev</h3>
+          <p class="service-card-body">Designing and coding responsive email templates that render beautifully across every inbox, combining visual appeal with deliverability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" style="padding: 6rem 4rem;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <p class="section-tag reveal">My Resume</p>
+      <h2 class="section-title reveal">Working<br><em>Experience</em></h2>
+      <div class="experience-list">
+        <div class="exp-item reveal">
+          <div class="exp-year">2025 — Present</div>
+          <div>
+            <h3 class="exp-role">Email Marketing Specialist</h3>
+            <p class="exp-company">Freelancer</p>
+            <p class="exp-desc">Managing campaigns end-to-end — from strategy to execution. Focused on segmentation, A/B testing, and performance analysis to improve engagement and conversions for diverse clients.</p>
+          </div>
+        </div>
+        <div class="exp-item reveal reveal-delay-1">
+          <div class="exp-year">2024 — 2025</div>
+          <div>
+            <h3 class="exp-role">Email Marketing Strategist</h3>
+            <p class="exp-company">Freelancer</p>
+            <p class="exp-desc">Developed comprehensive email strategies — welcome series, abandoned cart flows, re-engagement campaigns. High-level lifecycle marketing with measurable outcomes.</p>
+          </div>
+        </div>
+        <div class="exp-item reveal reveal-delay-2">
+          <div class="exp-year">2022 — 2024</div>
+          <div>
+            <h3 class="exp-role">Email Marketing / Landing Page Designer</h3>
+            <p class="exp-company">Freelancer</p>
+            <p class="exp-desc">Bridged marketing and design — creating user-friendly landing pages and coding responsive email templates that aligned with campaign goals and brand identity.</p>
+          </div>
+        </div>
+        <div class="exp-item reveal reveal-delay-1">
+          <div class="exp-year">2021 — 2022</div>
+          <div>
+            <h3 class="exp-role">Email Marketing Specialist</h3>
+            <p class="exp-company">Freelancer</p>
+            <p class="exp-desc">Strategic email campaign planning including goal setting, audience targeting, and determining messaging and timing for each campaign.</p>
+          </div>
+        </div>
+        <div class="exp-item reveal">
+          <div class="exp-year">2019 — 2021</div>
+          <div>
+            <h3 class="exp-role">Copywriter</h3>
+            <p class="exp-company">Reload Media · Nevanna · Freelancer</p>
+            <p class="exp-desc">Created persuasive content for emails and product pages — compelling copy that captures attention and drives readers to take action.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="projects" id="portfolio">
+    <div style="max-width:1100px; margin:0 auto;">
+      <p class="section-tag reveal">⚡ My Builds</p>
+      <h2 class="section-title reveal">Vibe Coded<br><em>Projects</em></h2>
+      <div class="projects-grid">
+
+        <div class="project-card reveal">
+          <div class="project-img-placeholder"><i class="fa fa-file-alt"></i></div>
+          <div class="project-body">
+            <div class="project-tags"><span class="project-tag">HTML/CSS</span><span class="project-tag">JavaScript</span><span class="project-tag">UI/UX</span></div>
+            <h3 class="project-title">Resume Pro</h3>
+            <p class="project-desc">A sleek resume builder that eliminates formatting headaches. Create professional resumes in minutes with customizable templates.</p>
+            <div class="project-stats">
+              <div><div class="project-stat-val">500+</div><div class="project-stat-lbl">Users</div></div>
+              <div><div class="project-stat-val">4.8</div><div class="project-stat-lbl">Rating</div></div>
+              <div><div class="project-stat-val">2024</div><div class="project-stat-lbl">Launched</div></div>
+            </div>
+            <a href="https://resumepro.pages.dev/" target="_blank" class="project-link">Live Demo <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-img-placeholder"><i class="fa fa-th-large"></i></div>
+          <div class="project-body">
+            <div class="project-tags"><span class="project-tag">Templates</span><span class="project-tag">Design</span><span class="project-tag">Free</span></div>
+            <h3 class="project-title">Resume Templates</h3>
+            <p class="project-desc">A curated collection of clean, modern templates for job seekers. Fully customizable and print-ready across formats.</p>
+            <div class="project-stats">
+              <div><div class="project-stat-val">12</div><div class="project-stat-lbl">Templates</div></div>
+              <div><div class="project-stat-val">3</div><div class="project-stat-lbl">Formats</div></div>
+              <div><div class="project-stat-val">2024</div><div class="project-stat-lbl">Updated</div></div>
+            </div>
+            <a href="https://resumepro.pages.dev/resume-templates" target="_blank" class="project-link">Browse Templates <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-2">
+          <div class="project-img-placeholder"><i class="fa fa-images"></i></div>
+          <div class="project-body">
+            <div class="project-tags"><span class="project-tag">Portfolio</span><span class="project-tag">Creative</span><span class="project-tag">Responsive</span></div>
+            <h3 class="project-title">Portfolio Templates</h3>
+            <p class="project-desc">Ready-to-use portfolio templates for creatives and professionals. Designed for simplicity and visual impact.</p>
+            <div class="project-stats">
+              <div><div class="project-stat-val">8</div><div class="project-stat-lbl">Designs</div></div>
+              <div><div class="project-stat-val">100%</div><div class="project-stat-lbl">Responsive</div></div>
+              <div><div class="project-stat-val">2024</div><div class="project-stat-lbl">Updated</div></div>
+            </div>
+            <a href="https://resumepro.pages.dev/portfolio-templates" target="_blank" class="project-link">View Gallery <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-img-placeholder"><i class="fa fa-mobile-alt"></i></div>
+          <div class="project-body">
+            <div class="project-tags"><span class="project-tag">Android</span><span class="project-tag">Java</span><span class="project-tag">Mobile</span></div>
+            <h3 class="project-title">Android Apps</h3>
+            <p class="project-desc">A showcase of Android applications built while exploring mobile development. Practical tools for daily use.</p>
+            <div class="project-stats">
+              <div><div class="project-stat-val">5</div><div class="project-stat-lbl">Apps</div></div>
+              <div><div class="project-stat-val">1K+</div><div class="project-stat-lbl">Downloads</div></div>
+              <div><div class="project-stat-val">4.5</div><div class="project-stat-lbl">Rating</div></div>
+            </div>
+            <a href="https://resumepro.pages.dev/android-applications" target="_blank" class="project-link">View Apps <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-img-placeholder"><i class="fa fa-users"></i></div>
+          <div class="project-body">
+            <div class="project-tags"><span class="project-tag">Web App</span><span class="project-tag">Family</span><span class="project-tag">Tools</span></div>
+            <h3 class="project-title">Family Connection Tools</h3>
+            <p class="project-desc">Small web apps to help families stay organized — shared calendars, chore trackers, and more. Currently in beta.</p>
+            <div class="project-stats">
+              <div><div class="project-stat-val">6</div><div class="project-stat-lbl">Tools</div></div>
+              <div><div class="project-stat-val">3</div><div class="project-stat-lbl">Families</div></div>
+              <div><div class="project-stat-val">Beta</div><div class="project-stat-lbl">Status</div></div>
+            </div>
+            <a href="https://resumepro.pages.dev/family-connection-tools" target="_blank" class="project-link">Try Tools <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-2">
+          <div class="project-img-placeholder"><i class="fa fa-chart-bar"></i></div>
+          <div class="project-body">
+            <div class="project-tags"><span class="project-tag">Analytics</span><span class="project-tag">Klaviyo</span><span class="project-tag">CSV</span></div>
+            <h3 class="project-title">Klaviyo Analytics Dashboard</h3>
+            <p class="project-desc">Upload and visualize Klaviyo campaign data. Track opens, clicks, revenue, and more with interactive charts.</p>
+            <div class="project-stats">
+              <div><div class="project-stat-val">Real-time</div><div class="project-stat-lbl">Analysis</div></div>
+              <div><div class="project-stat-val">CSV</div><div class="project-stat-lbl">Import</div></div>
+              <div><div class="project-stat-val">Free</div><div class="project-stat-lbl">Tool</div></div>
+            </div>
+            <a href="https://resumepro.pages.dev/klaviyo-tool" target="_blank" class="project-link">Analyze Data <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Campaign Performance -->
+  <section class="campaigns" id="email-samples">
+    <div style="max-width:1100px; margin:0 auto;">
+      <p class="section-tag reveal">Real Results · Niche Audience</p>
+      <h2 class="section-title reveal">Campaign<br><em>Performance</em></h2>
+      <p class="section-sub reveal">Live data from real campaigns — open rates, click rates, and patterns sold tracked across monthly segments.</p>
+
+      <div class="campaign-controls reveal">
+        <select id="monthSelector" class="month-select">
+          <option value="jan-2026">January 2026</option>
+          <option value="feb-2026" selected>February 2026</option>
+        </select>
+        <span class="campaign-count" id="campaignCount">Loading…</span>
+      </div>
+
+      <div id="monthDataContainer">
+        <div class="campaign-loading">
+          <div class="campaign-loading-dots"><span></span><span></span><span></span></div>
+          Loading campaign data…
+        </div>
+      </div>
+
+      <div class="insights-grid reveal" style="margin-top:3rem;">
+        <div class="insight-card">
+          <div class="insight-icon">🎯</div>
+          <h4>Segmentation Works</h4>
+          <p>Engaged segments averaged 78%+ open rates</p>
+        </div>
+        <div class="insight-card">
+          <div class="insight-icon">📱</div>
+          <h4>SMS Drives Urgency</h4>
+          <p>SMS campaigns achieved 28%+ click rates</p>
+        </div>
+        <div class="insight-card">
+          <div class="insight-icon">❤️</div>
+          <h4>Content Builds Trust</h4>
+          <p>Educational content saw 80%+ open rates</p>
+        </div>
+        <div class="insight-card">
+          <div class="insight-icon">🔄</div>
+          <h4>Win-Back Success</h4>
+          <p>40% of dormant users re-engaged</p>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:2.5rem;" class="reveal">
+        <a href="email-gallery.html" class="btn-primary campaign-gallery-cta">
+          <i class="fas fa-images"></i> View Sample Campaign Gallery
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog -->
+  <section id="blog" style="padding: 6rem 4rem;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <p class="section-tag reveal">From My Blog</p>
+      <h2 class="section-title reveal">Latest Articles on<br><em>Email Marketing</em></h2>
+      <div class="blog-grid">
+        <div class="blog-card reveal">
+          <img class="blog-img" src="img/blog-less-is-more.jpg" alt="Focused Email Design" onerror="this.src='img/blog-1.jpg'">
+          <div class="blog-body">
+            <div class="blog-meta-row">
+              <span class="blog-meta-tag"><i class="far fa-user"></i>Adolf</span>
+              <span class="blog-meta-tag"><i class="far fa-list-alt"></i>Design Strategy</span>
+              <span class="blog-meta-tag"><i class="far fa-calendar-alt"></i>Feb 2026</span>
+            </div>
+            <h3 class="blog-title">Why Less Is More: The Power of Focused Email Design</h3>
+            <p class="blog-excerpt">Most eCommerce emails cram too many products, causing decision fatigue. A focused "hero + highlight" approach drives better clicks — especially on mobile.</p>
+            <a href="https://resumepro.pages.dev/blogs/why-less-is-more" target="_blank" class="blog-read-more">Read Article <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="blog-card reveal reveal-delay-1">
+          <img class="blog-img" src="img/blog-list-failure.jpg" alt="Email List Building" onerror="this.src='img/blog-2.jpg'">
+          <div class="blog-body">
+            <div class="blog-meta-row">
+              <span class="blog-meta-tag"><i class="far fa-user"></i>Adolf</span>
+              <span class="blog-meta-tag"><i class="far fa-list-alt"></i>List Building</span>
+              <span class="blog-meta-tag"><i class="far fa-calendar-alt"></i>Jan 2026</span>
+            </div>
+            <h3 class="blog-title">Why Your Email List Might Be Failing — And How to Fix It</h3>
+            <p class="blog-excerpt">Low engagement often starts at the signup form. Strategic design, clear incentives, and double opt-in attract subscribers who actually want to hear from you.</p>
+            <a href="https://resumepro.pages.dev/blogs/email-list-failure" target="_blank" class="blog-read-more">Read Article <i class="fa fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div style="max-width:1100px; margin:0 auto;">
+      <p class="section-tag reveal">Get In Touch</p>
+      <h2 class="section-title reveal">Let's Work<br><em>Together</em></h2>
+      <div class="contact-wrap">
+        <div class="reveal">
+          <h3>Have a project in mind? Let's talk about it.</h3>
+          <p>Whether you need a complete email strategy, killer copy, or a new web tool built — I'm here for it. Drop me a message and I'll get back to you promptly.</p>
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fa fa-phone"></i></div>
+            <span class="contact-item-text">+63 965 672 5801</span>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fa fa-envelope"></i></div>
+            <span class="contact-item-text">reload.adolf2023@gmail.com</span>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fa fa-map-marker-alt"></i></div>
+            <span class="contact-item-text">Springville, Molino, Cavite, Philippines</span>
+          </div>
+          <div class="contact-socials">
+            <a href="https://www.facebook.com/adolfdg" target="_blank" class="contact-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank" class="contact-social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" target="_blank" class="contact-social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="contact-form reveal reveal-delay-1">
+          <div id="success"></div>
+          <form id="contactForm" action="https://formsubmit.co/reload.adolf2023@gmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://apdg21.github.io/portfolio/thank-you.html">
+            <input type="hidden" name="_subject" value="New Contact Form Submission">
+            <input type="hidden" name="_template" value="box">
+            <input type="text" name="_honey" style="display:none">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Adolf de Guzman" required>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="_subject" placeholder="Email campaign strategy" required>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
+            <button type="submit" id="sendMessageButton">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <span class="footer-brand">Adolf<span style="color:var(--accent)">.</span></span>
+    <span>&copy; 2026 Adolf P. de Guzman · All rights reserved</span>
+    <span>Designed &amp; built by <a href="#">Adolf</a></span>
+  </footer>
+
+  <!-- Back to top -->
+  <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa fa-arrow-up"></i></a>
+
+  <!-- Scripts -->
+  <script>
+    // ── Loader
+    window.addEventListener('load', () => {
+      setTimeout(() => document.getElementById('loader').classList.add('hidden'), 300);
     });
-});
-</script>
-<!-- Contact End -->
-    
-    <!-- Blog Start -->
-<div class="blog" id="blog">
-    <div class="container">
-        <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-            <p>From My Blog</p>
-            <h2>Latest Articles on Email Marketing</h2>
-        </div>
-        <div class="row">
-            <!-- Why Less Is More -->
-            <div class="col-lg-6">
-                <div class="blog-item wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="blog-img">
-                        <img src="img/blog-less-is-more.jpg" alt="Focused Email Design" onerror="this.src='img/blog-1.jpg'">
-                    </div>
-                    <div class="blog-text">
-                        <h2>Why Less Is More: The Power of Focused Email Design</h2>
-                        <div class="blog-meta">
-                            <p><i class="far fa-user"></i>Adolf</p>
-                            <p><i class="far fa-list-alt"></i>Design Strategy</p>
-                            <p><i class="far fa-calendar-alt"></i>Feb 2026</p>
-                        </div>
-                        <p>Most eCommerce emails cram too many products, causing decision fatigue. Learn why a focused "hero + highlight" approach drives better clicks and conversions—especially on mobile.</p>
-                        <a class="btn" href="https://resumepro.pages.dev/blogs/why-less-is-more" target="_blank">Read More <i class="fa fa-angle-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Why Your Email List Might Be Failing -->
-            <div class="col-lg-6">
-                <div class="blog-item wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="blog-img">
-                        <img src="img/blog-list-failure.jpg" alt="Email List Building" onerror="this.src='img/blog-2.jpg'">
-                    </div>
-                    <div class="blog-text">
-                        <h2>Why Your Email List Might Be Failing—And How to Fix It</h2>
-                        <div class="blog-meta">
-                            <p><i class="far fa-user"></i>Adolf</p>
-                            <p><i class="far fa-list-alt"></i>List Building</p>
-                            <p><i class="far fa-calendar-alt"></i>Jan 2026</p>
-                        </div>
-                        <p>Low engagement often starts at the signup form. Discover how strategic form design, clear incentives, and double opt-in can attract quality subscribers who actually want to hear from you.</p>
-                        <a class="btn" href="https://resumepro.pages.dev/blogs/email-list-failure" target="_blank">Read More <i class="fa fa-angle-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Blog End -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
-    <!-- Footer Start -->
-    <div class="footer wow fadeIn" data-wow-delay="0.3s">
-        <div class="container-fluid" style="background: linear-gradient(90deg, #2c3e50, #3498db);">
-            <div class="container">
-                <div class="footer-info">
-                    <h2>Adolf P. de Guzman</h2>
-                    <h3>Springville, Molino, Cavite, Philippines</h3>
-                    <div class="footer-menu">
-                        <p>+639656725801</p>
-                        <p>dolfean214@gmail.com</p>
-                    </div>
-                    <div class="footer-social">
-                        <a href="https://www.facebook.com/adolfdg" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="container copyright">
-                <p>&copy; <a href="#">Adolf P. de Guzman</a>, All Right Reserved | Designed By <a href="https://htmlcodex.com">HTML Codex</a>, Content Updated by Adolf</p>
-            </div>
-        </div>
-    </div>
-    <!-- Footer End -->
 
-    <!-- Back to top button -->
-    <a href="#" class="btn back-to-top"><i class="fa fa-chevron-up"></i></a>
+    // ── Navbar
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+      document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 300);
+    });
 
-    <!-- Pre Loader -->
-    <div id="loader" class="show">
-        <div class="loader"></div>
-    </div>
+    // ── Mobile nav
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navToggle.classList.remove('open');
+      navLinks.classList.remove('open');
+    }));
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/typed/typed.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    // ── Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
+
+    // ── Typed effect
+    const phrases = ['Email Marketing Specialist', 'Copywriter', 'Vibe Coder', 'Front-End Tinkerer', 'Marketing Strategist'];
+    let phraseIdx = 0, charIdx = 0, deleting = false;
+    const el = document.getElementById('typed-output');
+    function type() {
+      const current = phrases[phraseIdx];
+      el.textContent = deleting ? current.slice(0, charIdx--) : current.slice(0, charIdx++);
+      let delay = deleting ? 60 : 100;
+      if (!deleting && charIdx > current.length) { delay = 1800; deleting = true; }
+      else if (deleting && charIdx < 0) { deleting = false; phraseIdx = (phraseIdx + 1) % phrases.length; delay = 400; }
+      setTimeout(type, delay);
+    }
+    setTimeout(type, 1200);
+
+    // ── Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    reveals.forEach(r => revealObserver.observe(r));
+
+    // ── Skills animation
+    const skillObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('.skill-fill').forEach(bar => {
+            bar.style.width = bar.dataset.width + '%';
+          });
+          skillObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.skills-list').forEach(s => skillObserver.observe(s));
+
+    // ── Campaign loader
+    const monthFiles = {
+      'jan-2026': '/email-campaigns/jan-2026.html',
+      'feb-2026': '/email-campaigns/feb-2026.html'
+    };
+    const monthStats = {
+      'jan-2026': '16 campaigns · 79% avg. open rate · 364 patterns sold',
+      'feb-2026': '14 campaigns · 77% avg. open rate · 350 patterns sold'
+    };
+    async function loadMonthData(monthId) {
+      const container = document.getElementById('monthDataContainer');
+      const countEl   = document.getElementById('campaignCount');
+      container.innerHTML = `<div class="campaign-loading"><div class="campaign-loading-dots"><span></span><span></span><span></span></div>Loading…</div>`;
+      try {
+        const res  = await fetch(monthFiles[monthId]);
+        const html = await res.text();
+        const doc  = new DOMParser().parseFromString(html, 'text/html');
+        const data = doc.querySelector('.month-campaign-data');
+        container.innerHTML = data ? data.outerHTML : '<p style="color:rgba(245,242,236,.4);padding:2rem;">No data found.</p>';
+        countEl.textContent = monthStats[monthId] || '';
+      } catch {
+        container.innerHTML = `<div class="campaign-error">⚠️ Unable to load campaign data — please try again later.</div>`;
+      }
+    }
+    document.getElementById('monthSelector').addEventListener('change', e => loadMonthData(e.target.value));
+    document.addEventListener('DOMContentLoaded', () => loadMonthData('feb-2026'));
+
+    // ── Contact form AJAX
+    (function() {
+      const form = document.getElementById('contactForm');
+      if (!form) return;
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('sendMessageButton');
+        btn.disabled = true; btn.textContent = 'Sending…';
+        const data = new FormData(form);
+        fetch('https://formsubmit.co/ajax/reload.adolf2023@gmail.com', { method: 'POST', body: data })
+          .then(r => r.json())
+          .then(() => { window.location.href = '/thank-you.html'; })
+          .catch(() => {
+            document.getElementById('success').innerHTML = '<div class="alert-danger">Connection error. Please try again.</div>';
+            btn.disabled = false; btn.textContent = 'Send Message';
+          });
+      });
+    })();
+  </script>
 </body>
 </html>
