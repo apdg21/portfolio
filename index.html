@@ -664,6 +664,118 @@
     /* ─── TYPED CURSOR ─── */
     .typed-cursor { opacity: 1; animation: typedBlink 0.7s infinite; }
     @keyframes typedBlink { 50% { opacity: 0; } }
+
+    /* ─── CAMPAIGN PERFORMANCE DATA (injected month HTML) ─── */
+    .month-campaign-data { color: var(--paper); }
+
+    /* Highlight banner */
+    .email-highlight-banner {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1.5rem;
+    }
+    .highlight-item {
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .highlight-icon { font-size: 1.6rem; flex-shrink: 0; }
+    .highlight-content { display: flex; flex-direction: column; gap: 0.15rem; }
+    .highlight-label {
+      font-family: var(--mono);
+      font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(245,242,236,0.45);
+    }
+    .highlight-value {
+      font-family: var(--serif); font-size: 1.6rem; line-height: 1;
+      color: var(--paper);
+    }
+    .highlight-note {
+      font-size: 0.7rem; color: rgba(245,242,236,0.45);
+    }
+
+    /* Performance panel */
+    .performance-panel { border-radius: 16px; }
+    .performance-panel h3 {
+      font-family: var(--serif);
+      font-size: 1.4rem !important; font-weight: 600 !important;
+      color: var(--paper) !important; margin: 0 0 1.5rem 0 !important;
+    }
+
+    /* Results table */
+    .email-table-wrapper {
+      margin-top: 2rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .email-table-wrapper h3 {
+      font-family: var(--serif);
+      font-size: 1.2rem; color: var(--paper);
+      padding: 1.5rem 2rem 0; text-align: center; margin-bottom: 1rem;
+    }
+    .table-responsive { overflow-x: auto; padding: 0 0 1rem; }
+    .email-results-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.82rem;
+    }
+    .email-results-table thead tr {
+      background: rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .email-results-table th {
+      padding: 0.75rem 1rem; text-align: left;
+      font-family: var(--mono); font-size: 0.65rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(245,242,236,0.45); font-weight: 500;
+      white-space: nowrap;
+    }
+    .email-results-table td {
+      padding: 0.7rem 1rem;
+      color: rgba(245,242,236,0.8);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      vertical-align: middle;
+    }
+    .email-results-table tbody tr:last-child td { border-bottom: none; }
+    .email-results-table tbody tr:hover td {
+      background: rgba(255,255,255,0.03);
+      color: var(--paper);
+    }
+    .email-results-table .highlight-row td {
+      background: rgba(200,75,49,0.08);
+      color: var(--paper);
+    }
+    .email-results-table .highlight-row:hover td {
+      background: rgba(200,75,49,0.14);
+    }
+    .email-results-table tfoot tr {
+      background: rgba(255,255,255,0.06);
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .email-results-table tfoot td {
+      padding: 0.85rem 1rem;
+      font-family: var(--mono); font-size: 0.75rem;
+      color: var(--accent2) !important;
+      font-weight: 600;
+    }
+
+    /* Row / col overrides from inline styles in month HTML */
+    .month-campaign-data .row { display: block; }
+    .month-campaign-data .col-12 { display: block; }
+    .month-campaign-data .text-center { text-align: center; }
+    .month-campaign-data .mb-4 { margin-bottom: 1.5rem; }
+
+    @media (max-width: 768px) {
+      .highlight-grid { grid-template-columns: 1fr 1fr; }
+      .email-results-table th,
+      .email-results-table td { padding: 0.55rem 0.7rem; font-size: 0.75rem; }
+    }
   </style>
 </head>
 <body>
@@ -1065,7 +1177,7 @@
           </div>
           <div class="contact-item">
             <div class="contact-item-icon"><i class="fa fa-envelope"></i></div>
-            <span class="contact-item-text">reload.adolf2023@gmail.com</span>
+            <span class="contact-item-text"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3745525b585653195653585b510507050477505a565e5b1954585a">[email&#160;protected]</a></span>
           </div>
           <div class="contact-item">
             <div class="contact-item-icon"><i class="fa fa-map-marker-alt"></i></div>
@@ -1111,7 +1223,7 @@
   <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa fa-arrow-up"></i></a>
 
   <!-- Scripts -->
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // ── Loader
     window.addEventListener('load', () => {
       setTimeout(() => document.getElementById('loader').classList.add('hidden'), 300);
@@ -1218,11 +1330,4 @@
           .then(r => r.json())
           .then(() => { window.location.href = '/thank-you.html'; })
           .catch(() => {
-            document.getElementById('success').innerHTML = '<div class="alert-danger">Connection error. Please try again.</div>';
-            btn.disabled = false; btn.textContent = 'Send Message';
-          });
-      });
-    })();
-  </script>
-</body>
-</html>
+            document.ge
