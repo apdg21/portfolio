@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>Adolf de Guzman · Email Marketing & Shopify Resume</title>
-  <meta name="description" content="Resume of Adolf de Guzman — Email Marketing Specialist, Shopify Expert & Vibe Coder. Klaviyo, campaigns, automations.">
+  <meta name="description" content="Resume of Adolf de Guzman — Email Marketing Specialist, Shopify Expert & Vibe Coder.">
   
-  <!-- Google Fonts + Font Awesome (matching portfolio aesthetics) -->
+  <!-- Google Fonts + Font Awesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   
-  <!-- html2pdf bundle for PDF export -->
+  <!-- html2pdf library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   
   <style>
@@ -50,17 +50,15 @@
       margin: 0 auto;
       background: var(--card-bg);
       border-radius: 12px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.02);
-      overflow: hidden;
-      transition: all 0.2s;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+      overflow: visible; /* important for PDF capture */
     }
 
-    /* inner padding */
     .resume-inner {
       padding: 2.5rem;
     }
 
-    /* header section (resume header) */
+    /* header */
     .resume-header {
       display: flex;
       flex-wrap: wrap;
@@ -75,25 +73,19 @@
       font-family: var(--serif);
       font-size: 2.7rem;
       letter-spacing: -1px;
-      line-height: 1.1;
-      color: var(--ink);
     }
     .header-info h1 span {
       color: var(--accent);
       font-style: italic;
     }
     .header-tagline {
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--accent);
-      margin: 0.5rem 0 0.25rem;
-      letter-spacing: -0.2px;
       font-family: var(--mono);
-      text-transform: uppercase;
       font-size: 0.75rem;
+      color: var(--accent);
+      text-transform: uppercase;
     }
     .header-title {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 500;
       color: var(--muted);
       margin-top: 0.25rem;
@@ -104,7 +96,6 @@
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid var(--accent);
-      box-shadow: 0 8px 14px rgba(0,0,0,0.05);
     }
     @media (max-width: 550px) {
       .resume-inner { padding: 1.5rem; }
@@ -112,7 +103,7 @@
       .header-avatar { width: 75px; height: 75px; }
     }
 
-    /* 2 column layout */
+    /* two column layout */
     .resume-grid {
       display: grid;
       grid-template-columns: 1fr 2fr;
@@ -125,22 +116,20 @@
       }
     }
 
-    /* sidebar (left) styling */
+    /* sidebar */
     .sidebar-section {
       margin-bottom: 2rem;
     }
     .section-title-resume {
       font-family: var(--serif);
       font-size: 1.3rem;
-      letter-spacing: -0.3px;
-      margin-bottom: 1rem;
-      display: inline-block;
       border-bottom: 2px solid var(--accent);
+      display: inline-block;
       padding-bottom: 4px;
+      margin-bottom: 1rem;
     }
     .contact-list {
       list-style: none;
-      margin-top: 0.8rem;
     }
     .contact-list li {
       display: flex;
@@ -153,7 +142,6 @@
     .contact-list li i {
       width: 28px;
       color: var(--accent);
-      font-size: 1rem;
     }
     .skill-item {
       margin-bottom: 1rem;
@@ -163,24 +151,18 @@
       font-size: 0.85rem;
       display: flex;
       justify-content: space-between;
-      margin-bottom: 5px;
     }
     .skill-bar-bg {
       background: var(--border-light);
       height: 5px;
       border-radius: 4px;
-      overflow: hidden;
+      margin-top: 4px;
     }
     .skill-bar-fill {
       background: var(--accent);
       width: 0%;
       height: 100%;
       border-radius: 4px;
-    }
-    .skill-percent {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      color: var(--accent2);
     }
     .tools-list {
       display: flex;
@@ -194,7 +176,6 @@
       font-size: 0.7rem;
       font-weight: 500;
       border-radius: 30px;
-      color: var(--ink);
       font-family: var(--mono);
     }
     .highlight-stats {
@@ -209,16 +190,13 @@
       margin-bottom: 0.7rem;
       font-size: 0.8rem;
     }
-    .stat-label {
-      font-weight: 500;
-    }
     .stat-number {
       font-weight: 700;
       color: var(--accent);
       font-family: var(--mono);
     }
 
-    /* right column (experience, education) */
+    /* right column experience */
     .exp-item {
       margin-bottom: 1.8rem;
     }
@@ -227,18 +205,15 @@
       justify-content: space-between;
       flex-wrap: wrap;
       align-items: baseline;
-      margin-bottom: 0.3rem;
     }
     .exp-role {
       font-family: var(--serif);
       font-size: 1.1rem;
       font-weight: 600;
-      letter-spacing: -0.2px;
     }
     .exp-date {
       font-family: var(--mono);
       font-size: 0.7rem;
-      color: var(--muted);
       background: var(--cream);
       padding: 0.2rem 0.6rem;
       border-radius: 20px;
@@ -247,21 +222,16 @@
       font-weight: 600;
       font-size: 0.8rem;
       color: var(--accent);
-      margin-bottom: 0.5rem;
+      margin: 0.3rem 0 0.5rem;
       display: inline-block;
-    }
-    .exp-desc {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.6;
-      margin-top: 0.5rem;
-      padding-left: 0.2rem;
     }
     .exp-desc ul {
       padding-left: 1.2rem;
       margin-top: 0.3rem;
     }
     .exp-desc li {
+      font-size: 0.85rem;
+      color: var(--muted);
       margin-bottom: 0.4rem;
     }
     hr {
@@ -270,10 +240,13 @@
       margin: 1rem 0;
     }
 
-    /* pdf button and footer */
+    /* PDF button */
     .pdf-button-wrapper {
       text-align: right;
       margin-bottom: 1.5rem;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .btn-pdf {
       background: var(--ink);
@@ -282,12 +255,10 @@
       font-family: var(--sans);
       font-weight: 600;
       font-size: 0.8rem;
-      letter-spacing: 0.04em;
       color: var(--paper);
       border-radius: 40px;
       cursor: pointer;
-      transition: all 0.2s;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: 0.2s;
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -296,6 +267,7 @@
       background: var(--accent);
       transform: translateY(-2px);
     }
+
     .resume-footer {
       margin-top: 2.5rem;
       text-align: center;
@@ -306,79 +278,70 @@
       font-family: var(--mono);
     }
 
-    /* print/pdf adjustments */
+    /* print / PDF optimization */
     @media print {
       body {
         background: white;
         padding: 0;
         margin: 0;
       }
+      .pdf-button-wrapper {
+        display: none;
+      }
       .resume-container {
         box-shadow: none;
         border-radius: 0;
         max-width: 100%;
       }
-      .btn-pdf, .pdf-button-wrapper {
-        display: none;
-      }
       .resume-inner {
         padding: 0.2in;
       }
-      .skill-bar-fill {
-        background: var(--accent) !important;
+      .skill-bar-fill, .tool-badge, .exp-date {
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
-      .tool-badge, .exp-date {
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
+      /* ensure no overflow on printed pages */
+      .resume-grid {
+        break-inside: avoid;
+      }
+      .sidebar-section, .exp-item {
+        break-inside: avoid-page;
       }
     }
 
-    /* subtle animations */
-    .fade-up {
-      animation: fadeUp 0.6s ease forwards;
-    }
+    /* animation */
     @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-    section {
-      animation: fadeUp 0.5s ease;
+    .fade-up {
+      animation: fadeUp 0.5s ease forwards;
     }
   </style>
 </head>
 <body>
 
 <div class="pdf-button-wrapper">
-  <button class="btn-pdf" id="saveResumePDF"><i class="fa-regular fa-file-pdf"></i> Save as PDF (Resume)</button>
+  <button class="btn-pdf" id="saveResumePDF"><i class="fa-regular fa-file-pdf"></i> Save as PDF (Full Resume)</button>
 </div>
 
 <div class="resume-container" id="resumeContent">
   <div class="resume-inner">
-    <!-- Header with profile photo & basic info -->
+    <!-- Header -->
     <div class="resume-header">
       <div class="header-info">
         <div class="header-tagline">EMAIL MARKETING · SHOPIFY SPECIALIST</div>
         <h1>Adolf <span>de Guzman</span></h1>
         <div class="header-title">Email Marketing & Shopify Strategist | Klaviyo Partner</div>
-        <div class="header-title" style="font-size: 0.85rem; margin-top: 0.4rem;"><i class="fa fa-map-marker-alt" style="color: var(--accent);"></i> Cavite, Philippines · Remote / Worldwide</div>
+        <div class="header-title" style="font-size: 0.85rem; margin-top: 0.4rem;"><i class="fa fa-map-marker-alt" style="color: var(--accent);"></i> Cavite, Philippines · Remote</div>
       </div>
-      <img class="header-avatar" src="https://portfolio-6df.pages.dev/img/about.png" alt="Adolf de Guzman profile">
+      <img class="header-avatar" src="https://portfolio-6df.pages.dev/img/about.png" alt="Adolf de Guzman">
     </div>
 
-    <!-- Two column resume layout -->
+    <!-- Two column -->
     <div class="resume-grid">
-      <!-- LEFT COLUMN: contact, skills, tools, achievements -->
+      <!-- LEFT COLUMN -->
       <div class="left-sidebar">
-        
-        <!-- Contact -->
         <div class="sidebar-section">
           <h3 class="section-title-resume">Contact</h3>
           <ul class="contact-list">
@@ -389,221 +352,94 @@
           </ul>
         </div>
 
-        <!-- Core Skills with % (inspired by portfolio) -->
         <div class="sidebar-section">
           <h3 class="section-title-resume">Core Skills</h3>
-          <div class="skill-item">
-            <div class="skill-name">Email Marketing Strategy <span class="skill-percent">95%</span></div>
-            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:95%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-name">Shopify + Klaviyo <span class="skill-percent">90%</span></div>
-            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:90%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-name">Copywriting / CRO <span class="skill-percent">95%</span></div>
-            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:95%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-name">Email Automation (Flows) <span class="skill-percent">92%</span></div>
-            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:92%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-name">Campaign Analytics <span class="skill-percent">85%</span></div>
-            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:85%"></div></div>
-          </div>
+          <div class="skill-item"><div class="skill-name">Email Marketing <span>95%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:95%"></div></div></div>
+          <div class="skill-item"><div class="skill-name">Shopify + Klaviyo <span>90%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:90%"></div></div></div>
+          <div class="skill-item"><div class="skill-name">Copywriting / CRO <span>95%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:95%"></div></div></div>
+          <div class="skill-item"><div class="skill-name">Email Automation <span>92%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:92%"></div></div></div>
         </div>
 
-        <!-- Shopify & Email Tech Stack -->
         <div class="sidebar-section">
           <h3 class="section-title-resume">Tech Stack</h3>
           <div class="tools-list">
-            <span class="tool-badge">Klaviyo</span>
-            <span class="tool-badge">Mailchimp</span>
-            <span class="tool-badge">Shopify Email</span>
-            <span class="tool-badge">Omnisend</span>
-            <span class="tool-badge">ActiveCampaign</span>
-            <span class="tool-badge">HTML/CSS (Email)</span>
-            <span class="tool-badge">Google Analytics 4</span>
-            <span class="tool-badge">Zapier</span>
-            <span class="tool-badge">Recharge (Loyalty)</span>
+            <span class="tool-badge">Klaviyo</span><span class="tool-badge">Mailchimp</span><span class="tool-badge">Shopify Email</span>
+            <span class="tool-badge">Omnisend</span><span class="tool-badge">ActiveCampaign</span><span class="tool-badge">HTML/CSS</span>
+            <span class="tool-badge">GA4</span><span class="tool-badge">Zapier</span>
           </div>
         </div>
 
-        <!-- Key Metrics / Achievements (from portfolio stats) -->
         <div class="sidebar-section">
-          <h3 class="section-title-resume">Key Achievements</h3>
+          <h3 class="section-title-resume">Key Metrics</h3>
           <div class="highlight-stats">
-            <div class="stat-row"><span class="stat-label">Avg. Open Rate</span><span class="stat-number">78%+</span></div>
-            <div class="stat-row"><span class="stat-label">Click-through Rate (industry high)</span><span class="stat-number">12-18%</span></div>
-            <div class="stat-row"><span class="stat-label">Email Revenue Driven</span><span class="stat-number">$2.3M+</span></div>
-            <div class="stat-row"><span class="stat-label">Shopify Stores Optimized</span><span class="stat-number">15+</span></div>
-            <div class="stat-row"><span class="stat-label">Years in Email Marketing</span><span class="stat-number">6+ Years</span></div>
+            <div class="stat-row"><span>Avg. Open Rate</span><span class="stat-number">78%+</span></div>
+            <div class="stat-row"><span>CTR (industry high)</span><span class="stat-number">12-18%</span></div>
+            <div class="stat-row"><span>Revenue Driven</span><span class="stat-number">$2.3M+</span></div>
+            <div class="stat-row"><span>Shopify Stores</span><span class="stat-number">15+</span></div>
           </div>
-        </div>
-
-        <!-- languages / vibe coding note -->
-        <div class="sidebar-section">
-          <h3 class="section-title-resume">Vibe Coding & Tools</h3>
-          <div class="tools-list">
-            <span class="tool-badge">HTML/CSS/JS</span>
-            <span class="tool-badge">Tailwind</span>
-            <span class="tool-badge">Liquid (Shopify)</span>
-            <span class="tool-badge">Figma</span>
-          </div>
-          <p style="font-size: 0.75rem; margin-top: 0.8rem; color: var(--muted);">Building web apps, email templates, and automation tools — combining marketing with development.</p>
         </div>
       </div>
 
-      <!-- RIGHT COLUMN: experience & education (email marketing + shopify focus) -->
+      <!-- RIGHT COLUMN -->
       <div class="right-content">
-        <!-- Professional Experience -->
         <div class="sidebar-section">
           <h3 class="section-title-resume">Work Experience</h3>
-          
           <div class="exp-item">
-            <div class="exp-header">
-              <span class="exp-role">Email Marketing & Shopify Specialist</span>
-              <span class="exp-date">2025 – Present</span>
-            </div>
-            <div class="exp-company">Freelance · Remote (Clients across US, EU, PH)</div>
-            <div class="exp-desc">
-              <ul>
-                <li>Build and optimize Klaviyo flows for 7 Shopify brands — abandoned cart, browse abandonment, post-purchase, win-back campaigns → average 35% revenue lift within 60 days.</li>
-                <li>Execute email marketing strategies focused on segmentation & personalization, boosting customer LTV by 42% for a D2C fashion store.</li>
-                <li>Collaborate with Shopify store owners to design newsletter templates, popups, and SMS integrations using Klaviyo + Shopify Flow.</li>
-                <li>Implement A/B testing on subject lines, CTAs, and send times; improved open rates from 62% to 78% for a skincare brand.</li>
-              </ul>
-            </div>
+            <div class="exp-header"><span class="exp-role">Email Marketing & Shopify Specialist</span><span class="exp-date">2025 – Present</span></div>
+            <div class="exp-company">Freelance · Remote (US, EU, PH)</div>
+            <div class="exp-desc"><ul><li>Klaviyo flows for 7 Shopify brands → 35% revenue lift.</li><li>Segmentation & personalization boosted LTV by 42%.</li><li>A/B testing lifted open rates from 62% to 78%.</li></ul></div>
           </div>
-
           <div class="exp-item">
-            <div class="exp-header">
-              <span class="exp-role">Email Marketing Strategist</span>
-              <span class="exp-date">2024 – 2025</span>
-            </div>
-            <div class="exp-company">Digital Nurture Agency (Remote)</div>
-            <div class="exp-desc">
-              <ul>
-                <li>Led email campaigns for 12+ Shopify merchants, increasing average email-attributed revenue by 28% YoY.</li>
-                <li>Created customer journey maps: welcome sequences, re-engagement flows, VIP loyalty programs using Klaviyo & Omnisend.</li>
-                <li>Developed quarterly email calendar aligned with product drops and seasonal sales, generating over $890K in attributed sales.</li>
-              </ul>
-            </div>
+            <div class="exp-header"><span class="exp-role">Email Marketing Strategist</span><span class="exp-date">2024 – 2025</span></div>
+            <div class="exp-company">Digital Nurture Agency</div>
+            <div class="exp-desc"><ul><li>12+ Shopify merchants, 28% revenue increase YoY.</li><li>Welcome flows, re-engagement, VIP programs → $890K attributed sales.</li></ul></div>
           </div>
-
           <div class="exp-item">
-            <div class="exp-header">
-              <span class="exp-role">Email Marketing / Landing Page Designer</span>
-              <span class="exp-date">2022 – 2024</span>
-            </div>
-            <div class="exp-company">Freelance · Shopify Partners</div>
-            <div class="exp-desc">
-              <ul>
-                <li>Designed responsive email templates and high-converting landing pages for Shopify brands, focusing on mobile-first and brand consistency.</li>
-                <li>Optimized Klaviyo signup forms & popups: increased email list growth by 47% across 6 ecommerce stores.</li>
-                <li>Built custom HTML email modules for Klaviyo campaigns, reducing dev time and improving deliverability scores.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="exp-item">
-            <div class="exp-header">
-              <span class="exp-role">Copywriter & Email Marketer</span>
-              <span class="exp-date">2019 – 2021</span>
-            </div>
-            <div class="exp-company">Reload Media · Nevanna (Freelance)</div>
-            <div class="exp-desc">
-              <ul>
-                <li>Crafted persuasive email copy for launch sequences, daily deals, and product drops, driving up to 22% conversion rates.</li>
-                <li>Worked closely with design teams to ensure brand voice alignment and increase engagement metrics.</li>
-              </ul>
-            </div>
+            <div class="exp-header"><span class="exp-role">Email / Landing Page Designer</span><span class="exp-date">2022 – 2024</span></div>
+            <div class="exp-company">Freelance Shopify Partner</div>
+            <div class="exp-desc"><ul><li>Responsive email templates & popups → 47% list growth.</li><li>Custom HTML modules for Klaviyo.</li></ul></div>
           </div>
         </div>
 
-        <!-- Shopify-focused projects / case studies -->
         <div class="sidebar-section">
           <h3 class="section-title-resume">Shopify Email Wins</h3>
-          <div class="exp-item" style="margin-bottom: 1rem;">
-            <div class="exp-role" style="font-size: 1rem;">🔹 Abandoned Cart Flow Overhaul</div>
-            <div class="exp-desc">Redesigned a 3-email cart saver series for a home decor Shopify store → recovered 18% of lost carts, added $120K in 6 months.</div>
-          </div>
-          <div class="exp-item" style="margin-bottom: 1rem;">
-            <div class="exp-role" style="font-size: 1rem;">🔹 Klaviyo SMS + Email Integration</div>
-            <div class="exp-desc">Launched coordinated SMS/Email campaigns for flash sales; achieved 3.8x ROAS for a health supplement brand.</div>
-          </div>
-          <div class="exp-item" style="margin-bottom: 1rem;">
-            <div class="exp-role" style="font-size: 1rem;">🔹 Post-Purchase Upsell Sequences</div>
-            <div class="exp-desc">Built personalized post-purchase flows based on purchase history, increasing repeat purchase rate by 31% within 90 days.</div>
-          </div>
+          <div class="exp-item"><span class="exp-role">🔹 Abandoned Cart Flow</span><div class="exp-desc">Recovered 18% of lost carts → +$120K in 6 months.</div></div>
+          <div class="exp-item"><span class="exp-role">🔹 Klaviyo SMS + Email</span><div class="exp-desc">3.8x ROAS for health supplement brand.</div></div>
+          <div class="exp-item"><span class="exp-role">🔹 Post-Purchase Upsell</span><div class="exp-desc">Increased repeat purchase rate by 31%.</div></div>
         </div>
 
-        <!-- Education & Certifications -->
         <div class="sidebar-section">
-          <h3 class="section-title-resume">Education & Certifications</h3>
-          <div class="exp-item">
-            <div class="exp-header">
-              <span class="exp-role">Klaviyo Product Certified</span>
-              <span class="exp-date">2023</span>
-            </div>
-            <div class="exp-company">Klaviyo Academy</div>
-          </div>
-          <div class="exp-item">
-            <div class="exp-header">
-              <span class="exp-role">Shopify Partner Fundamentals</span>
-              <span class="exp-date">2024</span>
-            </div>
-            <div class="exp-company">Shopify Partners Program</div>
-          </div>
-          <div class="exp-item">
-            <div class="exp-header">
-              <span class="exp-role">Bachelor of Science in Information Technology</span>
-              <span class="exp-date">2015 – 2019</span>
-            </div>
-            <div class="exp-company">De La Salle University – Dasmariñas</div>
-          </div>
-        </div>
-
-        <hr>
-        <div style="font-size: 0.8rem; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: space-between; align-items: center;">
-          <span><i class="fa fa-trophy" style="color: var(--accent);"></i> 78% avg open rate · 500K+ users reached</span>
-          <span><i class="fa fa-code"></i> Vibe coder · email + Shopify dev</span>
+          <h3 class="section-title-resume">Certifications</h3>
+          <div class="exp-item">Klaviyo Product Certified (2023) · Shopify Partner Fundamentals (2024)</div>
         </div>
       </div>
     </div>
 
     <div class="resume-footer">
-      <i class="fa-regular fa-clock"></i> Available for freelance & full-time contracts · Let’s grow your email & Shopify revenue
+      <i class="fa-regular fa-clock"></i> Available for freelance & full-time · Let's grow your email & Shopify revenue
     </div>
   </div>
 </div>
 
 <script>
-  // PDF SAVE FUNCTIONALITY using html2pdf (optimized for resume layout)
-  const pdfBtn = document.getElementById('saveResumePDF');
-  const resumeElement = document.getElementById('resumeContent');
+  (function() {
+    const pdfBtn = document.getElementById('saveResumePDF');
+    const element = document.getElementById('resumeContent');
 
-  pdfBtn.addEventListener('click', () => {
-    // clone element to avoid any weird live DOM issues (optional)
-    const opt = {
-      margin:        [0.5, 0.5, 0.5, 0.5],
-      filename:     'Adolf_de_Guzman_Email_Shopify_Resume.pdf',
-      image:        { type: 'jpeg', quality: 0.98 },
-      html2canvas:  { scale: 2, useCORS: true, letterRendering: true },
-      jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
-    };
-    // store original overflow for print handling but not needed
-    html2pdf().set(opt).from(resumeElement).save();
-  });
-
-  // smooth entrance animations - reveal on load
-  document.querySelectorAll('.sidebar-section, .right-content > div').forEach((el, idx) => {
-    el.style.opacity = '0';
-    el.style.animation = 'fadeUp 0.4s ease forwards';
-    el.style.animationDelay = `${idx * 0.05}s`;
-  });
-  document.querySelector('.resume-header').style.animation = 'fadeUp 0.5s ease forwards';
+    pdfBtn.addEventListener('click', function() {
+      // Force a tiny delay to ensure any pending layout finishes
+      setTimeout(() => {
+        const opt = {
+          margin:        [0.5, 0.5, 0.5, 0.5],  // top, right, bottom, left (inches)
+          filename:     'Adolf_de_Guzman_Email_Shopify_Resume.pdf',
+          image:        { type: 'jpeg', quality: 0.98 },
+          html2canvas:  { scale: 2, useCORS: true, letterRendering: true, logging: false },
+          jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+        };
+        html2pdf().set(opt).from(element).save();
+      }, 100);
+    });
+  })();
 </script>
 </body>
 </html>
