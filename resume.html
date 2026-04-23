@@ -2,444 +2,742 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adolf de Guzman · Email Marketing & Shopify Resume</title>
   <meta name="description" content="Resume of Adolf de Guzman — Email Marketing Specialist, Shopify Expert & Vibe Coder.">
-  
-  <!-- Google Fonts + Font Awesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  
-  <!-- html2pdf library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --ink: #0d0d0d;
-      --paper: #f5f2ec;
-      --cream: #ede9df;
-      --accent: #c84b31;
-      --accent2: #e8a87c;
-      --muted: #7a7568;
-      --border-light: #e2dbc9;
-      --card-bg: #ffffff;
-      --mono: 'Space Mono', monospace;
-      --serif: 'DM Serif Display', serif;
-      --sans: 'DM Sans', sans-serif;
+      --ink: #111;
+      --paper: #f4f0e8;
+      --cream: #ede8db;
+      --cream2: #e5dfd0;
+      --rust: #bf4626;
+      --rust-light: #e8c4b4;
+      --rust-dark: #8c3218;
+      --sand: #c9bfa8;
+      --muted: #6b6659;
+      --white: #ffffff;
+      --serif: 'Fraunces', Georgia, serif;
+      --sans: 'Instrument Sans', sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+      --nav-h: 56px;
     }
+
+    html { scroll-behavior: smooth; }
 
     body {
       background: var(--paper);
       font-family: var(--sans);
       color: var(--ink);
-      line-height: 1.5;
-      padding: 2rem 1.5rem;
+      line-height: 1.55;
     }
 
-    /* resume container – clean card style */
-    .resume-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      background: var(--card-bg);
-      border-radius: 12px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
-      overflow: visible; /* important for PDF capture */
-    }
-
-    .resume-inner {
-      padding: 2.5rem;
-    }
-
-    /* header */
-    .resume-header {
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: var(--nav-h);
+      background: rgba(244, 240, 232, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--cream2);
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
       align-items: center;
+      padding: 0 2rem;
       gap: 1.5rem;
-      margin-bottom: 2.5rem;
-      padding-bottom: 1.8rem;
-      border-bottom: 2px solid var(--border-light);
+      justify-content: space-between;
     }
-    .header-info h1 {
+    .nav-brand {
       font-family: var(--serif);
-      font-size: 2.7rem;
-      letter-spacing: -1px;
-    }
-    .header-info h1 span {
-      color: var(--accent);
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--rust);
       font-style: italic;
+      white-space: nowrap;
     }
-    .header-tagline {
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      color: var(--accent);
-      text-transform: uppercase;
-    }
-    .header-title {
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: var(--muted);
-      margin-top: 0.25rem;
-    }
-    .header-avatar {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--accent);
-    }
-    @media (max-width: 550px) {
-      .resume-inner { padding: 1.5rem; }
-      .header-info h1 { font-size: 2rem; }
-      .header-avatar { width: 75px; height: 75px; }
-    }
-
-    /* two column layout */
-    .resume-grid {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 2.5rem;
-    }
-    @media (max-width: 768px) {
-      .resume-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-    }
-
-    /* sidebar */
-    .sidebar-section {
-      margin-bottom: 2rem;
-    }
-    .section-title-resume {
-      font-family: var(--serif);
-      font-size: 1.3rem;
-      border-bottom: 2px solid var(--accent);
-      display: inline-block;
-      padding-bottom: 4px;
-      margin-bottom: 1rem;
-    }
-    .contact-list {
+    .nav-links {
+      display: flex;
+      gap: 0.25rem;
       list-style: none;
+      flex-wrap: wrap;
     }
-    .contact-list li {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      margin-bottom: 0.85rem;
-      font-size: 0.85rem;
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      text-decoration: none;
       color: var(--muted);
-    }
-    .contact-list li i {
-      width: 28px;
-      color: var(--accent);
-    }
-    .skill-item {
-      margin-bottom: 1rem;
-    }
-    .skill-name {
-      font-weight: 600;
-      font-size: 0.85rem;
-      display: flex;
-      justify-content: space-between;
-    }
-    .skill-bar-bg {
-      background: var(--border-light);
-      height: 5px;
-      border-radius: 4px;
-      margin-top: 4px;
-    }
-    .skill-bar-fill {
-      background: var(--accent);
-      width: 0%;
-      height: 100%;
-      border-radius: 4px;
-    }
-    .tools-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.8rem;
-    }
-    .tool-badge {
-      background: var(--cream);
-      padding: 0.2rem 0.7rem;
-      font-size: 0.7rem;
-      font-weight: 500;
-      border-radius: 30px;
-      font-family: var(--mono);
-    }
-    .highlight-stats {
-      background: var(--cream);
-      padding: 1rem;
-      border-radius: 12px;
-      margin: 1rem 0;
-    }
-    .stat-row {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 0.7rem;
-      font-size: 0.8rem;
-    }
-    .stat-number {
-      font-weight: 700;
-      color: var(--accent);
-      font-family: var(--mono);
-    }
-
-    /* right column experience */
-    .exp-item {
-      margin-bottom: 1.8rem;
-    }
-    .exp-header {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      align-items: baseline;
-    }
-    .exp-role {
-      font-family: var(--serif);
-      font-size: 1.1rem;
-      font-weight: 600;
-    }
-    .exp-date {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      background: var(--cream);
-      padding: 0.2rem 0.6rem;
+      padding: 0.3rem 0.7rem;
       border-radius: 20px;
+      transition: background 0.2s, color 0.2s;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
     }
-    .exp-company {
-      font-weight: 600;
-      font-size: 0.8rem;
-      color: var(--accent);
-      margin: 0.3rem 0 0.5rem;
-      display: inline-block;
+    .nav-links a:hover, .nav-links a.active {
+      background: var(--rust);
+      color: var(--white);
     }
-    .exp-desc ul {
-      padding-left: 1.2rem;
-      margin-top: 0.3rem;
+    .nav-actions {
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+      flex-shrink: 0;
     }
-    .exp-desc li {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-bottom: 0.4rem;
-    }
-    hr {
-      border: none;
-      border-top: 1px solid var(--border-light);
-      margin: 1rem 0;
-    }
-
-    /* PDF button */
-    .pdf-button-wrapper {
-      text-align: right;
-      margin-bottom: 1.5rem;
-      max-width: 1100px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .btn-pdf {
-      background: var(--ink);
-      border: none;
-      padding: 0.7rem 1.5rem;
+    .btn-portfolio {
       font-family: var(--sans);
+      font-size: 0.72rem;
       font-weight: 600;
-      font-size: 0.8rem;
-      color: var(--paper);
-      border-radius: 40px;
+      text-decoration: none;
+      color: var(--muted);
+      border: 1.5px solid var(--sand);
+      padding: 0.35rem 0.85rem;
+      border-radius: 30px;
+      transition: 0.2s;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .btn-portfolio:hover { border-color: var(--rust); color: var(--rust); }
+    .btn-pdf-nav {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      background: var(--rust);
+      color: var(--white);
+      border: none;
+      padding: 0.38rem 0.9rem;
+      border-radius: 30px;
       cursor: pointer;
       transition: 0.2s;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 5px;
+      white-space: nowrap;
     }
-    .btn-pdf:hover {
-      background: var(--accent);
-      transform: translateY(-2px);
+    .btn-pdf-nav:hover { background: var(--rust-dark); transform: translateY(-1px); }
+
+    /* ── PAGE WRAP ── */
+    .page-wrap {
+      padding-top: calc(var(--nav-h) + 2.5rem);
+      padding-bottom: 4rem;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
     }
 
-    .resume-footer {
-      margin-top: 2.5rem;
-      text-align: center;
-      font-size: 0.7rem;
-      color: var(--muted);
-      border-top: 1px solid var(--border-light);
-      padding-top: 1.5rem;
+    /* ── RESUME CARD ── */
+    .resume-card {
+      max-width: 1080px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 18px;
+      box-shadow: 0 4px 40px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04);
+      overflow: hidden;
+    }
+
+    /* ── HERO HEADER ── */
+    .resume-hero {
+      background: var(--ink);
+      padding: 3rem 3rem 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .resume-hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(191,70,38,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-tag {
       font-family: var(--mono);
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--rust);
+      margin-bottom: 0.75rem;
+    }
+    .hero-name {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      color: var(--white);
+      line-height: 1.05;
+      font-weight: 400;
+    }
+    .hero-name em {
+      color: var(--rust);
+      font-style: italic;
+    }
+    .hero-subtitle {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.55);
+      margin-top: 0.6rem;
+      font-weight: 400;
+    }
+    .hero-location {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .hero-location i { color: var(--rust); }
+    .hero-avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--rust);
+      box-shadow: 0 0 0 6px rgba(191,70,38,0.12);
     }
 
-    /* print / PDF optimization */
-    @media print {
-      body {
-        background: white;
-        padding: 0;
-        margin: 0;
-      }
-      .pdf-button-wrapper {
-        display: none;
-      }
-      .resume-container {
-        box-shadow: none;
-        border-radius: 0;
-        max-width: 100%;
-      }
-      .resume-inner {
-        padding: 0.2in;
-      }
-      .skill-bar-fill, .tool-badge, .exp-date {
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
-      /* ensure no overflow on printed pages */
-      .resume-grid {
-        break-inside: avoid;
-      }
-      .sidebar-section, .exp-item {
-        break-inside: avoid-page;
-      }
+    /* ── BODY GRID ── */
+    .resume-body {
+      display: grid;
+      grid-template-columns: 280px 1fr;
     }
 
-    /* animation */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* ── SIDEBAR ── */
+    .sidebar {
+      background: var(--cream);
+      border-right: 1px solid var(--cream2);
+      padding: 2.5rem 2rem;
     }
+    .sidebar-section { margin-bottom: 2.2rem; }
+    .s-title {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      border-bottom: 2px solid var(--rust);
+      padding-bottom: 5px;
+      margin-bottom: 1.1rem;
+      display: inline-block;
+    }
+
+    /* contact */
+    .contact-list { list-style: none; }
+    .contact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+    .contact-list li i {
+      color: var(--rust);
+      width: 16px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* skills */
+    .skill-row { margin-bottom: 0.9rem; }
+    .skill-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      font-weight: 500;
+      margin-bottom: 5px;
+      color: var(--ink);
+    }
+    .skill-pct {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--muted);
+    }
+    .skill-track {
+      height: 4px;
+      background: var(--cream2);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .skill-fill {
+      height: 100%;
+      background: var(--rust);
+      border-radius: 4px;
+      width: 0%;
+      transition: width 1.2s cubic-bezier(.22,.68,0,1.2);
+    }
+
+    /* tools */
+    .tools-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.2rem;
+    }
+    .tool-chip {
+      font-family: var(--mono);
+      font-size: 0.63rem;
+      background: var(--white);
+      border: 1px solid var(--cream2);
+      color: var(--muted);
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+    }
+
+    /* stats */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+      margin-top: 0.3rem;
+    }
+    .stat-card {
+      background: var(--white);
+      border: 1px solid var(--cream2);
+      border-radius: 10px;
+      padding: 0.65rem 0.75rem;
+      text-align: center;
+    }
+    .stat-num {
+      font-family: var(--mono);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--rust);
+      display: block;
+    }
+    .stat-lbl {
+      font-size: 0.62rem;
+      color: var(--muted);
+      display: block;
+      margin-top: 2px;
+      line-height: 1.3;
+    }
+
+    /* ── MAIN CONTENT ── */
+    .main-content {
+      padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+    }
+    .section { margin-bottom: 2.5rem; }
+    .section:last-child { margin-bottom: 0; }
+
+    .m-title {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      border-bottom: 2px solid var(--rust);
+      padding-bottom: 5px;
+      margin-bottom: 1.4rem;
+      display: inline-block;
+    }
+
+    /* experience */
+    .exp-item {
+      margin-bottom: 1.6rem;
+      padding-bottom: 1.6rem;
+      border-bottom: 1px solid #f0ece3;
+    }
+    .exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .exp-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.25rem;
+    }
+    .exp-role {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.2;
+    }
+    .exp-date {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      background: var(--cream);
+      color: var(--muted);
+      padding: 0.22rem 0.65rem;
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .exp-co {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--rust);
+      margin-bottom: 0.55rem;
+    }
+    .exp-list {
+      padding-left: 1.1rem;
+    }
+    .exp-list li {
+      font-size: 0.83rem;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+      line-height: 1.5;
+    }
+    .exp-list li::marker { color: var(--rust); }
+
+    /* wins */
+    .wins-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.9rem;
+    }
+    .win-card {
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      border: 1px solid var(--cream2);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .win-card:hover { transform: translateY(-3px); box-shadow: 0 6px 24px rgba(0,0,0,0.07); }
+    .win-icon {
+      width: 32px; height: 32px;
+      background: var(--rust);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 0.65rem;
+      font-size: 14px;
+      color: var(--white);
+    }
+    .win-title {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.3rem;
+      line-height: 1.25;
+    }
+    .win-desc {
+      font-size: 0.76rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    /* certs */
+    .cert-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--cream);
+      border: 1px solid var(--cream2);
+      border-radius: 8px;
+      padding: 0.5rem 0.9rem;
+      font-size: 0.78rem;
+      color: var(--ink);
+      margin: 0 0.5rem 0.5rem 0;
+    }
+    .cert-chip i { color: var(--rust); font-size: 0.85rem; }
+
+    /* ── FOOTER ── */
+    .resume-footer {
+      background: var(--cream);
+      border-top: 1px solid var(--cream2);
+      padding: 1.2rem 3rem;
+      text-align: center;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── ANIMATIONS ── */
     .fade-up {
-      animation: fadeUp 0.5s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 820px) {
+      .resume-body { grid-template-columns: 1fr; }
+      .sidebar { border-right: none; border-bottom: 1px solid var(--cream2); padding: 2rem 1.5rem; }
+      .main-content { padding: 2rem 1.5rem; }
+      .wins-grid { grid-template-columns: 1fr 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .resume-hero { padding: 2rem 1.5rem; }
+    }
+    @media (max-width: 560px) {
+      .wins-grid { grid-template-columns: 1fr; }
+      .hero-avatar { width: 80px; height: 80px; }
+      nav { padding: 0 1rem; gap: 0.75rem; }
+      .nav-links { display: none; }
+    }
+
+    /* ── PRINT / PDF ── */
+    @media print {
+      nav, .pdf-button-wrapper { display: none !important; }
+      body { background: white; }
+      .page-wrap { padding: 0; }
+      .resume-card { box-shadow: none; border-radius: 0; max-width: 100%; }
+      .resume-hero { padding: 1.5rem 2rem; }
+      .sidebar, .main-content { padding: 1.5rem 1.5rem; }
+      .resume-body { grid-template-columns: 260px 1fr; }
+      .win-card:hover { transform: none; box-shadow: none; }
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+      .exp-item, .sidebar-section, .win-card { break-inside: avoid; }
+      .section { break-inside: avoid; }
+      .fade-up { opacity: 1 !important; transform: none !important; }
     }
   </style>
 </head>
 <body>
 
-<div class="pdf-button-wrapper">
-  <button class="btn-pdf" id="saveResumePDF"><i class="fa-regular fa-file-pdf"></i> Save as PDF (Full Resume)</button>
-</div>
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">Adolf de Guzman</div>
+  <ul class="nav-links">
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#wins">Wins</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#certifications">Certs</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a class="btn-portfolio" href="https://portfolio-6df.pages.dev/" target="_blank">
+      <i class="fa-solid fa-arrow-left" style="font-size:0.65rem"></i> Portfolio
+    </a>
+    <button class="btn-pdf-nav" id="savePDF">
+      <i class="fa-regular fa-file-pdf" style="font-size:0.7rem"></i> Save PDF
+    </button>
+  </div>
+</nav>
 
-<div class="resume-container" id="resumeContent">
-  <div class="resume-inner">
-    <!-- Header -->
-    <div class="resume-header">
-      <div class="header-info">
-        <div class="header-tagline">EMAIL MARKETING · SHOPIFY SPECIALIST</div>
-        <h1>Adolf <span>de Guzman</span></h1>
-        <div class="header-title">Email Marketing & Shopify Strategist | Klaviyo Partner</div>
-        <div class="header-title" style="font-size: 0.85rem; margin-top: 0.4rem;"><i class="fa fa-map-marker-alt" style="color: var(--accent);"></i> Cavite, Philippines · Remote</div>
-      </div>
-      <img class="header-avatar" src="https://portfolio-6df.pages.dev/img/about.png" alt="Adolf de Guzman">
+<div class="page-wrap">
+<div class="resume-card" id="resumeContent">
+
+  <!-- HERO -->
+  <header class="resume-hero">
+    <div>
+      <div class="hero-tag">Email Marketing · Shopify Specialist · Klaviyo Partner</div>
+      <h1 class="hero-name">Adolf <em>de Guzman</em></h1>
+      <p class="hero-subtitle">Email Marketing &amp; Shopify Strategist</p>
+      <p class="hero-location"><i class="fa fa-map-marker-alt"></i> Cavite, Philippines · Available Remote</p>
     </div>
+    <img class="hero-avatar" src="https://portfolio-6df.pages.dev/img/about.png" alt="Adolf de Guzman" crossorigin="anonymous">
+  </header>
 
-    <!-- Two column -->
-    <div class="resume-grid">
-      <!-- LEFT COLUMN -->
-      <div class="left-sidebar">
-        <div class="sidebar-section">
-          <h3 class="section-title-resume">Contact</h3>
-          <ul class="contact-list">
-            <li><i class="fas fa-envelope"></i> adolf@emailmarketing.pro</li>
-            <li><i class="fas fa-phone-alt"></i> +63 912 345 6789</li>
-            <li><i class="fab fa-linkedin"></i> linkedin.com/in/adolfguzman</li>
-            <li><i class="fab fa-github"></i> github.com/adolfguz</li>
+  <!-- BODY -->
+  <div class="resume-body">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="sidebar-section fade-up" id="skills">
+        <h3 class="s-title">Contact</h3>
+        <ul class="contact-list">
+          <li><i class="fas fa-envelope"></i> adolf@emailmarketing.pro</li>
+          <li><i class="fas fa-phone-alt"></i> +63 912 345 6789</li>
+          <li><i class="fab fa-linkedin"></i> linkedin.com/in/adolfguzman</li>
+          <li><i class="fab fa-github"></i> github.com/adolfguz</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section fade-up">
+        <h3 class="s-title">Core Skills</h3>
+        <div class="skill-row">
+          <div class="skill-label">Email Marketing <span class="skill-pct">95%</span></div>
+          <div class="skill-track"><div class="skill-fill" data-width="95"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label">Shopify + Klaviyo <span class="skill-pct">90%</span></div>
+          <div class="skill-track"><div class="skill-fill" data-width="90"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label">Copywriting / CRO <span class="skill-pct">95%</span></div>
+          <div class="skill-track"><div class="skill-fill" data-width="95"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label">Email Automation <span class="skill-pct">92%</span></div>
+          <div class="skill-track"><div class="skill-fill" data-width="92"></div></div>
+        </div>
+      </div>
+
+      <div class="sidebar-section fade-up">
+        <h3 class="s-title">Tech Stack</h3>
+        <div class="tools-wrap">
+          <span class="tool-chip">Klaviyo</span>
+          <span class="tool-chip">Mailchimp</span>
+          <span class="tool-chip">Shopify Email</span>
+          <span class="tool-chip">Omnisend</span>
+          <span class="tool-chip">ActiveCampaign</span>
+          <span class="tool-chip">HTML/CSS</span>
+          <span class="tool-chip">GA4</span>
+          <span class="tool-chip">Zapier</span>
+        </div>
+      </div>
+
+      <div class="sidebar-section fade-up">
+        <h3 class="s-title">Key Metrics</h3>
+        <div class="stats-grid">
+          <div class="stat-card"><span class="stat-num">78%+</span><span class="stat-lbl">Avg. Open Rate</span></div>
+          <div class="stat-card"><span class="stat-num">12–18%</span><span class="stat-lbl">Click-Through Rate</span></div>
+          <div class="stat-card"><span class="stat-num">$2.3M+</span><span class="stat-lbl">Revenue Driven</span></div>
+          <div class="stat-card"><span class="stat-num">2</span><span class="stat-lbl">Shopify Brands</span></div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+      <div class="section fade-up" id="experience">
+        <h3 class="m-title">Work Experience</h3>
+
+        <div class="exp-item">
+          <div class="exp-head">
+            <span class="exp-role">Email Marketing &amp; Shopify Specialist</span>
+            <span class="exp-date">2025 – Present</span>
+          </div>
+          <div class="exp-co">Freelance · Remote (US, EU, PH)</div>
+          <ul class="exp-list">
+            <li>Built and optimized Klaviyo flows for 2 Shopify brands, resulting in a 35% revenue lift across both stores.</li>
+            <li>Implemented advanced segmentation and personalization strategies that boosted customer LTV by 42%.</li>
+            <li>Ran systematic A/B testing on subject lines, content, and timing — lifting open rates from 62% to 78%.</li>
           </ul>
         </div>
 
-        <div class="sidebar-section">
-          <h3 class="section-title-resume">Core Skills</h3>
-          <div class="skill-item"><div class="skill-name">Email Marketing <span>95%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:95%"></div></div></div>
-          <div class="skill-item"><div class="skill-name">Shopify + Klaviyo <span>90%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:90%"></div></div></div>
-          <div class="skill-item"><div class="skill-name">Copywriting / CRO <span>95%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:95%"></div></div></div>
-          <div class="skill-item"><div class="skill-name">Email Automation <span>92%</span></div><div class="skill-bar-bg"><div class="skill-bar-fill" style="width:92%"></div></div></div>
-        </div>
-
-        <div class="sidebar-section">
-          <h3 class="section-title-resume">Tech Stack</h3>
-          <div class="tools-list">
-            <span class="tool-badge">Klaviyo</span><span class="tool-badge">Mailchimp</span><span class="tool-badge">Shopify Email</span>
-            <span class="tool-badge">Omnisend</span><span class="tool-badge">ActiveCampaign</span><span class="tool-badge">HTML/CSS</span>
-            <span class="tool-badge">GA4</span><span class="tool-badge">Zapier</span>
+        <div class="exp-item">
+          <div class="exp-head">
+            <span class="exp-role">Email Marketing Strategist</span>
+            <span class="exp-date">2024 – 2025</span>
           </div>
+          <div class="exp-co">Digital Nurture Agency</div>
+          <ul class="exp-list">
+            <li>Managed email programs for 12+ Shopify merchants, driving a 28% revenue increase year-over-year.</li>
+            <li>Designed welcome flows, re-engagement campaigns, and VIP programs contributing to $890K in attributed sales.</li>
+          </ul>
         </div>
 
-        <div class="sidebar-section">
-          <h3 class="section-title-resume">Key Metrics</h3>
-          <div class="highlight-stats">
-            <div class="stat-row"><span>Avg. Open Rate</span><span class="stat-number">78%+</span></div>
-            <div class="stat-row"><span>CTR (industry high)</span><span class="stat-number">12-18%</span></div>
-            <div class="stat-row"><span>Revenue Driven</span><span class="stat-number">$2.3M+</span></div>
-            <div class="stat-row"><span>Shopify Stores</span><span class="stat-number">15+</span></div>
+        <div class="exp-item">
+          <div class="exp-head">
+            <span class="exp-role">Email / Landing Page Designer</span>
+            <span class="exp-date">2022 – 2024</span>
+          </div>
+          <div class="exp-co">Freelance Shopify Partner</div>
+          <ul class="exp-list">
+            <li>Designed responsive email templates and popups that grew client lists by 47%.</li>
+            <li>Developed custom HTML email modules and drag-and-drop blocks for Klaviyo.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section fade-up" id="wins">
+        <h3 class="m-title">Shopify Email Wins</h3>
+        <div class="wins-grid">
+          <div class="win-card">
+            <div class="win-icon"><i class="fa fa-cart-shopping"></i></div>
+            <div class="win-title">Abandoned Cart Flow</div>
+            <div class="win-desc">Recovered 18% of lost carts → +$120K revenue in 6 months.</div>
+          </div>
+          <div class="win-card">
+            <div class="win-icon"><i class="fa fa-comment-sms"></i></div>
+            <div class="win-title">Klaviyo SMS + Email</div>
+            <div class="win-desc">3.8× ROAS for a health supplement brand via integrated campaigns.</div>
+          </div>
+          <div class="win-card">
+            <div class="win-icon"><i class="fa fa-arrow-up-right-dots"></i></div>
+            <div class="win-title">Post-Purchase Upsell</div>
+            <div class="win-desc">Increased repeat purchase rate by 31% through timed upsell sequences.</div>
           </div>
         </div>
       </div>
 
-      <!-- RIGHT COLUMN -->
-      <div class="right-content">
-        <div class="sidebar-section">
-          <h3 class="section-title-resume">Work Experience</h3>
-          <div class="exp-item">
-            <div class="exp-header"><span class="exp-role">Email Marketing & Shopify Specialist</span><span class="exp-date">2025 – Present</span></div>
-            <div class="exp-company">Freelance · Remote (US, EU, PH)</div>
-            <div class="exp-desc"><ul><li>Klaviyo flows for 7 Shopify brands → 35% revenue lift.</li><li>Segmentation & personalization boosted LTV by 42%.</li><li>A/B testing lifted open rates from 62% to 78%.</li></ul></div>
-          </div>
-          <div class="exp-item">
-            <div class="exp-header"><span class="exp-role">Email Marketing Strategist</span><span class="exp-date">2024 – 2025</span></div>
-            <div class="exp-company">Digital Nurture Agency</div>
-            <div class="exp-desc"><ul><li>12+ Shopify merchants, 28% revenue increase YoY.</li><li>Welcome flows, re-engagement, VIP programs → $890K attributed sales.</li></ul></div>
-          </div>
-          <div class="exp-item">
-            <div class="exp-header"><span class="exp-role">Email / Landing Page Designer</span><span class="exp-date">2022 – 2024</span></div>
-            <div class="exp-company">Freelance Shopify Partner</div>
-            <div class="exp-desc"><ul><li>Responsive email templates & popups → 47% list growth.</li><li>Custom HTML modules for Klaviyo.</li></ul></div>
-          </div>
-        </div>
-
-        <div class="sidebar-section">
-          <h3 class="section-title-resume">Shopify Email Wins</h3>
-          <div class="exp-item"><span class="exp-role">🔹 Abandoned Cart Flow</span><div class="exp-desc">Recovered 18% of lost carts → +$120K in 6 months.</div></div>
-          <div class="exp-item"><span class="exp-role">🔹 Klaviyo SMS + Email</span><div class="exp-desc">3.8x ROAS for health supplement brand.</div></div>
-          <div class="exp-item"><span class="exp-role">🔹 Post-Purchase Upsell</span><div class="exp-desc">Increased repeat purchase rate by 31%.</div></div>
-        </div>
-
-        <div class="sidebar-section">
-          <h3 class="section-title-resume">Certifications</h3>
-          <div class="exp-item">Klaviyo Product Certified (2023) · Shopify Partner Fundamentals (2024)</div>
-        </div>
+      <div class="section fade-up" id="certifications">
+        <h3 class="m-title">Certifications</h3>
+        <span class="cert-chip"><i class="fa fa-certificate"></i> Klaviyo Product Certified (2023)</span>
+        <span class="cert-chip"><i class="fa fa-store"></i> Shopify Partner Fundamentals (2024)</span>
       </div>
-    </div>
 
-    <div class="resume-footer">
-      <i class="fa-regular fa-clock"></i> Available for freelance & full-time · Let's grow your email & Shopify revenue
-    </div>
-  </div>
-</div>
+    </main>
+
+  </div><!-- /resume-body -->
+
+  <footer class="resume-footer">
+    <i class="fa-regular fa-clock"></i>&nbsp; Available for freelance &amp; full-time · Let's grow your email &amp; Shopify revenue
+  </footer>
+
+</div><!-- /resume-card -->
+</div><!-- /page-wrap -->
 
 <script>
-  (function() {
-    const pdfBtn = document.getElementById('saveResumePDF');
-    const element = document.getElementById('resumeContent');
-
-    pdfBtn.addEventListener('click', function() {
-      // Force a tiny delay to ensure any pending layout finishes
-      setTimeout(() => {
-        const opt = {
-          margin:        [0.5, 0.5, 0.5, 0.5],  // top, right, bottom, left (inches)
-          filename:     'Adolf_de_Guzman_Email_Shopify_Resume.pdf',
-          image:        { type: 'jpeg', quality: 0.98 },
-          html2canvas:  { scale: 2, useCORS: true, letterRendering: true, logging: false },
-          jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
-        };
-        html2pdf().set(opt).from(element).save();
-      }, 100);
+  /* ── Skill bars animate on load ── */
+  function animateBars() {
+    document.querySelectorAll('.skill-fill').forEach(el => {
+      const w = el.getAttribute('data-width');
+      setTimeout(() => { el.style.width = w + '%'; }, 300);
     });
-  })();
+  }
+
+  /* ── Scroll fade-up ── */
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  /* ── Active nav links on scroll ── */
+  const sections = ['experience','wins','skills','certifications'];
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const scrollSpy = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-40% 0px -55%' });
+  sections.forEach(id => { const el = document.getElementById(id); if(el) scrollSpy.observe(el); });
+
+  /* ── Animate skill bars when sidebar visible ── */
+  const sidebarObs = new IntersectionObserver(e => {
+    if (e[0].isIntersecting) { animateBars(); sidebarObs.disconnect(); }
+  }, { threshold: 0.1 });
+  const sidebar = document.querySelector('.sidebar');
+  if (sidebar) sidebarObs.observe(sidebar);
+
+  /* ── PDF export ── */
+  document.getElementById('savePDF').addEventListener('click', function() {
+    const el = document.getElementById('resumeContent');
+    const opt = {
+      margin: 0,
+      filename: 'Adolf_de_Guzman_Resume.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: {
+        scale: 2,
+        useCORS: true,
+        letterRendering: true,
+        logging: false,
+        scrollY: 0,
+        windowWidth: 1100
+      },
+      jsPDF: { unit: 'px', format: [1100, 1556], orientation: 'portrait', hotfixes: ['px_scaling'] },
+      pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+    };
+    html2pdf().set(opt).from(el).save();
+  });
 </script>
 </body>
 </html>
