@@ -9,7 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -718,25 +719,76 @@
   const sidebar = document.querySelector('.sidebar');
   if (sidebar) sidebarObs.observe(sidebar);
 
-  /* ── PDF export ── */
-  document.getElementById('savePDF').addEventListener('click', function() {
+  /* ── PDF export — full-height single page, no cuts ── */
+  document.getElementById('savePDF').addEventListener('click', async function() {
+    const btn = this;
+    btn.disabled = true;
+    btn.textContent = 'Generating…';
+
     const el = document.getElementById('resumeContent');
-    const opt = {
-      margin: 0,
-      filename: 'Adolf_de_Guzman_Resume.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: {
+
+    /* 1. Hide nav so it doesn't appear in snapshot */
+    const nav = document.querySelector('nav');
+    const origNavDisplay = nav.style.display;
+    nav.style.display = 'none';
+
+    /* 2. Force all fade-up elements visible for capture */
+    document.querySelectorAll('.fade-up').forEach(e => {
+      e.style.opacity = '1';
+      e.style.transform = 'none';
+      e.style.transition = 'none';
+    });
+
+    /* 3. Force all skill bars to their target width for capture */
+    document.querySelectorAll('.skill-fill').forEach(e => {
+      e.style.width = e.getAttribute('data-width') + '%';
+      e.style.transition = 'none';
+    });
+
+    try {
+      /* 4. Render the element to canvas at high resolution */
+      const canvas = await html2canvas(el, {
         scale: 2,
         useCORS: true,
-        letterRendering: true,
+        allowTaint: false,
         logging: false,
-        scrollY: 0,
-        windowWidth: 1100
-      },
-      jsPDF: { unit: 'px', format: [1100, 1556], orientation: 'portrait', hotfixes: ['px_scaling'] },
-      pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-    };
-    html2pdf().set(opt).from(el).save();
+        scrollX: 0,
+        scrollY: -window.scrollY,
+        windowWidth: el.scrollWidth,
+        width: el.scrollWidth,
+        height: el.scrollHeight,
+        backgroundColor: '#ffffff'
+      });
+
+      /* 5. Build a PDF whose page size EXACTLY matches the canvas — no breaks */
+      const imgW = canvas.width;
+      const imgH = canvas.height;
+
+      /* Convert px → mm (96dpi → 25.4mm/in) */
+      const pxToMm = px => px * 25.4 / (96 * 2); /* ÷2 because scale=2 */
+      const pageW = pxToMm(imgW);
+      const pageH = pxToMm(imgH);
+
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF({
+        orientation: pageW > pageH ? 'landscape' : 'portrait',
+        unit: 'mm',
+        format: [pageW, pageH]
+      });
+
+      const imgData = canvas.toDataURL('image/jpeg', 0.97);
+      doc.addImage(imgData, 'JPEG', 0, 0, pageW, pageH);
+      doc.save('Adolf_de_Guzman_Resume.pdf');
+
+    } catch(err) {
+      console.error('PDF error:', err);
+      alert('PDF generation failed. Please try again.');
+    }
+
+    /* 6. Restore */
+    nav.style.display = origNavDisplay;
+    btn.disabled = false;
+    btn.innerHTML = '<i class="fa-regular fa-file-pdf" style="font-size:0.7rem"></i> Save PDF';
   });
 </script>
 </body>
