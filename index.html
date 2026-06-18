@@ -1095,8 +1095,7 @@
 
       <div class="campaign-controls reveal">
         <select id="monthSelector" class="month-select">
-          <option value="jan-2026">January 2026</option>
-          <option value="feb-2026" selected>February 2026</option>
+         <option value="sep-2025" selected>September 2025</option>
         </select>
         <span class="campaign-count" id="campaignCount">Loading…</span>
       </div>
@@ -1313,13 +1312,11 @@ function hideLoader() {
 
     // ── Campaign loader
     const monthFiles = {
-      'jan-2026': '/email-campaigns/jan-2026.html',
-      'feb-2026': '/email-campaigns/feb-2026.html'
-    };
-    const monthStats = {
-      'jan-2026': '16 campaigns · 79% avg. open rate · 364 patterns sold',
-      'feb-2026': '14 campaigns · 77% avg. open rate · 350 patterns sold'
-    };
+  'sep-2025': '/email-campaigns/sep-2025.html'
+};
+const monthStats = {
+  'sep-2025': '16 campaigns · 80.5% avg. open rate · 446 patterns sold'
+};
     async function loadMonthData(monthId) {
       const container = document.getElementById('monthDataContainer');
       const countEl   = document.getElementById('campaignCount');
@@ -1336,7 +1333,7 @@ function hideLoader() {
       }
     }
     document.getElementById('monthSelector').addEventListener('change', e => loadMonthData(e.target.value));
-    document.addEventListener('DOMContentLoaded', () => loadMonthData('feb-2026'));
+    document.addEventListener('DOMContentLoaded', () => loadMonthData('sep-2025'));
 
       // ── Contact form AJAX
     (function() {

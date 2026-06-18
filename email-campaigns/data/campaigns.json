@@ -1,36 +1,27 @@
 {
   "meta": {
-    "lastUpdated": "2026-03-01",
-    "totalCampaigns": 30,
+    "lastUpdated": "2025-10-01",
+    "totalCampaigns": 16,
     "dateRange": {
-      "start": "2026-01-01",
-      "end": "2026-02-28"
+      "start": "2025-09-01",
+      "end": "2025-09-30"
     },
     "summary": {
-      "avgOpenRate": "78%",
-      "totalPatternsSold": 714,
-      "totalRevenue": "€29,365.44",
-      "totalOrders": 1609
+      "avgOpenRate": "80.5%",
+      "totalPatternsSold": 446,
+      "totalRevenue": "€7,859.15",
+      "totalOrders": 446
     }
   },
   "months": [
     {
-      "id": "jan-2026",
-      "name": "January 2026",
-      "slug": "january-2026",
+      "id": "sep-2025",
+      "name": "September 2025",
+      "slug": "september-2025",
       "campaignCount": 16,
-      "emailCount": 14,
-      "smsCount": 2,
-      "file": "jan-2026.json"
-    },
-    {
-      "id": "feb-2026",
-      "name": "February 2026",
-      "slug": "february-2026",
-      "campaignCount": 14,
-      "emailCount": 13,
+      "emailCount": 15,
       "smsCount": 1,
-      "file": "feb-2026.json"
+      "file": "sep-2025.json"
     }
   ]
 }
