@@ -7,23 +7,23 @@
   },
   "summary": {
     "revenue": {
-      "total": 7859.15,
-      "change": null,
-      "orders": 446,
+      "total": 21068.92,
+      "change": "+29.2%",
+      "orders": 1208,
       "breakdown": {
         "campaigns": {
           "revenue": 7859.15,
-          "orders": 446
+          "orders": 464
         },
         "automation": {
-          "revenue": 0,
-          "orders": 0
+          "revenue": 13209.77,
+          "orders": 744
         }
       }
     },
     "storeTotal": {
-      "revenue": null,
-      "orders": null
+      "revenue": 84653.82,
+      "orders": 5327
     },
     "audience": {
       "email": {
