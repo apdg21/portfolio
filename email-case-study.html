@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Email Marketing Case Study — Adolf de Guzman</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="25 months of real ecommerce email data — open rates, revenue attribution, list growth, and the unsubscribe rate story. A case study by Adolf de Guzman.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:     #0d0d0d;
+      --paper:   #f5f2ec;
+      --cream:   #ede9df;
+      --accent:  #c84b31;
+      --accent2: #e8a87c;
+      --muted:   #7a7568;
+      --border:  #d4cebc;
+      --mono:    'Space Mono', monospace;
+      --serif:   'DM Serif Display', serif;
+      --sans:    'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      background: var(--paper);
+      color: var(--ink);
+      overflow-x: hidden;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+    ::selection { background: var(--accent); color: #fff; }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--cream); }
+    ::-webkit-scrollbar-thumb { background: var(--accent); }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 4rem;
+      transition: background 0.4s, box-shadow 0.4s, padding 0.3s;
+    }
+    nav.scrolled {
+      background: rgba(245,242,236,0.96);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 var(--border);
+      padding: 0.8rem 4rem;
+    }
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.5rem; color: var(--ink); text-decoration: none;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-back {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: var(--sans); font-size: 0.8rem; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--accent); }
+    .nav-back i { font-size: 0.7rem; }
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      nav.scrolled { padding: 0.7rem 1.5rem; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 8rem 4rem 5rem;
+      position: relative; overflow: hidden;
+      background: var(--ink);
+    }
+    /* Subtle ruled-paper texture on dark background */
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent, transparent 44px,
+        rgba(255,255,255,0.025) 44px, rgba(255,255,255,0.025) 45px
+      );
+      pointer-events: none;
+    }
+    /* Glow accent */
+    .hero::after {
+      content: '';
+      position: absolute; bottom: -10%; right: -5%;
+      width: 60vw; height: 60vw; max-width: 700px; max-height: 700px;
+      background: radial-gradient(ellipse at center, rgba(200,75,49,0.18) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-tag {
+      font-family: var(--mono);
+      font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 1.5rem;
+      opacity: 0; animation: fadeUp 0.7s 0.3s forwards;
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 7vw, 6.5rem);
+      line-height: 1.0; letter-spacing: -2px; color: var(--paper);
+      max-width: 900px;
+      margin-bottom: 2rem;
+      opacity: 0; animation: fadeUp 0.7s 0.5s forwards;
+    }
+    .hero h1 em { font-style: italic; color: var(--accent); }
+
+    .hero-meta {
+      display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1.5rem;
+      opacity: 0; animation: fadeUp 0.7s 0.7s forwards;
+    }
+    .hero-meta-item {
+      display: flex; flex-direction: column; gap: 0.2rem;
+    }
+    .hero-meta-label {
+      font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: rgba(245,242,236,0.4);
+    }
+    .hero-meta-value {
+      font-family: var(--serif); font-size: 1.4rem; color: var(--paper);
+    }
+    .hero-meta-divider {
+      width: 1px; height: 40px; background: rgba(255,255,255,0.1);
+    }
+    .hero-scroll-hint {
+      position: absolute; bottom: 2rem; right: 4rem;
+      display: flex; align-items: center; gap: 0.6rem;
+      font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.12em;
+      color: rgba(245,242,236,0.3); text-transform: uppercase;
+      opacity: 0; animation: fadeIn 1s 1.2s forwards;
+    }
+    .hero-scroll-hint i { font-size: 0.65rem; animation: bounceY 2s infinite; }
+
+    @keyframes bounceY {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(5px); }
+    }
+
+    /* ── CONTEXT STRIP ── */
+    .context-strip {
+      background: var(--accent);
+      padding: 1rem 4rem;
+      display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+    }
+    .context-strip p {
+      font-family: var(--sans); font-size: 0.85rem; font-weight: 500;
+      color: #fff; flex: 1;
+    }
+    .context-strip p strong { font-weight: 700; }
+    .context-strip-pill {
+      font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.15); border-radius: 2px;
+      padding: 0.25rem 0.6rem; white-space: nowrap;
+    }
+    @media (max-width: 768px) {
+      .context-strip { padding: 1rem 1.5rem; }
+    }
+
+    /* ── PROOF NUMBERS ── */
+    .proof {
+      background: var(--cream);
+      padding: 4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .proof-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border); border-radius: 4px; overflow: hidden;
+      max-width: 1100px; margin: 0 auto;
+    }
+    .proof-item {
+      background: var(--paper);
+      padding: 2.5rem 2rem;
+      transition: background 0.3s;
+    }
+    .proof-item:hover { background: var(--ink); }
+    .proof-item:hover .proof-num { color: var(--paper); }
+    .proof-item:hover .proof-label { color: rgba(245,242,236,0.5); }
+    .proof-item:hover .proof-sub { color: rgba(245,242,236,0.35); }
+    .proof-num {
+      font-family: var(--serif); font-size: clamp(2.2rem, 4vw, 3rem);
+      line-height: 1; color: var(--ink);
+      margin-bottom: 0.4rem;
+      transition: color 0.3s;
+    }
+    .proof-num em { font-style: italic; color: var(--accent); }
+    .proof-label {
+      font-size: 0.8rem; font-weight: 500; color: var(--ink);
+      margin-bottom: 0.2rem; transition: color 0.3s;
+    }
+    .proof-sub {
+      font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.08em;
+      color: var(--muted); transition: color 0.3s;
+    }
+    @media (max-width: 768px) {
+      .proof { padding: 2.5rem 1.5rem; }
+      .proof-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ── STORY SECTION ── */
+    .story {
+      max-width: 1100px; margin: 0 auto;
+      padding: 5rem 4rem;
+      display: grid; grid-template-columns: 1fr 340px;
+      gap: 5rem; align-items: start;
+    }
+    @media (max-width: 900px) {
+      .story { grid-template-columns: 1fr; gap: 3rem; padding: 3rem 1.5rem; }
+    }
+
+    .story-body h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      line-height: 1.1; letter-spacing: -1px;
+      margin-bottom: 1rem;
+    }
+    .story-body h2 em { font-style: italic; color: var(--accent); }
+    .story-body p {
+      color: #2e2c28; font-size: 1rem; line-height: 1.8;
+      margin-bottom: 1.2rem;
+    }
+    .story-body p strong { color: var(--ink); font-weight: 600; }
+
+    .pull-quote {
+      font-family: var(--serif); font-style: italic;
+      font-size: 1.35rem; line-height: 1.4; color: var(--ink);
+      border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink);
+      padding: 1.2rem 0; margin: 2rem 0;
+    }
+    .pull-quote::before {
+      content: '\201C'; color: var(--accent);
+      font-size: 2.8rem; line-height: 0; vertical-align: -0.45rem;
+    }
+
+    /* Chapter labels */
+    .chapter {
+      display: flex; align-items: baseline; gap: 0.8rem;
+      margin: 3rem 0 1rem;
+    }
+    .chapter-num {
+      font-family: var(--mono); font-size: 0.65rem;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent);
+    }
+    .chapter h3 {
+      font-family: var(--serif); font-size: 1.35rem; color: var(--ink);
+    }
+
+    /* ── SIDEBAR ── */
+    .story-sidebar { position: relative; }
+    .sidebar-sticky { position: sticky; top: 5rem; }
+
+    .data-card {
+      background: var(--ink); color: var(--paper);
+      border-radius: 4px; padding: 1.6rem; margin-bottom: 1rem;
+    }
+    .data-card-label {
+      font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: rgba(245,242,236,0.4);
+      margin-bottom: 0.4rem;
+    }
+    .data-card-value {
+      font-family: var(--serif); font-size: 2.2rem; line-height: 1;
+      color: var(--paper); margin-bottom: 0.3rem;
+    }
+    .data-card-sub {
+      font-size: 0.78rem; color: rgba(245,242,236,0.45); font-weight: 300;
+    }
+    .data-card.highlight { background: var(--accent); }
+    .data-card.highlight .data-card-label { color: rgba(255,255,255,0.6); }
+    .data-card.highlight .data-card-sub { color: rgba(255,255,255,0.6); }
+
+    .sidebar-note {
+      background: var(--cream); border-left: 3px solid var(--border);
+      padding: 1rem 1.2rem; border-radius: 0 4px 4px 0;
+      font-size: 0.82rem; color: var(--muted); line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .sidebar-note strong { color: var(--ink); font-weight: 600; }
+
+    /* ── PHASES STRIP ── */
+    .phases {
+      background: var(--ink);
+      padding: 5rem 4rem;
+    }
+    .phases-inner { max-width: 1100px; margin: 0 auto; }
+    .phases-header {
+      text-align: center; margin-bottom: 3rem;
+    }
+    .phases-header p {
+      font-family: var(--mono); font-size: 0.68rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--accent2); margin-bottom: 0.8rem;
+    }
+    .phases-header h2 {
+      font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 3rem);
+      color: var(--paper); letter-spacing: -1px;
+    }
+    .phases-header h2 em { font-style: italic; color: var(--accent); }
+
+    .phases-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1px; background: rgba(255,255,255,0.08);
+      border-radius: 6px; overflow: hidden;
+    }
+    .phase {
+      background: var(--ink); padding: 2rem 1.5rem;
+      position: relative;
+    }
+    .phase-period {
+      font-family: var(--mono); font-size: 0.62rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(245,242,236,0.35); margin-bottom: 0.6rem;
+    }
+    .phase-badge {
+      display: inline-block; font-family: var(--mono);
+      font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 3px 8px; border-radius: 2px; margin-bottom: 0.8rem;
+    }
+    .badge-gray  { background: rgba(255,255,255,0.08); color: rgba(245,242,236,0.45); }
+    .badge-amber { background: #3a2008; color: #f5c060; }
+    .badge-teal  { background: #072a1a; color: #5ecaa5; }
+    .badge-blue  { background: #08183a; color: #7ab0e8; }
+
+    .phase-title {
+      font-family: var(--serif); font-size: 1.05rem;
+      color: var(--paper); margin-bottom: 0.6rem; line-height: 1.2;
+    }
+    .phase-desc {
+      font-size: 0.8rem; color: rgba(245,242,236,0.5); line-height: 1.65;
+    }
+    @media (max-width: 768px) {
+      .phases { padding: 3rem 1.5rem; }
+      .phases-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ── CTA SECTION ── */
+    .cta-section {
+      max-width: 1100px; margin: 0 auto;
+      padding: 6rem 4rem;
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 3rem; align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .cta-section h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.1; letter-spacing: -1px;
+    }
+    .cta-section h2 em { font-style: italic; color: var(--accent); }
+    .cta-section p {
+      font-size: 0.95rem; color: var(--muted); margin-top: 0.8rem; max-width: 480px;
+    }
+    .cta-buttons { display: flex; flex-direction: column; gap: 0.8rem; min-width: 220px; }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+      background: var(--accent); color: #fff;
+      padding: 1rem 1.8rem;
+      font-family: var(--sans); font-size: 0.85rem; font-weight: 600;
+      letter-spacing: 0.05em; border: none; border-radius: 2px; cursor: pointer;
+      text-decoration: none; transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { background: #a8391f; transform: translateY(-2px); }
+    .btn-outline {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+      background: transparent; color: var(--ink);
+      padding: 1rem 1.8rem;
+      font-family: var(--sans); font-size: 0.85rem; font-weight: 600;
+      letter-spacing: 0.05em; border: 1.5px solid var(--ink); border-radius: 2px;
+      text-decoration: none; transition: background 0.2s, color 0.2s, transform 0.2s;
+    }
+    .btn-outline:hover { background: var(--ink); color: var(--paper); transform: translateY(-2px); }
+
+    @media (max-width: 768px) {
+      .cta-section { grid-template-columns: 1fr; padding: 3.5rem 1.5rem; }
+      .cta-buttons { flex-direction: row; flex-wrap: wrap; }
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink); color: rgba(245,242,236,0.45);
+      padding: 2.5rem 4rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem; font-size: 0.78rem;
+    }
+    footer a { color: rgba(245,242,236,0.45); text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: var(--accent2); }
+    .footer-brand { font-family: var(--serif); font-size: 1.2rem; color: var(--paper); }
+    @media (max-width: 640px) { footer { padding: 2rem 1.5rem; text-align: center; justify-content: center; } }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    .reveal {
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 0.1s; }
+    .reveal-d2 { transition-delay: 0.2s; }
+    .reveal-d3 { transition-delay: 0.3s; }
+
+    /* ── BACK TO TOP ── */
+    .back-to-top {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 99;
+      width: 40px; height: 40px; background: var(--accent); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 2px; text-decoration: none; font-size: 0.85rem;
+      opacity: 0; transform: translateY(10px);
+      transition: opacity 0.3s, transform 0.3s;
+      pointer-events: none;
+    }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .back-to-top:hover { background: #a8391f; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="/" class="nav-logo">Adolf<span>.</span></a>
+    <a href="/" class="nav-back"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <p class="hero-tag">Case Study · Email Marketing · Real Ecommerce Data</p>
+    <h1>€368K From<br>a Channel<br><em>They Own.</em></h1>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Period</span>
+        <span class="hero-meta-value">25 months</span>
+      </div>
+      <div class="hero-meta-divider"></div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Revenue tracked</span>
+        <span class="hero-meta-value">€1M+</span>
+      </div>
+      <div class="hero-meta-divider"></div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Email contribution</span>
+        <span class="hero-meta-value">~35%</span>
+      </div>
+      <div class="hero-meta-divider"></div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">List grown to</span>
+        <span class="hero-meta-value">13,924</span>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">Scroll <i class="fas fa-chevron-down"></i></div>
+  </section>
+
+  <!-- CONTEXT STRIP -->
+  <div class="context-strip">
+    <p>This case study uses <strong>real, anonymized data</strong> from an active ecommerce client. Brand details are withheld by agreement — the numbers are not.</p>
+    <span class="context-strip-pill">Anonymized</span>
+    <span class="context-strip-pill">Apr 2024 – Apr 2026</span>
+  </div>
+
+  <!-- PROOF NUMBERS -->
+  <div class="proof">
+    <div class="proof-grid">
+      <div class="proof-item reveal">
+        <div class="proof-num"><em>€84.6K</em></div>
+        <div class="proof-label">Single-month revenue peak</div>
+        <div class="proof-sub">September 2025</div>
+      </div>
+      <div class="proof-item reveal reveal-d1">
+        <div class="proof-num">7.58<em>%</em></div>
+        <div class="proof-label">Unsub rate at its worst</div>
+        <div class="proof-sub">Feb 2025 — then fixed</div>
+      </div>
+      <div class="proof-item reveal reveal-d2">
+        <div class="proof-num"><em>2.1</em>%</div>
+        <div class="proof-label">Unsub rate after optimisation</div>
+        <div class="proof-sub">Steady from Jun 2025</div>
+      </div>
+      <div class="proof-item reveal reveal-d3">
+        <div class="proof-num">4<em>×</em></div>
+        <div class="proof-label">Automations vs campaigns</div>
+        <div class="proof-sub">Flows outperformed most months</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STORY + SIDEBAR -->
+  <div class="story">
+    <main class="story-body">
+
+      <div class="chapter reveal">
+        <span class="chapter-num">01 /</span>
+        <h3>Before email existed</h3>
+      </div>
+      <p class="reveal">From January to June 2024 this store was earning revenue on its own — respectable, but capped. No owned audience, no compounding channel. Paid or organic traffic would arrive, convert at whatever rate it did, and leave. There was nothing to retarget, nothing to nurture, no way to reach customers again without spending more to acquire them again.</p>
+
+      <div class="chapter reveal">
+        <span class="chapter-num">02 /</span>
+        <h3>What changed in July 2024</h3>
+      </div>
+      <p class="reveal">Email went live. Automations first — welcome sequences, abandoned cart flows, post-purchase triggers. Then campaigns. Within four months, revenue that had been flat was compounding. The automations built in those early months continued running through the entire 25-month dataset with minimal additional effort.</p>
+      <p class="reveal">This is the part clients often underestimate: <strong>you build the flows once</strong>. An abandoned cart email doesn't need a strategist to fire it at 2pm on a Tuesday. It fires 30 minutes after someone leaves without buying, every time, indefinitely.</p>
+
+      <div class="pull-quote reveal">Email campaigns are where strategy becomes revenue. Every send is a controlled experiment in persuasion.</div>
+
+      <div class="chapter reveal">
+        <span class="chapter-num">03 /</span>
+        <h3>The unsubscribe crisis — and the recovery</h3>
+      </div>
+      <p class="reveal">The most instructive chapter in this data isn't the revenue peak. It's February 2025, when the unsubscribe rate hit <strong>7.58%</strong>. Industry benchmarks flag anything above 0.5–1% as worth investigating. 7.58% is a distress signal.</p>
+      <p class="reveal">The list had nearly doubled from October 2024 to February 2025. Fast growth is exciting. Poor acquisition quality is not. When subscribers opt in without genuine intent — or get bombarded before they're ready — they leave.</p>
+      <p class="reveal">The correction involved better segmentation, cleaner acquisition sources, and more deliberate send cadence. By June 2025, the unsub rate had dropped below 3% and never came back up. The engaged list kept growing anyway — from ~6,000 in mid-2025 to nearly 14,000 by April 2026. Quality and scale, at the same time.</p>
+
+      <div class="chapter reveal">
+        <span class="chapter-num">04 /</span>
+        <h3>What this means for your brand</h3>
+      </div>
+      <p class="reveal">Most ecommerce brands treat email as a promotional tool — something you send when there's a sale. This data shows it's infrastructure. The channel that amplifies everything else: makes product launches land harder, turns seasonal peaks higher, and increases the lifetime value of every customer you've already paid to acquire.</p>
+      <p class="reveal">The brands that struggle with email make one of two mistakes. They underinvest and leave recoverable revenue on the table. Or they over-extract — too many sends, poor targeting, purchased lists — and burn trust faster than they can rebuild it.</p>
+      <p class="reveal">Done right, email isn't just a revenue channel. It's the most durable asset an ecommerce brand can build.</p>
+
+    </main>
+
+    <aside class="story-sidebar">
+      <div class="sidebar-sticky">
+        <div class="data-card highlight reveal">
+          <div class="data-card-label">Email share of revenue</div>
+          <div class="data-card-value">~35%</div>
+          <div class="data-card-sub">of all store revenue, owned entirely</div>
+        </div>
+        <div class="data-card reveal reveal-d1">
+          <div class="data-card-label">Total email revenue</div>
+          <div class="data-card-value">€368K</div>
+          <div class="data-card-sub">Apr 2024 → Apr 2026</div>
+        </div>
+        <div class="data-card reveal reveal-d2">
+          <div class="data-card-label">Engaged subscribers</div>
+          <div class="data-card-value">13,924</div>
+          <div class="data-card-sub">April 2026</div>
+        </div>
+        <div class="sidebar-note reveal reveal-d1" style="margin-top:1rem;">
+          <strong>Automation vs. campaigns</strong><br>
+          In most months of the dataset, automated flows generated more revenue than manual campaigns — without extra effort after setup.
+        </div>
+        <div class="sidebar-note reveal reveal-d2">
+          <strong>The turning point</strong><br>
+          Unsub rate peaked at 7.58% in Feb 2025. By June 2025 it had dropped to below 3% — and held there through April 2026.
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- PHASES -->
+  <section class="phases">
+    <div class="phases-inner">
+      <div class="phases-header reveal">
+        <p>The brand's journey</p>
+        <h2>Four Phases Across<br><em>25 Months</em></h2>
+      </div>
+      <div class="phases-grid">
+        <div class="phase reveal">
+          <div class="phase-period">Jan – Jun 2024</div>
+          <span class="phase-badge badge-gray">Pre-email</span>
+          <div class="phase-title">Store Alone</div>
+          <div class="phase-desc">Revenue generated organically. No owned audience channel. Growth capped without a way to re-engage customers after the first purchase.</div>
+        </div>
+        <div class="phase reveal reveal-d1">
+          <div class="phase-period">Jul – Oct 2024</div>
+          <span class="phase-badge badge-amber">Ramp-up</span>
+          <div class="phase-title">Setup &amp; Launch</div>
+          <div class="phase-desc">Automations go live. First campaigns sent. List starts growing rapidly. Revenue begins scaling in a way organic-only channels rarely sustain.</div>
+        </div>
+        <div class="phase reveal reveal-d2">
+          <div class="phase-period">Nov 2024 – May 2025</div>
+          <span class="phase-badge badge-teal">Growth</span>
+          <div class="phase-title">Fast Growth, High Churn</div>
+          <div class="phase-desc">List doubles. Revenue peaks. Unsub rate spikes to 7.58% — a warning that acquisition quality hadn't kept pace with volume.</div>
+        </div>
+        <div class="phase reveal reveal-d3">
+          <div class="phase-period">Jun 2025 → Present</div>
+          <span class="phase-badge badge-blue">Optimised</span>
+          <div class="phase-title">Healthy &amp; Scalable</div>
+          <div class="phase-desc">Unsub rate drops below 3% and holds. List grows to 14K. Revenue stays elevated. The channel matures into a sustainable owned asset.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div>
+      <h2>See the Full<br><em>Data &amp; Charts</em></h2>
+      <p>The complete deep-dive — interactive charts, 25-month performance table, unsubscribe rate analysis, and the full breakdown of campaign vs. automation revenue.</p>
+    </div>
+    <div class="cta-buttons reveal">
+      <a href="https://email-marketing-42t.pages.dev/overview" target="_blank" rel="noopener" class="btn-primary">
+        <i class="fas fa-chart-line"></i> View Full Case Study
+      </a>
+      <a href="/#contact" class="btn-outline">
+        <i class="fas fa-envelope"></i> Work With Me
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-brand">Adolf<span style="color:var(--accent)">.</span></span>
+    <span>Case Study · Email Marketing · Ecommerce</span>
+    <a href="/">← Back to Portfolio</a>
+  </footer>
+
+  <a href="#top" class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+
+  <script>
+    // Navbar scroll
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+      document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 300);
+    });
+
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(r => obs.observe(r));
+  </script>
+
+</body>
+</html>
